@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'EF_jejudoldam';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-style: normal !important; /* 기울임 스타일 제거 */
+}
+
+.home {
+    display: flex;
+    width: 430px;
+    height: 264px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    font-style: normal;
+}
+
+.homehead {
+    width: 400px;
+    height: 202px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* 가운데 정렬 */
+    font-style: normal;
+}
+
+.name {
+    color: #000;
+    font-family: 'EF_jejudoldam';
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px; /* 이름과 설명 사이 간격 조절 */
+}
+
+.description {
+    color: #7E7E7E;
+    font-family: Pretendard; /* Pretendard 폰트 적용 */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* .body{
+
+}
+
+.input{
+    display: flex;
+    width: 322px;
+    height: 307px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+}
+
+.discription2{
+    color: #7E7E7E;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.select{
+    display: flex;
+    width: 322px;
+    height: 178px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.start{
+    width: 321px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #FFF3B2;
+}
+
+.start2{
+    display: inline-flex;
+    align-items: center;
+    gap: 176px;
+}
+
+.text{
+    display: flex;
+    width: 83px;
+    height: 21px;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+

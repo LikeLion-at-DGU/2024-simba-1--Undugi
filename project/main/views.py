@@ -6,7 +6,7 @@ from .models import Building, Route, Path
 #    return render(request, 'main/mainpage.html')
 
 
-def main_page(request):
+def mainpage(request):
     if request.method == 'POST':
         start_building_id = request.POST.get('start_building')
         end_building_id = request.POST.get('end_building')
@@ -39,7 +39,7 @@ def main_page(request):
 
     buildings = Building.objects.all()
     paths = Path.objects.all()
-    return render(request, 'main_page.html', {'buildings': buildings, 'paths': paths})
+    return render(request, 'main/mainpage.html', {'buildings': buildings, 'paths': paths})
 
 def map_page(request):
     # 지도로 이동하는 로직 추가한 것

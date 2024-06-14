@@ -1,1 +1,31 @@
-메인페이지
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/main/mainpage.css'%}"
+/>
+
+<div class = "home">
+    <div class = "homehead">
+        <img src="../../project/static/assets/icons/logo.png" alt="logo">
+        <i class = "name">언더기</i>
+        <i class = "discription">매일 오르는 언덕을 조금 더 즐겁게</i>
+        <hr>
+    </div>
+    <div class = "body">
+        <div class ="input">
+            <i class = "discription2"> 언더기는 원하시는 소모 칼로리에 알맞는 코스를 추천해드려요</i>
+            <div class = "select">
+                <div class = "start">
+                    <div class = "start2">
+                        <i class = "text">출발지 입력</i>
+                        <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Vector_2" d="M1.28571 0C1.04694 0 0.812887 0.0672291 0.609775 0.194154C0.406663 0.321079 0.242519 0.502685 0.135737 0.718623C0.0289546 0.93456 -0.0162473 1.1763 0.00519579 1.41675C0.0266389 1.6572 0.11388 1.88686 0.257143 2.08L7.97143 12.48C8.09119 12.6415 8.24648 12.7725 8.42501 12.8628C8.60354 12.953 8.8004 13 9 13C9.1996 13 9.39646 12.953 9.57499 12.8628C9.75352 12.7725 9.90881 12.6415 10.0286 12.48L17.7429 2.08C17.8861 1.88686 17.9734 1.6572 17.9948 1.41675C18.0162 1.1763 17.971 0.93456 17.8643 0.718623C17.7575 0.502685 17.5933 0.321079 17.3902 0.194154C17.1871 0.0672291 16.9531 0 16.7143 0H1.28571Z" fill="black"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
