@@ -14,7 +14,9 @@
     <div class="head">
         <div class="signin">
             <div class="signinbutton">
-                <button id="button">Sign in</button>
+                <a href="{% url 'accounts:login' %}">
+                    <button id="button" type="button">Sign in</button>
+                </a>
             </div>
         </div>
         <div class="logo">
