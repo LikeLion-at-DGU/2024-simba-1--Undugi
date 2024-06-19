@@ -1,1 +1,17 @@
 회원가입페이지
+<form action="{% url 'accounts:signup1' %}" method="POST">
+    {% csrf_token %}
+    <p>아이디</p>
+    <input type="text" name="id">
+    <br>
+
+    <p>비밀번호</p>
+    <input type="password" name="password">
+    <br>
+
+    <p>비밀번호 확인</p>
+    <input type="password" name="confirm">
+    <br>
+
+    <button type="submit">다음</button>
+</form>
