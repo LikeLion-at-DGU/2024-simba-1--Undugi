@@ -19,27 +19,46 @@ def login(request):
     elif request.method == 'GET':
         return render(request, 'accounts/login.html')
     
-def login_view(request):
-    return render(request, 'accounts/login.html')
-    
 def logout(request):
     auth.logout(request)
     return redirect('main:mainpage')
 
-def signup(request):
+def signup1(request):
     if request.method == 'POST':
         if request.POST['password'] == request.POST['confirm']:
-            user = User.objects.create_user(
-                id=request.POST['id'],
-                password=request.POST['password']
-            )
-            user.profile.nickname=request.POST['nickname']
-            user.profile.weight=request.POST['weight']
-            user.profile.goal=request.POST['goal']
-            user.profile.place=request.POST['place']
-
-            user.profile.save()
-
-            auth.login(request, user)
-            return redirect('/')
+            request.session['id'] = request.POST['id']
+            request.session['password'] = request.POST['password']
+            return redirect('accounts:signup2')
     return render(request, 'accounts/signup.html')
+
+def signup2(request):
+    if request.method == 'POST':
+        user = User.objects.create_user(
+            username=request.session['id'],
+            password=request.session['password']
+        )
+        user.profile.nickname = request.POST['nickname']
+        user.profile.weight = request.POST['weight']
+        user.profile.goal = request.POST['goal']
+        user.profile.place = request.POST['place']
+
+        user.profile.save()
+
+        auth.login(request, user)
+        return redirect('/')
+    return render(request, 'accounts/signup2.html')
+
+def idpasswordfind(request):
+    return render(request, 'accounts/idpasswordfind.html')
+
+def idfindv1(request):
+    return render(request, 'accounts/idfindv1.html')
+
+def idfindv2(request):
+    return render(request, 'accounts/idfindv2.html')
+
+def passwordfindv1(request):
+    return render(request, 'accounts/passwordfindv1.html')
+
+def passwordfindv2(request):
+    return render(request, 'accounts/passwordfindv2.html')

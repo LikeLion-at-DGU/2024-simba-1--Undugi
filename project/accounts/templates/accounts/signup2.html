@@ -1,0 +1,20 @@
+<form action="{% url 'accounts:signup2' %}" method="POST">
+{% csrf_token %}
+<p>닉네임</p>
+<input type="text" name="nickname">
+<br>
+
+<p>체중</p>
+<input type="number" step="0.01" name="weight">
+<br>
+
+<p>목표 칼로리</p>
+<input type="text" name="goal">
+<br>
+
+<p>Q.학교에서 내가 가장 오래 머무르는 장소는?</p>
+<input type="text" name="place">
+<br>
+
+<input type="submit" value="회원가입">
+</form>
