@@ -1,9 +1,1 @@
 로그인페이지
-<form action="{% url 'accounts:login' %}" method="POST">
-    {% csrf_token %}
-    아이디 : <input type="text" name="id"><br>
-    비밀번호 : <input type="password" name="password"><br>
-    <input type="submit" value="Sign in"><br>
-    잊은 정보가 있나요? 아이디/비밀번호 찾기<br>
-    아직 회원이 아니신가요? <a href="{% url 'accounts:signup1' %}">회원가입하기</a>
-</form>

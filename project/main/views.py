@@ -18,7 +18,7 @@ def mainpage(request):
         end_building = Building.objects.get(id=end_building_id)
         path = Path.objects.get(id=path_id)
         
-         # 경로 추천 로직 예시: 일단 간단하게 최소 칼로리 경로를 선택하는 예시
+        # 경로 추천 로직 예시: 일단 간단하게 최소 칼로리 경로를 선택하는 예시
         recommended_path = Path.objects.filter(calorie__lte=calorie).order_by('calorie').first()
         
         Route.objects.create(
