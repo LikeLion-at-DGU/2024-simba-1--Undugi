@@ -37,7 +37,7 @@ def signup2(request):
             username=request.session['id'],
             password=request.session['password']
         )
-        user.profile.nickname = request.POST['nickname']
+        user.profile.nickName = request.POST['nickName']
         user.profile.weight = request.POST['weight']
         user.profile.goal = request.POST['goal']
         user.profile.place = request.POST['place']
