@@ -47,3 +47,18 @@ def signup2(request):
         auth.login(request, user)
         return redirect('/')
     return render(request, 'accounts/signup2.html')
+
+def idpasswordfind(request):
+    return render(request, 'accounts/idpasswordfind.html')
+
+def idfindv1(request):
+    return render(request, 'accounts/idfindv1.html')
+
+def idfindv2(request):
+    return render(request, 'accounts/idfindv2.html')
+
+def passwordfindv1(request):
+    return render(request, 'accounts/passwordfindv1.html')
+
+def passwordfindv2(request):
+    return render(request, 'accounts/passwordfindv2.html')
