@@ -55,11 +55,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const svgIcon = document.querySelector('.no');
-            const inputText = document.querySelector('.input-text');
+            const inputField = document.querySelector('.input-text');
             const placeholderText = 'ID';
     
             svgIcon.addEventListener('click', function() {
-                inputText.value = ''; 
+                inputField.value = ''; 
                 inputField.placeholder = placeholderText;
             });
         });
