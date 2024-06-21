@@ -10,8 +10,8 @@ class Profile(models.Model):
     nickName = models.TextField(max_length=30)  # 닉네임
     profileImage = models.TextField(null=True)  # 프로필사진
     goal = models.FloatField(null=True)         # 목표소모칼로리
-    consumedCalorie = models.FloatField(null=True)  # 총 소모한칼로리
-    weight = models.FloatField(null=True)       # null False면 왜 오류?
+    consumedCalorie = models.FloatField(null=True, default=0)  # 총 소모한칼로리
+    weight = models.FloatField(null=True, default=50)       # null False면 왜 오류?
     place = models.TextField(max_length=30)     # 학교에서 오래 머무르는 장소
     # rank =  models.ForeignKey(Rank, null=True, on_delete=models.CASCADE)
 
