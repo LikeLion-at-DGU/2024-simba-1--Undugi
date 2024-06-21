@@ -1,1 +1,42 @@
 지도 페이지
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Kakao 지도 시작하기</title>
+</head>
+<body>
+	<div id="map" style="width:600px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=70f022e04ffaf40810c250d86f2571e6"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(37.5583, 127.0002),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+        var linePath = [
+            new kakao.maps.LatLng(37.5578, 127.0019),
+            new kakao.maps.LatLng(37.5579, 127.0014),
+            new kakao.maps.LatLng(37.5581, 127.0015),
+            new kakao.maps.LatLng(37.5582, 127.0012),
+            new kakao.maps.LatLng(37.5584, 127.0011),
+            new kakao.maps.LatLng(37.5585, 127.0007),
+            new kakao.maps.LatLng(37.5581, 126.9997),
+            new kakao.maps.LatLng(37.5583, 126.9987),
+        ];  // 혜화관-신공학관
+
+        var polyline = new kakao.maps.Polyline({
+            path: linePath, // 선을 구성하는 좌표배열 입니다
+            strokeWeight: 5, // 선의 두께
+            strokeColor: '#FFAE00', // 선의 색깔
+            strokeOpacity: 0.7, // 선의 불투명도. 1에서 0 사이의 값이며 0에 가까울수록 투명
+            strokeStyle: 'solid' // 선의 스타일
+        });
+
+        polyline.setMap(map);  
+	</script>
+</body>
+</html>
