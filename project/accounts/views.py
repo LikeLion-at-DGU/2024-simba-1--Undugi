@@ -8,7 +8,7 @@ def login(request):
         id = request.POST['id']
         password = request.POST['password']
 
-        user = auth.authenticate(request, id=id, password=password)
+        user = auth.authenticate(request, username=id, password=password)
 
         if user is not None:
             auth.login(request, user)
