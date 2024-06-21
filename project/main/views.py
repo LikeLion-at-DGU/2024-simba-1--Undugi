@@ -43,6 +43,7 @@ def mainpage(request):
 
 def map_page(request):
     # 지도로 이동하는 로직 추가한 것
-    routes = Route.objects.all()
+    #routes = Route.objects.all()
 
-    return render(request, 'map_page.html',{'routes': routes})
+    #return render(request, 'map_page.html',{'routes': routes})
+    return render(request, 'main/map.html') # 개발 시 테스트용
