@@ -96,6 +96,9 @@
               <a href="{% url 'accounts:signup1' %}">회원가입하기</a>
             </div>
           </form>
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
         </div>
       </div>
       {% include 'shared/_navbar.html' %}
