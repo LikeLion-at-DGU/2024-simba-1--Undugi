@@ -1,6 +1,15 @@
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Building, Route, Path
+from ranking.models import Ranking
+from accounts.models import Profile
+def update_rankings():
+    # 랭킹 업데이트 로직
+    rankings = Ranking.objects.order_by('-total_calories_burned')
+    for index, ranking in enumerate(rankings, start=1):
+        ranking.rank = index
+        ranking.save()
+
 
 def mainpage(request):
     if request.method == 'POST':
@@ -28,13 +37,58 @@ def mainpage(request):
             })
 
         try:
-            Route.objects.create(
+            # 경로에 해당하는 소모 칼로리 계산
+            calorie_consumption = path.calorie
+
+            # Route 객체 생성
+            new_route = Route.objects.create(
                 start_building=start_building,
                 end_building=end_building,
-                path=path
+                path=path,
+                calorie=calorie_consumption
             )
 
-            return redirect('map_page')
+             # 사용자 소모 칼로리 업데이트
+            if request.user.is_authenticated:
+                profile = Profile.objects.get(user=request.user)
+                profile.consumedCalorie += calorie_consumption
+                profile.save()
+
+                # 랭킹 업데이트
+                try:
+                    user_ranking = Ranking.objects.get(nickname=request.user.username)
+                    user_ranking.total_calories_burned = profile.consumedCalorie
+                    user_ranking.save()
+                except Ranking.DoesNotExist:
+                    user_ranking = Ranking.objects.create(
+                        nickname=request.user.username,
+                        total_calories_burned=profile.consumedCalorie
+                    )
+
+                update_rankings()
+
+                # 사용자 순위 조회
+                user_ranking = Ranking.objects.get(nickname=request.user.username)
+
+                # 목표 소모 칼로리 가져오기
+                goal_calories = profile.goal
+
+            else:
+                user_ranking = None
+                goal_calories = None
+
+            # arrive.html로 데이터 전달
+            return render(request, 'main/arrive.html', {
+                'calorie_consumption': calorie_consumption,
+                'user_ranking': user_ranking,
+                'goal_calories': goal_calories
+            })
+
+
+            
+
+           
+
         except Exception as e:
             return render(request, 'main/mainpage.html', {
                 'buildings': Building.objects.all(),
@@ -45,6 +99,7 @@ def mainpage(request):
     buildings = Building.objects.all()
     paths = Path.objects.all()
     return render(request, 'main/mainpage.html', {'buildings': buildings, 'paths': paths})
+
 
 def map_page(request):
     # Logic for displaying the map page
