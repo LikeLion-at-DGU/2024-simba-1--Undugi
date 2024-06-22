@@ -25,100 +25,128 @@
       </div>
       <div class="body">
         <div class="title">
-            <a href="" class="backbutton">
-                <svg class="backbtn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M16.62 2.99004C16.5039 2.87363 16.366 2.78127 16.2141 2.71826C16.0622 2.65524 15.8994 2.6228 15.735 2.6228C15.5706 2.6228 15.4078 2.65524 15.2559 2.71826C15.1041 2.78127 14.9661 2.87363 14.85 2.99004L6.54 11.3C6.4473 11.3926 6.37375 11.5024 6.32357 11.6234C6.27339 11.7444 6.24756 11.8741 6.24756 12.005C6.24756 12.136 6.27339 12.2657 6.32357 12.3867C6.37375 12.5076 6.4473 12.6175 6.54 12.71L14.85 21.02C15.34 21.51 16.13 21.51 16.62 21.02C17.11 20.53 17.11 19.74 16.62 19.25L9.38 12L16.63 4.75004C17.11 4.27004 17.11 3.47004 16.62 2.99004Z" fill="#AFAFAF"/>
-                </svg>
-            </a>
+          <a href="" class="backbutton">
+            <svg
+              class="backbtn"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M16.62 2.99004C16.5039 2.87363 16.366 2.78127 16.2141 2.71826C16.0622 2.65524 15.8994 2.6228 15.735 2.6228C15.5706 2.6228 15.4078 2.65524 15.2559 2.71826C15.1041 2.78127 14.9661 2.87363 14.85 2.99004L6.54 11.3C6.4473 11.3926 6.37375 11.5024 6.32357 11.6234C6.27339 11.7444 6.24756 11.8741 6.24756 12.005C6.24756 12.136 6.27339 12.2657 6.32357 12.3867C6.37375 12.5076 6.4473 12.6175 6.54 12.71L14.85 21.02C15.34 21.51 16.13 21.51 16.62 21.02C17.11 20.53 17.11 19.74 16.62 19.25L9.38 12L16.63 4.75004C17.11 4.27004 17.11 3.47004 16.62 2.99004Z"
+                fill="#AFAFAF"
+              />
+            </svg>
+          </a>
           <span class="signuptxt">회원가입 하기</span>
         </div>
         <form action="{% url 'accounts:signup1' %}" method="POST">
-            {% csrf_token %}
-        <div class="idpw">
-          <div class="idsection">
-            <i class="idtxt">아이디</i>
-            <div class="textholder1">
-                <input type="text" class="id" id="id-input" name="id" placeholder="ID" required>
+          {% csrf_token %}
+          <div class="idpw">
+            <div class="idsection">
+              <i class="idtxt">아이디</i>
+              <div class="textholder1">
+                <input
+                  type="text"
+                  class="id"
+                  id="id-input"
+                  name="id"
+                  placeholder="ID"
+                  required
+                />
+                <svg
+                  class="no"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12ZM8.111 15.889C8.01726 15.7952 7.96461 15.6681 7.96461 15.5355C7.96461 15.4029 8.01726 15.2758 8.111 15.182L11.293 12L8.111 8.818C8.01992 8.7237 7.96952 8.5974 7.97066 8.4663C7.9718 8.3352 8.02439 8.20979 8.11709 8.11709C8.20979 8.02439 8.3352 7.9718 8.4663 7.97066C8.5974 7.96952 8.7237 8.01992 8.818 8.111L12 11.293L15.182 8.111C15.2763 8.01992 15.4026 7.96952 15.5337 7.97066C15.6648 7.9718 15.7902 8.02439 15.8829 8.11709C15.9756 8.20979 16.0282 8.3352 16.0293 8.4663C16.0305 8.5974 15.9801 8.7237 15.889 8.818L12.707 12L15.889 15.182C15.9801 15.2763 16.0305 15.4026 16.0293 15.5337C16.0282 15.6648 15.9756 15.7902 15.8829 15.8829C15.7902 15.9756 15.6648 16.0282 15.5337 16.0293C15.4026 16.0305 15.2763 15.9801 15.182 15.889L12 12.707L8.818 15.889C8.72424 15.9827 8.59708 16.0354 8.4645 16.0354C8.33192 16.0354 8.20476 15.9827 8.111 15.889Z"
+                    fill="#AFAFAF"
+                  />
+                </svg>
+              </div>
+              {% for message in messages %} {{ message }} {% endfor %}
             </div>
-            {% for message in messages %}
-              {{ message }}
-            {% endfor %}
-          </div>
-          <div class="pwsection">
-            <i class="pwtxt">비밀번호</i>
-            <div class="textholder2">
-                <input type="password" class="pw" id="pw-input" name="pw" placeholder="Password" required>
-            </div>
-            <p id="pwrule">&#8226; 비밀번호를 8자 이상으로 작성해주세요.<br>
-                &#8226; 영문 대소문자, 숫자, 특수문자를 하나 이상 포함해주세요.<br>
+            <div class="pwsection">
+              <i class="pwtxt">비밀번호</i>
+              <div class="textholder2">
+                <input
+                  type="password"
+                  class="pw"
+                  id="pw-input"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <p id="pwrule">
+                &#8226; 비밀번호를 8자 이상으로 작성해주세요.<br />
+                &#8226; 영문 대소문자, 숫자, 특수문자를 하나 이상
+                포함해주세요.<br />
                 &#8226; 사용가능 특수문자: @ ! ? - _
-            </p>
-          </div>
-          <div class="pwchecksection">
-            <i class="pwchecktxt">비밀번호 확인</i>
-            <div class="textholder3">
-                <input type="password" class="pwcheck" id="pwcheck-input" name="pw" placeholder="Password" required>
+              </p>
             </div>
-            <p id="pwcheckcomment">비밀번호를 다시 한 번 입력해 주세요.</p>
-            <p id="pwError">비밀번호가 일치하지 않습니다!</p>
+            <div class="pwchecksection">
+              <i class="pwchecktxt">비밀번호 확인</i>
+              <div class="textholder3">
+                <input
+                  type="password"
+                  class="pwcheck"
+                  id="pwcheck-input"
+                  name="confirm"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <p id="pwcheckcomment">비밀번호를 다시 한 번 입력해 주세요.</p>
+              <p id="pwError">비밀번호가 일치하지 않습니다!</p>
+            </div>
           </div>
-        </div>
-        <div class="next">
+          <div class="next">
             <div class="nextgo">
-                <a href="" id="nextbtn">다음</a>
+              <button type="submit" id="nextbtn" disabled>다음</button>
             </div>
-        </div>
+          </div>
+        </form>
       </div>
       {% include 'shared/_navbar.html' %}
     </div>
 
     <script>
-        const pwInput = document.getElementById('pw-input');
-        const pwCheckInput = document.getElementById('pwcheck-input');
-        const nextBtn = document.getElementById('nextbtn');
-        const pwError = document.getElementById('pwError');
-    
-        function validatePassword() {
-          const password = pwInput.value;
-          const confirmPassword = pwCheckInput.value;
-          const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@!?-_]).{8,}$/;
-    
-          if (regex.test(password) && password === confirmPassword) {
-            nextBtn.classList.add('active');
-            nextBtn.href = "#";
-            pwError.style.display = 'none';
+      const pwInput = document.getElementById("pw-input");
+      const pwCheckInput = document.getElementById("pwcheck-input");
+      const nextBtn = document.getElementById("nextbtn");
+      const pwError = document.getElementById("pwError");
+
+      function validatePassword() {
+        const password = pwInput.value;
+        const confirmPassword = pwCheckInput.value;
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@!?-_]).{8,}$/;
+
+        if (regex.test(password) && password === confirmPassword) {
+          nextBtn.disabled = false;
+          nextBtn.classList.add("active");
+          pwError.style.display = "none";
+        } else {
+          nextBtn.disabled = true;
+          nextBtn.classList.remove("active");
+          if (password !== confirmPassword) {
+            pwError.style.display = "block";
           } else {
-            nextBtn.classList.remove('active');
-            nextBtn.href = "";
-            if (password !== confirmPassword) {
-              pwError.style.display = 'block';
-            } else {
-              pwError.style.display = 'none';
-            }
+            pwError.style.display = "none";
           }
         }
-    
-        pwInput.addEventListener('input', validatePassword);
-        pwCheckInput.addEventListener('input', validatePassword);
-      </script>
+      }
+
+      pwInput.addEventListener("input", validatePassword);
+      pwCheckInput.addEventListener("input", validatePassword);
+    </script>
   </body>
 </html>
-
-{% comment %}
-<form action="{% url 'accounts:signup1' %}" method="POST">
-  {% csrf_token %}
-  <p>아이디</p>
-  <input type="text" name="id" />
-  <br />
-
-  <p>비밀번호</p>
-  <input type="password" name="password" />
-  <br />
-
-  <p>비밀번호 확인</p>
-  <input type="password" name="confirm" />
-  <br />
-
-  <button type="submit">다음</button>
-</form>
-{% endcomment %}
