@@ -13,7 +13,10 @@ def ranking_page(request):
     top_rankings = list(Ranking.objects.order_by('-total_calories_burned')[:3])
     user_ranking = None
     if request.user.is_authenticated:
-        user_ranking = Ranking.objects.get(nickname=request.user.username)
+        try:
+            user_ranking = Ranking.objects.get(nickname=request.user.username)
+        except Ranking.DoesNotExist:
+            user_ranking = None
 
     context = {
         'top_rankings': top_rankings,

@@ -15,7 +15,7 @@
         <div class="logo">
           <img
             class="image"
-            src="../../project/static/assets/icons/logo.png"
+            src="{% static 'assets/icons/logo.png' %}"
             alt="logo"
           />
           <div class="name">언더기</div>
@@ -25,12 +25,16 @@
       </div>
       <div class="body">
         <span class="congraturation">CONGRATULATIONS!<br /></span>
-        <span class="menow"><br />지금 나는 NNN 순위예요!</span>
+        {% if user_ranking %}
+          <span class="menow"><br />지금 나는 {{ user_ranking.rank }}순위예요!</span>
+        {% else %}
+          <span class="menow"><br />랭킹 데이터를 가져올 수 없습니다.</span>
+        {% endif %}
         <div class="circle">
           <div class="circlebar">
-            <span class="nowkcal">65 kcal<br /></span>
-            <span class="plankcal">100 kcal<br /></span>
-            <span class="todaygoal">오늘 목표까지 35 kcal 남았어요!<br /></span>
+            <span class="nowkcal">{{ calorie_consumption }} kcal<br /></span>
+            <span class="plankcal">{{ goal_calories }} kcal<br /></span>
+            <span class="todaygoal">오늘 목표까지 {{ goal_calories - calorie_consumption }} kcal 남았어요!<br /></span>
           </div>
         </div>
         <div class="homebtn">
