@@ -145,11 +145,6 @@ body {
   line-height: normal;
 }
 
-.no {
-  color: #afafaf;
-  cursor: pointer;
-}
-
 .pwsection {
   width: 280px;
   height: 73px;
@@ -257,9 +252,7 @@ body {
   align-items: center;
   width: 100%; /* 버튼의 너비를 부모 요소에 맞춤 */
   height: 100%; /* 버튼의 높이를 부모 요소에 맞춤 */
-
-  border-radius: 12px;
-  border: none;
+  color: #7e7e7e;
   font-family: Pretendard;
   font-size: 16px;
   font-style: normal;
