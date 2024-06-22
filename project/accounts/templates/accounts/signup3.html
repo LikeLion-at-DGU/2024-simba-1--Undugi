@@ -1,0 +1,8 @@
+<form action="{% url 'accounts:signup3' %}" method="POST">
+{% csrf_token %}
+
+<p>1일 목표 칼로리</p>
+<input type="text" name="goal">
+<br>
+
+<input type="submit" value="회원가입">

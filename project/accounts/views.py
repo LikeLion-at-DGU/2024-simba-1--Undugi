@@ -33,20 +33,33 @@ def signup1(request):
 
 def signup2(request):
     if request.method == 'POST':
+        request.session['nickName'] = request.POST['nickName']
+        request.session['major'] = request.POST['major']
+        request.session['weight'] = request.POST['weight']
+        request.session['gender'] = request.POST['gender']
+        request.session['agegroup'] = request.POST['agegroup']
+        return redirect('accounts:signup3')
+    return render(request, 'accounts/signup2.html')
+
+def signup3(request):
+    if request.method == 'POST':
         user = User.objects.create_user(
             username=request.session['id'],
             password=request.session['password']
         )
-        user.profile.nickName = request.POST['nickName']
-        user.profile.weight = request.POST['weight']
+        user.profile.nickName = request.session['nickName']
+        user.profile.major = request.session['major']
+        user.profile.weight = request.session['weight']
+        user.profile.gender = int(request.session['gender'])
+        user.profile.agegroup = request.session['agegroup']
+
         user.profile.goal = request.POST['goal']
-        user.profile.place = request.POST['place']
 
         user.profile.save()
 
         auth.login(request, user)
         return redirect('/')
-    return render(request, 'accounts/signup2.html')
+    return render(request, 'accounts/signup3.html')
 
 def idpasswordfind(request):
     return render(request, 'accounts/idpasswordfind.html')
