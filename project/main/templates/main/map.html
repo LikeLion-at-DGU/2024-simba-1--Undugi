@@ -1,18 +1,48 @@
-지도 페이지
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>Kakao 지도 시작하기</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지도</title>
+    <link rel="stylesheet" href="{% static 'css/main/map.css' %}" />
   </head>
   <body>
-    <div id="map" style="width: 600px; height: 400px"></div>
+    <div class="map">
+      <div class="status"></div>
+      <div class="head">
+        <div class="logo">
+          <img
+            class="image"
+            src="../../project/static/assets/icons/logo.png"
+            alt="logo"
+          />
+          <div class="name">언더기</div>
+          <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div id="kakaomap" style="width: 390px; height: 483px"></div>
+        <div class="content">
+          <i class="contenttxt">길에대한자세한안내 </i>
+        </div>
+        <div class="arriving">
+          <div class="arrivebtn">
+            <i class="arrivetxt"><a href="{% url 'main:arrive' %}">도착!</a></i>
+          </div>
+        </div>
+      </div>
+      {% include 'shared/_navbar.html' %}
+    </div>
+
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=70f022e04ffaf40810c250d86f2571e6"
     ></script>
     <script>
-      var container = document.getElementById("map");
+      var container = document.getElementById("kakaomap");
       var options = {
         center: new kakao.maps.LatLng(37.5583, 127.0002),
         level: 3,

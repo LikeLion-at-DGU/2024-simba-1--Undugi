@@ -138,6 +138,44 @@
           {% endif %}
         </div>
       </div>
+      {% include 'shared/_navbar.html' %}
     </div>
+
+    <div id="myModal" class="modal">
+      <span class="close">&times; </span>
+      <p class="rankinginfo">현재 내 순위는 NN위예요!</p>
+      <p class="cheerup"><br />조금만 더 힘내봐요!</p>
+      <img
+        class="image2"
+        src="../../project/static/assets/icons/rundugi.png"
+        alt="rundugi"
+      />
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("viewRanking");
+        const span = document.getElementsByClassName("close")[0];
+
+        // '내 순위 보기' 링크를 클릭했을 때 모달을 열기
+        btn.onclick = function (event) {
+          event.preventDefault();
+          modal.style.display = "block";
+        };
+
+        // 모달의 닫기 버튼 클릭 시 모달 닫기
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        // 모달 외부 클릭 시 모달 닫기
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      });
+    </script>
   </body>
 </html>
