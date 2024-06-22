@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 # Create your views here.
 def login(request):
@@ -14,6 +15,7 @@ def login(request):
             auth.login(request, user)
             return redirect('main:mainpage') # alert(?)
         else:
+            messages.error(request, '아이디와 비밀번호를 올바르게 입력해주세요.')
             return render(request, 'accounts/login.html')
         
     elif request.method == 'GET':
