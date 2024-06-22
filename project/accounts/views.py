@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
-from django.contrib.auth.hashers import check_password
+from django.contrib.auth.hashers import check_password, make_password
 from .models import Profile
 
 # Create your views here.
+# 로그인/로그아웃
 def login(request):
     if request.method == 'POST':
         id = request.POST['id']
@@ -25,6 +27,7 @@ def logout(request):
     auth.logout(request)
     return redirect('main:mainpage')
 
+# 회원가입
 def signup1(request):
     if request.method == 'POST':
         if request.POST['password'] == request.POST['confirm']:
@@ -63,9 +66,11 @@ def signup3(request):
         return redirect('/')
     return render(request, 'accounts/signup3.html')
 
+# 아이디/비밀번호 찾기
 def idpasswordfind(request):
     return render(request, 'accounts/idpasswordfind.html')
 
+# 아이디 찾기
 def idfindv1(request):
     if request.method == 'POST':
         nickname = request.POST.get('nickName', '')
@@ -88,6 +93,7 @@ def idfindv1(request):
 def idfindv2(request):
     return render(request, 'accounts/idfindv2.html')
 
+# 비밀번호 재설정
 def passwordfindv1(request):
     if request.method == 'POST':
         nickname = request.POST.get('nickName', '')
@@ -98,7 +104,7 @@ def passwordfindv1(request):
             user_profile = Profile.objects.get(nickName=nickname, major=major)
             user = user_profile.user
             if user.username == id:
-                request.session['nickName'] = nickname
+                request.session['user_id'] = user.id
                 return render(request, 'accounts/passwordfindv2.html')  # 비밀번호 재설정 페이지
             else:
                 messages.warning(request, '아이디가 일치하지 않습니다.')
@@ -114,15 +120,15 @@ def passwordfindv2(request):
         confirm = request.POST.get('confirm', '')
 
         if password == confirm:
-            nickName = request.session.get('nickName')
-            if nickName:
+            user_id = request.session.get('user_id')
+            if user_id:
                 try:
-                    user = Profile.objects.get(nickName=nickName)
-                    user.password = password    # 해시화?
+                    user = User.objects.get(id=user_id)
+                    user.set_password(password)
                     user.save()
                     messages.warning(request, '비밀번호 변경이 완료되었습니다.')
                     return render(request, 'accounts/passwordfindv1.html')   #passwordfindv3.html 생기면 경로 변경
-                except Profile.DoesNotExist:
+                except User.DoesNotExist:
                     messages.warning(request, '일치하는 사용자를 찾을 수 없습니다.')
                     return render(request, 'accounts/passwordfindv1.html')
         else:
