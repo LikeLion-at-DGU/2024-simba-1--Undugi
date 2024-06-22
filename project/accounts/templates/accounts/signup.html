@@ -1,17 +1,121 @@
-회원가입페이지
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>언더기</title>
+    <link rel="stylesheet" href="{% static 'css/accounts/signup.css' %}" />
+  </head>
+  <body>
+    <div class="signup">
+      <div class="status"></div>
+      <div class="head">
+        <div class="logo">
+          <img
+            class="image"
+            src="../../project/static/assets/icons/logo.png"
+            alt="logo"
+          />
+          <div class="name">언더기</div>
+          <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="title">
+            <a href="" class="backbutton">
+                <svg class="backbtn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M16.62 2.99004C16.5039 2.87363 16.366 2.78127 16.2141 2.71826C16.0622 2.65524 15.8994 2.6228 15.735 2.6228C15.5706 2.6228 15.4078 2.65524 15.2559 2.71826C15.1041 2.78127 14.9661 2.87363 14.85 2.99004L6.54 11.3C6.4473 11.3926 6.37375 11.5024 6.32357 11.6234C6.27339 11.7444 6.24756 11.8741 6.24756 12.005C6.24756 12.136 6.27339 12.2657 6.32357 12.3867C6.37375 12.5076 6.4473 12.6175 6.54 12.71L14.85 21.02C15.34 21.51 16.13 21.51 16.62 21.02C17.11 20.53 17.11 19.74 16.62 19.25L9.38 12L16.63 4.75004C17.11 4.27004 17.11 3.47004 16.62 2.99004Z" fill="#AFAFAF"/>
+                </svg>
+            </a>
+          <span class="signuptxt">회원가입 하기</span>
+        </div>
+        <form action="{% url 'accounts:signup1' %}" method="POST">
+            {% csrf_token %}
+        <div class="idpw">
+          <div class="idsection">
+            <i class="idtxt">아이디</i>
+            <div class="textholder1">
+                <input type="text" class="id" id="id-input" name="id" placeholder="ID" required>
+            </div>
+          </div>
+          <div class="pwsection">
+            <i class="pwtxt">비밀번호</i>
+            <div class="textholder2">
+                <input type="password" class="pw" id="pw-input" name="pw" placeholder="Password" required>
+            </div>
+            <p id="pwrule">&#8226; 비밀번호를 8자 이상으로 작성해주세요.<br>
+                &#8226; 영문 대소문자, 숫자, 특수문자를 하나 이상 포함해주세요.<br>
+                &#8226; 사용가능 특수문자: @ ! ? - _
+            </p>
+          </div>
+          <div class="pwchecksection">
+            <i class="pwchecktxt">비밀번호 확인</i>
+            <div class="textholder3">
+                <input type="password" class="pwcheck" id="pwcheck-input" name="pw" placeholder="Password" required>
+            </div>
+            <p id="pwcheckcomment">비밀번호를 다시 한 번 입력해 주세요.</p>
+            <p id="pwError">비밀번호가 일치하지 않습니다!</p>
+          </div>
+        </div>
+        <div class="next">
+            <div class="nextgo">
+                <a href="" id="nextbtn">다음</a>
+            </div>
+        </div>
+      </div>
+      {% include 'shared/_navbar.html' %}
+    </div>
+
+    <script>
+        const pwInput = document.getElementById('pw-input');
+        const pwCheckInput = document.getElementById('pwcheck-input');
+        const nextBtn = document.getElementById('nextbtn');
+        const pwError = document.getElementById('pwError');
+    
+        function validatePassword() {
+          const password = pwInput.value;
+          const confirmPassword = pwCheckInput.value;
+          const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@!?-_]).{8,}$/;
+    
+          if (regex.test(password) && password === confirmPassword) {
+            nextBtn.classList.add('active');
+            nextBtn.href = "#";
+            pwError.style.display = 'none';
+          } else {
+            nextBtn.classList.remove('active');
+            nextBtn.href = "";
+            if (password !== confirmPassword) {
+              pwError.style.display = 'block';
+            } else {
+              pwError.style.display = 'none';
+            }
+          }
+        }
+    
+        pwInput.addEventListener('input', validatePassword);
+        pwCheckInput.addEventListener('input', validatePassword);
+      </script>
+  </body>
+</html>
+
+{% comment %}
 <form action="{% url 'accounts:signup1' %}" method="POST">
-    {% csrf_token %}
-    <p>아이디</p>
-    <input type="text" name="id">
-    <br>
+  {% csrf_token %}
+  <p>아이디</p>
+  <input type="text" name="id" />
+  <br />
 
-    <p>비밀번호</p>
-    <input type="password" name="password">
-    <br>
+  <p>비밀번호</p>
+  <input type="password" name="password" />
+  <br />
 
-    <p>비밀번호 확인</p>
-    <input type="password" name="confirm">
-    <br>
+  <p>비밀번호 확인</p>
+  <input type="password" name="confirm" />
+  <br />
 
-    <button type="submit">다음</button>
+  <button type="submit">다음</button>
 </form>
+{% endcomment %}
