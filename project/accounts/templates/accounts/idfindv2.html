@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>언더기</title>
+    <link rel="stylesheet" href="{% static 'css/accounts/idfindv2.css' %}">
+</head>
+
+<body>
+    <div class="home">
+        <div class="head">
+            <div class="logo">
+                <img class="image" src="../../project/static/assets/icons/logo.png" alt="logo">
+                <div class="name">언더기</div>
+                <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+                <div class="separator"></div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="title">
+                <div class="title_text">아이디 찾기</div>
+            </div>
+            <div class="ID">
+                <p class="ID_text"> 잃어버린 아이디예요!<br>
+                    깜빡 잊지 않도록 주의하세요.
+                </p>
+                <div class = "ID_box">
+                    <p class = "ID_boxtext">아이디</p>
+                </div>
+            </div>
+            <div class="signin_button">
+                <a href="{% url 'accounts:login' %}" class="button">Sign in</a>
+            </div>
+        </div>
+        {% include 'shared/_navbar.html' %}
+    </div>
+</body>
+</html>

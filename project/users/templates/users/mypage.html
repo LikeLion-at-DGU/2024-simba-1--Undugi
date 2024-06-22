@@ -1,1 +1,8 @@
-마이페이지
+<img src="{{ profileImage }}"><br>
+{{user.profile.nickName}}<br>
+아이디 : {{user.profile.user.username}}<br>
+내 정보 수정<br><br>
+
+소모한 칼로리 : {{user.profile.consumedCalorie}}<br>
+목표 칼로리 : {{user.profile.goal}}kcal<br>
+오늘 목표까지 {{remainCalorie}}kcal 남았어요!
