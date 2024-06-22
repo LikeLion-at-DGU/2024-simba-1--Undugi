@@ -36,22 +36,14 @@
           </div>
           <div class="circle">
             <div class="circlebar">
-              <span class="nowkcal">65 kcal<br /></span>
-              <span class="plankcal">100 kcal<br /></span>
-              <span class="todaygoal">오늘 목표까지 35 kcal 남았어요!<br /></span>
+              <span class="nowkcal">{{user.profile.consumedCalorie}}<br /></span>
+              <span class="plankcal">{{user.profile.goal}}<br /></span>
+              <span class="todaygoal">오늘 목표까지 {{remainCalorie}}kcal 남았어요!<br /></span>
             </div>
           </div>
         </div>
       </div>
       {% include 'shared/_navbar.html' %}
     </div>
-    {% comment %} <img src="{{ profileImage }}" /><br />
-    {{user.profile.nickName}}<br />
-    아이디 : {{user.profile.user.username}}<br />
-    내 정보 수정<br /><br />
-
-    소모한 칼로리 : {{user.profile.consumedCalorie}}<br />
-    목표 칼로리 : {{user.profile.goal}}kcal<br />
-    오늘 목표까지 {{remainCalorie}}kcal 남았어요! {% endcomment %}
   </body>
 </html>
