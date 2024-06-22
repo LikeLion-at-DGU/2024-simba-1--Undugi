@@ -63,6 +63,9 @@
                         </div>
                         <p class="caution_text">정식 명칭으로 적어주세요.</p>
                     </div>
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
                     <div class="next">
                         <button type="submit" class="next_button">다음</button>
                     </div>
