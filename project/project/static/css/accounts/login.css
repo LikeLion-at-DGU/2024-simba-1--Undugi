@@ -152,9 +152,9 @@ form {
 }
 
 input {
-  border-radius: 12px;
-  background: #eee;
-  border: none;
+    border-radius: 12px;
+    background: #EEE;
+    border : none;
 }
 
 .no {
@@ -182,6 +182,32 @@ input {
   line-height: normal;
 }
 
+.error {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 1px solid #D80000;
+    background: #FFE9E9;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.error-icon {
+    margin-right: 10px;
 .caution_text {
   color: #000;
   font-family: Pretendard;

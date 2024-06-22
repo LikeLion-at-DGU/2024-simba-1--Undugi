@@ -50,6 +50,7 @@
               <input type="text" class="nicknameinput" name="nickName" />
               <br />
             </div>
+            {% for message in messages %} {{ message }} {% endfor %}
 
             <p>소속 학과</p>
             <input type="text" name="major" />

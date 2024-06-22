@@ -1,1 +1,63 @@
-정보 수정 페이지
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>언더기</title>
+    <link rel="stylesheet" href="{% static 'css/users/modify.css' %}">
+</head>
+
+<body>
+    <div class="home">
+        <div class="head">
+            <div class="logo">
+                <img class="image" src="../../project/static/assets/icons/logo.png" alt="logo">
+                <div class="name">언더기</div>
+                <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+                <div class="separator"></div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="image">
+                <p class="image_title">사진</p>
+                <div class="image_info">
+                    <img class="profile" src="{{ profileImage }}" /><br>
+                    <div class="image_text">나를 알릴 수 있는 사진을 등록해 주세요!
+                        등록된 사진은 랭킹 프로필에 사용됩니다.
+                    </div>
+                </div>
+            </div>
+            <div class="Nickname">
+                <p class="Nickname_title">닉네임</p>
+                <span class="nickname">{{user.profile.nickName}}</span>
+            </div>
+            <div class="ID">
+                <p class="id_title">아이디</p>
+                <span class="id">{{user.profile.user.username}}</span>
+            </div>
+            <div class="Password">
+                <p class="password_title">비밀번호</p>
+                <span class="id">********</span>
+            </div>
+            <div class="Cal">
+                <p class="cal_title">목표 칼로리</p>
+                <span class="plankcal">{{user.profile.goal}}kcal</span>
+            </div>
+            <div class="Weight">
+                <p class="weight_title">체중</p>
+                <span class="plankcal">{{user.profile.weight}}kg</span>
+            </div>
+            <div class="Major">
+                <p class="major_title">학과</p>
+                <span class="plankcal">{{user.profile.major}}</span>
+            </div>
+            <div class="modify_button">
+                <a href="{% url 'users:pw_checking' %}" class="button">내 정보 수정하기</a>
+            </div>
+        </div>
+        {% include 'shared/_navbar.html' %}
+    </div>
+</body>
+</html>
