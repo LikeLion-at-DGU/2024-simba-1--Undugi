@@ -2,51 +2,59 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>언더기</title>
-    <link rel="stylesheet" href="{% static 'css/main/mainpage.css' %}">
-</head>
-<body>
-<div class="home">
-    <div class="status"></div>
-    <div class="head">
+    <link rel="stylesheet" href="{% static 'css/main/mainpage.css' %}" />
+  </head>
+  <body>
+    <div class="home">
+      <div class="status"></div>
+      <div class="head">
         <div class="signin">
-            <div class="signinbutton">
-                <a href="{% url 'accounts:login' %}">
-                    <button id="button" type="button">Sign in</button>
-                </a>
-            </div>
+          <div class="signinbutton">
+            <a href="{% url 'accounts:login' %}">
+              <button id="button" type="button">Sign in</button>
+            </a>
+          </div>
         </div>
         <div class="logo">
-            <img class="image" src="../../project/static/assets/icons/logo.png" alt="logo">
-            <div class="name">언더기</div>
-            <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
-            <div class="separator"></div>
+          <img
+            class="image"
+            src="../../project/static/assets/icons/logo.png"
+            alt="logo"
+          />
+          <div class="name">언더기</div>
+          <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+          <div class="separator"></div>
         </div>
-    </div>
-    <div class="body">
+      </div>
+      <div class="body">
         <div class="contents">
-            <div class="choice">
-                <div class="mention">
-                    <div class="mention2">언더기와 함께 힘든 동국대 언덕을 재밌게 바꿔봐요!</div>
-                </div>
-                <div class="list">
-                    <select class="department" name="출발지 입력">
-                        <option>출발지 입력</option>
-                    </select>
-                    <select class="arrive" name="도착지 입력">
-                        <option>도착지 입력</option>
-                    </select>
-                </div>
+          <div class="choice">
+            <div class="mention">
+              <div class="mention2">
+                언더기와 함께 힘든 동국대 언덕을 재밌게 바꿔봐요!
+              </div>
             </div>
-            <div class="go">
-                <a href="{% url 'main:map_page' %}"><button id="gobutton">GO!</button></a>
+            <div class="list">
+              <select class="department" name="출발지 입력">
+                <option>출발지 입력</option>
+              </select>
+              <select class="arrive" name="도착지 입력">
+                <option>도착지 입력</option>
+              </select>
             </div>
+          </div>
+          <div class="go">
+            <a href="{% url 'main:map_page' %}"
+              ><button id="gobutton">GO!</button></a
+            >
+          </div>
         </div>
+      </div>
+      {% include 'shared/_navbar.html' %}
     </div>
-    {% include 'shared/_navbar.html' %}
-</div>
-</body>
+  </body>
 </html>
