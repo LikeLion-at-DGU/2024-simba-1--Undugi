@@ -15,7 +15,7 @@
         <div class="logo">
           <img
             class="image"
-            src="../../project/static/assets/icons/logo.png"
+            src="{% static 'assets/icons/logo.png' %}"
             alt="logo"
           />
           <div class="name">언더기</div>
@@ -28,8 +28,9 @@
           <div class="hotranking">
             <i class="hotrankingtext">🔥HOT RANKING🔥</i>
             <p class="text"><br />랭킹을 확인하고 좀 더 힘내봅시다!</p>
-            <a href="" class="viewranking"><br />내 순위 보기<br /></a>
+            <a href="{% url 'ranking:detailed_ranking_page' %}" class="viewranking"><br />내 순위 보기<br /></a>
           </div>
+
           <div class="nickname">
             <div class="nickname1">
               <div class="profile">
@@ -45,11 +46,11 @@
               </div>
               <div class="nickname1text">
                 <div class="info">
-                  <p class="loadnickname">닉네임</p>
-                  <p class="id">아이디</p>
+                  <p class="loadnickname">{{ top_rankings.0.nickname }}</p>
+                  <p class="id">{{ top_rankings.0.ranking_id }}</p>
                 </div>
                 <div class="score">
-                  <span class="n">NNN</span>
+                  <span class="n">{{ top_rankings.0.total_calories_burned }}</span>
                   <span class="kcal">kcal</span>
                 </div>
               </div>
@@ -71,11 +72,11 @@
               </div>
               <div class="nickname1text">
                 <div class="info">
-                  <p class="loadnickname">닉네임</p>
-                  <p class="id">아이디</p>
+                    <p class="loadnickname">{{ top_rankings.1.nickname }}</p>
+                    <p class="id">{{ top_rankings.1.ranking_id }}</p>
                 </div>
                 <div class="score">
-                  <span class="n">NNN</span>
+                  <span class="n">{{ top_rankings.1.total_calories_burned }}</span>
                   <span class="kcal">kcal</span>
                 </div>
               </div>
@@ -97,17 +98,18 @@
               </div>
               <div class="nickname1text">
                 <div class="info">
-                  <p class="loadnickname">닉네임</p>
-                  <p class="id">아이디</p>
+                  <p class="loadnickname">{{ top_rankings.2.nickname }}</p>
+                  <p class="id">{{ top_rankings.2.ranking_id }}</p>
                 </div>
                 <div class="score">
-                  <span class="n">NNN</span>
+                  <span class="n">{{ top_rankings.2.total_calories_burned }}</span>
                   <span class="kcal">kcal</span>
                 </div>
               </div>
             </div>
           </div>
-
+                     
+          {% if user_ranking %}
           <div class="nickname">
             <div class="nickname1">
               <div class="profile">
@@ -123,16 +125,17 @@
               </div>
               <div class="nickname1text">
                 <div class="info">
-                  <p class="loadnickname">닉네임</p>
-                  <p class="id">아이디</p>
+                  <p class="loadnickname">{{ user_ranking.nickname }}</p>
+                  <p class="id">{{ user_ranking.ranking_id }}</p>
                 </div>
                 <div class="score">
-                  <span class="n">NNN</span>
+                  <span class="n">{{ user_ranking.total_calories_burned }}</span>
                   <span class="kcal">kcal</span>
                 </div>
               </div>
             </div>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>
