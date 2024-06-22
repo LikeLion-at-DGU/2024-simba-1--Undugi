@@ -3,6 +3,9 @@
 <p>닉네임</p>
 <input type="text" name="nickName">
 <br>
+{% for message in messages %}
+    {{ message }}
+{% endfor %}
 
 <p>소속 학과</p>
 <input type="text" name="major">
