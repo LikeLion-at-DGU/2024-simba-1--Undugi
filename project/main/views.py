@@ -47,3 +47,6 @@ def map_page(request):
 
     #return render(request, 'map_page.html',{'routes': routes})
     return render(request, 'main/map.html') # 개발 시 테스트용
+
+def arrive(request):
+    return render(request, 'main/arrive.html')

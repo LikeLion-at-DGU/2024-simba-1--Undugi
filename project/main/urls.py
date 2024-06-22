@@ -6,4 +6,5 @@ app_name = "main"
 urlpatterns = [
     path('', views.mainpage, name='mainpage'),
     path('map/', map_page, name='map_page'),
+    path('arrive/', arrive, name='arrive'),
 ]
