@@ -78,18 +78,53 @@ def idfindv1(request):
             if check_password(password, user.password):
                 return render(request, 'accounts/idfindv2.html', {'username': user.username})
             else:
-                messages.warning(request, "비밀번호가 일치하지 않습니다.")      # 추후 경고창 디자인 완료시 수정
-                return render(request, 'accounts/idfindv2.html', {'error':'비밀번호가 일치하지 않습니다.'})
+                messages.warning(request, "비밀번호가 일치하지 않습니다.")
+                return render(request, 'accounts/idfindv1.html', {'error':'비밀번호가 일치하지 않습니다.'})
         except Profile.DoesNotExist:
-            messages.warning(request, "일치하는 사용자를 찾을 수 없습니다.")    # 추후 경고창 디자인 완료시 수정
-            return render(request, 'accounts/idfindv2.html', {'error':'일치하는 사용자를 찾을 수 없습니다.'})
+            messages.warning(request, "일치하는 사용자를 찾을 수 없습니다.")
+            return render(request, 'accounts/idfindv1.html', {'error':'일치하는 사용자를 찾을 수 없습니다.'})
     return render(request, 'accounts/idfindv1.html')
 
 def idfindv2(request):
     return render(request, 'accounts/idfindv2.html')
 
 def passwordfindv1(request):
+    if request.method == 'POST':
+        nickname = request.POST.get('nickName', '')
+        id = request.POST.get('id', '')
+        major = request.POST.get('major', '')
+
+        try:
+            user_profile = Profile.objects.get(nickName=nickname, major=major)
+            user = user_profile.user
+            if user.username == id:
+                request.session['nickName'] = nickname
+                return render(request, 'accounts/passwordfindv2.html')  # 비밀번호 재설정 페이지
+            else:
+                messages.warning(request, '아이디가 일치하지 않습니다.')
+                return render(request, 'accounts/passwordfindv1.html', {'error':'아이디가 일치하지 않습니다.'})
+        except Profile.DoesNotExist:
+            messages.warning(request, "일치하는 사용자를 찾을 수 없습니다.")
+            return render(request,'accounts/passwordfindv1.html', {'error':'일치하는 사용자를 찾을 수 없습니다.'})
     return render(request, 'accounts/passwordfindv1.html')
 
 def passwordfindv2(request):
+    if request.method == 'POST':
+        password = request.POST.get('password', '')
+        confirm = request.POST.get('confirm', '')
+
+        if password == confirm:
+            nickName = request.session.get('nickName')
+            if nickName:
+                try:
+                    user = Profile.objects.get(nickName=nickName)
+                    user.password = password    # 해시화?
+                    user.save()
+                    messages.warning(request, '비밀번호 변경이 완료되었습니다.')
+                    return render(request, 'accounts/passwordfindv1.html')   #passwordfindv3.html 생기면 경로 변경
+                except Profile.DoesNotExist:
+                    messages.warning(request, '일치하는 사용자를 찾을 수 없습니다.')
+                    return render(request, 'accounts/passwordfindv1.html')
+        else:
+            messages.warning(request, '비밀번호가 일치하지 않습니다.')
     return render(request, 'accounts/passwordfindv2.html')
