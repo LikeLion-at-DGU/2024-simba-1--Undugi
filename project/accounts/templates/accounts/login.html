@@ -2,14 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>언더기</title>
-    <link rel="stylesheet" href="{% static 'css/accounts/login.css' %}">
-</head>
+    <link rel="stylesheet" href="{% static 'css/accounts/login.css' %}" />
+  </head>
 
-<body>
+  <body>
     <div class="home">
         <div class="head">
             <div class="logo">
@@ -65,32 +65,31 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const svgIcon = document.querySelector('.no');
-            const inputField = document.querySelector('.input-text');
-            const placeholderText = 'ID';
-    
-            svgIcon.addEventListener('click', function() {
-                inputField.value = ''; 
-                inputField.placeholder = placeholderText;
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        const svgIcon = document.querySelector(".no");
+        const inputField = document.querySelector(".input-text");
+        const placeholderText = "ID";
+
+        svgIcon.addEventListener("click", function () {
+          inputField.value = "";
+          inputField.placeholder = placeholderText;
         });
+      });
 
-        document.addEventListener('DOMContentLoaded', function() {
-        const passwordInput = document.getElementById('password-input');
-        const svgIcon = document.querySelector('.invisiblebutton');
+      document.addEventListener("DOMContentLoaded", function () {
+        const passwordInput = document.getElementById("password-input");
+        const svgIcon = document.querySelector(".invisiblebutton");
 
-        passwordInput.type = 'password';
+        passwordInput.type = "password";
 
-        svgIcon.addEventListener('click', function() {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-            } else {
-                passwordInput.type = 'password';
-            }
+        svgIcon.addEventListener("click", function () {
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+          } else {
+            passwordInput.type = "password";
+          }
         });
-    });
+      });
     </script>
-
-</body>
+  </body>
 </html>

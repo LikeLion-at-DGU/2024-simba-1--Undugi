@@ -1,1 +1,49 @@
-마이페이지
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>언더기</title>
+    <link rel="stylesheet" href="{% static 'css/users/mypage.css' %}" />
+  </head>
+  <body>
+    <div class="map">
+      <div class="status"></div>
+      <div class="head">
+        <div class="logo">
+          <img
+            class="image"
+            src="../../project/static/assets/icons/logo.png"
+            alt="logo"
+          />
+          <div class="name">언더기</div>
+          <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="mypage">
+          <div class="information">
+            <img class="profile" src="{{ profileImage }}" /><br />
+            <span class="nickname">{{user.profile.nickName}}</span>
+            <span class="id">{{user.profile.user.username}}</span>
+            <div class="myinfo">
+              <i class="myinfotxt"><a href="{% url 'users:modify' %}">내 정보</a></i>
+            </div>
+            <a href="{% url 'accounts:logout' %}" id="logout">로그아웃<a>
+          </div>
+          <div class="circle">
+            <div class="circlebar">
+              <span class="nowkcal">{{user.profile.consumedCalorie}}<br /></span>
+              <span class="plankcal">{{user.profile.goal}}<br /></span>
+              <span class="todaygoal">오늘 목표까지 {{remainCalorie}}kcal 남았어요!<br /></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% include 'shared/_navbar.html' %}
+    </div>
+  </body>
+</html>

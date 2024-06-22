@@ -1,1 +1,181 @@
-랭킹페이지
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>언더기</title>
+    <link rel="stylesheet" href="{% static 'css/ranking/ranking.css' %}" />
+  </head>
+  <body>
+    <div class="ranking">
+      <div class="status"></div>
+      <div class="head">
+        <div class="logo">
+          <img
+            class="image"
+            src="{% static 'assets/icons/logo.png' %}"
+            alt="logo"
+          />
+          <div class="name">언더기</div>
+          <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="hotrankingsection">
+          <div class="hotranking">
+            <i class="hotrankingtext">🔥HOT RANKING🔥</i>
+            <p class="text"><br />랭킹을 확인하고 좀 더 힘내봅시다!</p>
+            <a href="{% url 'ranking:detailed_ranking_page' %}" class="viewranking"><br />내 순위 보기<br /></a>
+          </div>
+
+          <div class="nickname">
+            <div class="nickname1">
+              <div class="profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="55"
+                  height="54"
+                  viewBox="0 0 55 54"
+                  fill="none"
+                >
+                  <circle cx="27.5" cy="27" r="27" fill="#D9D9D9" />
+                </svg>
+              </div>
+              <div class="nickname1text">
+                <div class="info">
+                  <p class="loadnickname">{{ top_rankings.0.nickname }}</p>
+                  <p class="id">{{ top_rankings.0.ranking_id }}</p>
+                </div>
+                <div class="score">
+                  <span class="n">{{ top_rankings.0.total_calories_burned }}</span>
+                  <span class="kcal">kcal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nickname">
+            <div class="nickname1">
+              <div class="profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="55"
+                  height="54"
+                  viewBox="0 0 55 54"
+                  fill="none"
+                >
+                  <circle cx="27.5" cy="27" r="27" fill="#D9D9D9" />
+                </svg>
+              </div>
+              <div class="nickname1text">
+                <div class="info">
+                    <p class="loadnickname">{{ top_rankings.1.nickname }}</p>
+                    <p class="id">{{ top_rankings.1.ranking_id }}</p>
+                </div>
+                <div class="score">
+                  <span class="n">{{ top_rankings.1.total_calories_burned }}</span>
+                  <span class="kcal">kcal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nickname">
+            <div class="nickname1">
+              <div class="profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="55"
+                  height="54"
+                  viewBox="0 0 55 54"
+                  fill="none"
+                >
+                  <circle cx="27.5" cy="27" r="27" fill="#D9D9D9" />
+                </svg>
+              </div>
+              <div class="nickname1text">
+                <div class="info">
+                  <p class="loadnickname">{{ top_rankings.2.nickname }}</p>
+                  <p class="id">{{ top_rankings.2.ranking_id }}</p>
+                </div>
+                <div class="score">
+                  <span class="n">{{ top_rankings.2.total_calories_burned }}</span>
+                  <span class="kcal">kcal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+                     
+          {% if user_ranking %}
+          <div class="nickname">
+            <div class="nickname1">
+              <div class="profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="55"
+                  height="54"
+                  viewBox="0 0 55 54"
+                  fill="none"
+                >
+                  <circle cx="27.5" cy="27" r="27" fill="#D9D9D9" />
+                </svg>
+              </div>
+              <div class="nickname1text">
+                <div class="info">
+                  <p class="loadnickname">{{ user_ranking.nickname }}</p>
+                  <p class="id">{{ user_ranking.ranking_id }}</p>
+                </div>
+                <div class="score">
+                  <span class="n">{{ user_ranking.total_calories_burned }}</span>
+                  <span class="kcal">kcal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% include 'shared/_navbar.html' %}
+    </div>
+
+    <div id="myModal" class="modal">
+      <span class="close">&times; </span>
+      <p class="rankinginfo">현재 내 순위는 NN위예요!</p>
+      <p class="cheerup"><br />조금만 더 힘내봐요!</p>
+      <img
+        class="image2"
+        src="../../project/static/assets/icons/rundugi.png"
+        alt="rundugi"
+      />
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("viewRanking");
+        const span = document.getElementsByClassName("close")[0];
+
+        // '내 순위 보기' 링크를 클릭했을 때 모달을 열기
+        btn.onclick = function (event) {
+          event.preventDefault();
+          modal.style.display = "block";
+        };
+
+        // 모달의 닫기 버튼 클릭 시 모달 닫기
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        // 모달 외부 클릭 시 모달 닫기
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

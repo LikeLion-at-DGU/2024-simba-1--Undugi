@@ -8,11 +8,13 @@ from django.db.models.signals import post_save
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE) #id, password, name 전송
     nickName = models.TextField(max_length=30)  # 닉네임
-    profileImage = models.TextField(null=True)  # 프로필사진
+    profileImage = models.ImageField(upload_to='profileImages/', null=True)  # 프로필사진
     goal = models.FloatField(null=True)         # 목표소모칼로리
-    consumedCalorie = models.FloatField(null=True)  # 총 소모한칼로리
-    weight = models.FloatField(null=True)       # null False면 왜 오류?
-    place = models.TextField(max_length=30)     # 학교에서 오래 머무르는 장소
+    consumedCalorie = models.FloatField(null=True, default=0)  # 총 소모한칼로리
+    weight = models.FloatField(null=True, default=50)       # null False면 왜 오류?
+    major = models.TextField(max_length=40)     # 소속 학과
+    gender = models.BooleanField(null=True)               # 성별
+    agegroup = models.IntegerField(null=True)            # 연령대
     # rank =  models.ForeignKey(Rank, null=True, on_delete=models.CASCADE)
 
 @receiver(post_save, sender=User)
