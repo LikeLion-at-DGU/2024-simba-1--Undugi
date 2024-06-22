@@ -1,1 +1,45 @@
-도착 페이지
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지도</title>
+    <link rel="stylesheet" href="{% static 'css/main/arrive.css' %}" />
+  </head>
+  <body>
+    <div class="arrive">
+      <div class="status"></div>
+      <div class="head">
+        <div class="logo">
+          <img
+            class="image"
+            src="../../project/static/assets/icons/logo.png"
+            alt="logo"
+          />
+          <div class="name">언더기</div>
+          <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="body">
+        <span class="congraturation">CONGRATULATIONS!<br /></span>
+        <span class="menow"><br />지금 나는 NNN 순위예요!</span>
+        <div class="circle">
+          <div class="circlebar">
+            <span class="nowkcal">65 kcal<br /></span>
+            <span class="plankcal">100 kcal<br /></span>
+            <span class="todaygoal">오늘 목표까지 35 kcal 남았어요!<br /></span>
+          </div>
+        </div>
+        <div class="homebtn">
+          <div class="home">
+            <a href="" id="homebtn2">HOME</a>
+          </div>
+        </div>
+      </div>
+      {% include 'shared/_navbar.html' %}
+    </div>
+  </body>
+</html>
