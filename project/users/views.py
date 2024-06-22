@@ -12,3 +12,7 @@ def mypage(request):
         'remainCalorie' : remainCalorie
     }
     return render(request, 'users/mypage.html', context)
+
+
+def modify(request):
+    return render(request, 'users/modify.html')
