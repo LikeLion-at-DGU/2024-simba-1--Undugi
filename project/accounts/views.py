@@ -18,6 +18,7 @@ def login(request):
             auth.login(request, user)
             return redirect('main:mainpage') # alert(?)
         else:
+            messages.warning(request, '가입 정보가 없는 아이디예요.')
             return render(request, 'accounts/login.html')
         
     elif request.method == 'GET':
