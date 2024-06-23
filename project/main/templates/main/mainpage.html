@@ -38,68 +38,69 @@
                 언더기와 함께 힘든 동국대 언덕을 재밌게 바꿔봐요!
               </div>
             </div>
-            <div class="list">
-              <select class="department" name="출발지 입력">
-                <option selected disabled>출발지 입력</option>
-                <option>학술문화관</option>
-                <option>혜화관</option>
-                <option>명진관</option>
-                <option>본관</option>
-                <option>법학관</option>
-                <option>정각원</option>
-                <option>경영관</option>
-                <option>사회과학관</option>
-                <option>다향관</option>
-                <option>체육관</option>
-                <option>학림관</option>
-                <option>계산관</option>
-                <option>학생회관</option>
-                <option>정보문화관</option>
-                <option>원흥관</option>
-                <option>남산학사</option>
-                <option>신공학관</option>
-                <option>중앙도서관</option>
-                <option>상록원</option>
-                <option>만해광장</option>
-                <option>대운동장</option>
-                <option>정문</option>
-                <option>후문</option>
-                <option>과학관</option>
-              </select>
-              <select class="arrive" name="도착지 입력">
-                <option selected disabled>도착지 입력</option>
-                <option>학술문화관</option>
-                <option>혜화관</option>
-                <option>명진관</option>
-                <option>본관</option>
-                <option>법학관</option>
-                <option>정각원</option>
-                <option>경영관</option>
-                <option>사회과학관</option>
-                <option>다향관</option>
-                <option>체육관</option>
-                <option>학림관</option>
-                <option>계산관</option>
-                <option>학생회관</option>
-                <option>정보문화관</option>
-                <option>원흥관</option>
-                <option>남산학사</option>
-                <option>신공학관</option>
-                <option>중앙도서관</option>
-                <option>상록원</option>
-                <option>만해광장</option>
-                <option>대운동장</option>
-                <option>정문</option>
-                <option>후문</option>
-                <option>과학관</option>
-              </select>
-            </div>
+            <form action="{% url 'main:map_page' %}" method="POST">
+              {% csrf_token %}
+              <div class="list">
+                <select class="department" name="start_building">
+                  <option selected disabled>출발지 입력</option>
+                  <option value="학술문화관">학술문화관</option>
+                  <option value="혜화관">혜화관</option>
+                  <option value="명진관">명진관</option>
+                  <option value="본관">본관</option>
+                  <option value="법학관">법학관</option>
+                  <option value="정각원">정각원</option>
+                  <option value="경영관">경영관</option>
+                  <option value="사회과학관">사회과학관</option>
+                  <option value="다향관">다향관</option>
+                  <option value="체육관">체육관</option>
+                  <option value="학림관">학림관</option>
+                  <option value="계산관">계산관</option>
+                  <option value="학생회관">학생회관</option>
+                  <option value="정보문화관">정보문화관</option>
+                  <option value="원흥관">원흥관</option>
+                  <option value="남산학사">남산학사</option>
+                  <option value="신공학관">신공학관</option>
+                  <option value="중앙도서관">중앙도서관</option>
+                  <option value="상록원">상록원</option>
+                  <option value="만해광장">만해광장</option>
+                  <option value="대운동장">대운동장</option>
+                  <option value="정문">정문</option>
+                  <option value="후문">후문</option>
+                  <option value="과학관">과학관</option>
+                </select>
+                <select class="arrive" name="end_building">
+                  <option selected disabled>도착지 입력</option>
+                  <option value="학술문화관">학술문화관</option>
+                  <option value="혜화관">혜화관</option>
+                  <option value="명진관">명진관</option>
+                  <option value="본관">본관</option>
+                  <option value="법학관">법학관</option>
+                  <option value="정각원">정각원</option>
+                  <option value="경영관">경영관</option>
+                  <option value="사회과학관">사회과학관</option>
+                  <option value="다향관">다향관</option>
+                  <option value="체육관">체육관</option>
+                  <option value="학림관">학림관</option>
+                  <option value="계산관">계산관</option>
+                  <option value="학생회관">학생회관</option>
+                  <option value="정보문화관">정보문화관</option>
+                  <option value="원흥관">원흥관</option>
+                  <option value="남산학사">남산학사</option>
+                  <option value="신공학관">신공학관</option>
+                  <option value="중앙도서관">중앙도서관</option>
+                  <option value="상록원">상록원</option>
+                  <option value="만해광장">만해광장</option>
+                  <option value="대운동장">대운동장</option>
+                  <option value="정문">정문</option>
+                  <option value="후문">후문</option>
+                  <option value="과학관">과학관</option>
+                </select>
+              </div>
           </div>
           <div class="go">
-            <a href="{% url 'main:map_page' %}"
-              ><button id="gobutton">GO!</button></a
-            >
+            <button type="submit" id="gobutton">GO!</button>
           </div>
+        </form>
         </div>
       </div>
       {% include 'shared/_navbar.html' %}
