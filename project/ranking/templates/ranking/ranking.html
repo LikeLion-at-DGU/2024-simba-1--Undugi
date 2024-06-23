@@ -32,28 +32,29 @@
               ><br />내 순위 보기<br
             /></a>
           </div>
-
           {% for ranking in top_rankings %}
-                <div class="nickname">
-                    <div class="nickname1">
-                        <div class="profile">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="55" height="54" viewBox="0 0 55 54" fill="none">
-                                <circle cx="27.5" cy="27" r="27" fill="#D9D9D9" />
-                            </svg>
-                        </div>
-                        <div class="nickname1text">
-                            <div class="info">
-                                <p class="loadnickname">{{ ranking.nickname }}</p>
-                                <p class="id">{{ ranking.ranking_id }}</p>
-                            </div>
-                            <div class="score">
-                                <span class="n">{{ ranking.total_calories_burned }}</span>
-                                <span class="kcal">kcal</span>
-                            </div>
-                        </div>
-                    </div>
+          <div class="nickname">
+            <div class="nickname1">
+              <div class="profile">
+                <img
+                  class="one"
+                  src="{% static 'assets/icons/one.png' %}"
+                  alt="logo"
+                />
+              </div>
+              <div class="nickname1text">
+                  <div class="info">
+                      <p class="loadnickname">{{ ranking.nickname }}</p>
+                      <p class="id">{{ ranking.ranking_id }}</p>
+                  </div>
+                  <div class="score">
+                      <span class="n">{{ ranking.total_calories_burned }}</span>
+                      <span class="kcal">kcal</span>
                 </div>
-          {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
         </div>
       </div>
       {% include 'shared/_navbar.html' %}
@@ -69,6 +70,8 @@
         alt="rundugi"
       />
     </div>
+
+    <div class="modal-backdrop"></div>
 
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
