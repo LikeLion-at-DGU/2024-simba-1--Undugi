@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
-from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
-from django.contrib.auth.hashers import check_password, make_password
+from django.contrib.auth.hashers import check_password
 from .models import Profile
 
 # Create your views here.
@@ -34,12 +33,27 @@ def signup1(request):
         if request.POST['password'] == request.POST['confirm']:
             request.session['id'] = request.POST['id']
             request.session['password'] = request.POST['password']
+            # 중복 아이디 방지
+            try:
+                user_profile = User.objects.get(username = request.POST['id'])
+                messages.warning(request, '이미 존재하는 아이디입니다. 다른 아이디로 시도해 보세요.')
+                return render(request, 'accounts/signup.html')
+            except User.DoesNotExist:
+                user_profile = None     # 출력 어떻게 할지 의논
             return redirect('accounts:signup2')
     return render(request, 'accounts/signup.html')
 
 def signup2(request):
     if request.method == 'POST':
         request.session['nickName'] = request.POST['nickName']
+        # 닉네임 중복 방지
+        try:
+            user_profile = Profile.objects.get(nickName = request.POST['nickName'])
+            messages.warning(request, '이미 존재하는 닉네임입니다. 다른 닉네임을 입력해 주세요.')
+            return render(request, 'accounts/signup2.html')
+        except Profile.DoesNotExist:
+            user_profile = None
+
         request.session['major'] = request.POST['major']
         request.session['weight'] = request.POST['weight']
         request.session['gender'] = request.POST['gender']

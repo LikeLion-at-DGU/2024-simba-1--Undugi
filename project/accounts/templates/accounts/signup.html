@@ -40,11 +40,14 @@
             <div class="textholder1">
                 <input type="text" class="id" id="id-input" name="id" placeholder="ID" required>
             </div>
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
           </div>
           <div class="pwsection">
             <i class="pwtxt">비밀번호</i>
             <div class="textholder2">
-                <input type="password" class="pw" id="pw-input" name="pw" placeholder="Password" required>
+                <input type="password" class="pw" id="pw-input" name="password" placeholder="Password" required>
             </div>
             <p id="pwrule">&#8226; 비밀번호를 8자 이상으로 작성해주세요.<br>
                 &#8226; 영문 대소문자, 숫자, 특수문자를 하나 이상 포함해주세요.<br>
@@ -54,7 +57,7 @@
           <div class="pwchecksection">
             <i class="pwchecktxt">비밀번호 확인</i>
             <div class="textholder3">
-                <input type="password" class="pwcheck" id="pwcheck-input" name="pw" placeholder="Password" required>
+                <input type="password" class="pwcheck" id="pwcheck-input" name="confirm" placeholder="Password" required>
             </div>
             <p id="pwcheckcomment">비밀번호를 다시 한 번 입력해 주세요.</p>
             <p id="pwError">비밀번호가 일치하지 않습니다!</p>
@@ -62,9 +65,10 @@
         </div>
         <div class="next">
             <div class="nextgo">
-                <a href="" id="nextbtn">다음</a>
+                <button type="submit" id="nextbtn">다음</a>
             </div>
         </div>
+        </form>
       </div>
       {% include 'shared/_navbar.html' %}
     </div>
