@@ -7,9 +7,9 @@
 }
 
 * {
-  font-style: normal !important;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -22,8 +22,7 @@ body {
   font-family: "Pretendard", sans-serif;
 }
 
-.ranking,
-.map {
+.signup4 {
   display: flex;
   flex-direction: column;
   max-width: 430px;
@@ -75,85 +74,67 @@ body {
 
 .body {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 430px;
-  height: 656px;
-  padding: 21px 0px;
+  height: 596px;
+  padding: 133px 0px 186px 0px;
+  flex-direction: column;
+  align-items: center;
   flex-shrink: 0;
 }
 
-.kcal {
+.contents {
   display: flex;
-  height: 37px;
+  width: 430px;
+  height: 277px;
+  padding: 0px 79px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  flex-direction: column;
+}
+
+.hello {
   color: #000;
+  text-align: center;
   font-family: EF_jejudoldam;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
-  margin-bottom: 40px;
 }
 
-#kakaomap {
-  width: 390px;
-  height: 483px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  background: #eee;
+.image2 {
+  width: 172px;
+  height: 172px;
+  flex-shrink: 0;
 }
 
-.content {
-  width: 390px;
-  height: 70px;
-  background: #676767;
+.signinbtn {
+  width: 110px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 35px;
+  background-color: #ffc700;
+  border: none;
 }
 
-.contenttxt {
-  color: #fff;
+.signin {
+  color: #000;
   font-family: Pretendard;
-  font-size: 13px;
+  font-size: 14.7px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  padding-left: 15px;
-  padding-top: 15px;
-}
-
-.arriving {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 430px;
-  height: 30px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  flex-shrink: 0;
-}
-
-#arrivebtn {
-  width: 130px;
-  height: 50px;
-  border-radius: 30px;
-  background: #ffc700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
   cursor: pointer;
   text-decoration: none;
-
-  color: #000;
-  font-family: EF_jejudoldam;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  margin-left: 30px;
+  margin-top: 10px;
 }
 
 .bottom {
@@ -172,7 +153,7 @@ body {
   gap: 80px;
   width: 270px;
   height: 43px;
-  padding: 14px 80px 15px 80px;
+  padding: 14px 0px 15px 0px;
   flex-shrink: 0;
 }
 

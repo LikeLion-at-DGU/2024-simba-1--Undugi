@@ -1,8 +1,200 @@
-<form action="{% url 'accounts:signup3' %}" method="POST">
-{% csrf_token %}
+{% load static %}
 
-<p>1일 목표 칼로리</p>
-<input type="text" name="goal">
-<br>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>언더기</title>
+    <link rel="stylesheet" href="{% static 'css/accounts/signup3.css' %}" />
+  </head>
+  <body>
+    <div class="signup3">
+      <div class="status"></div>
+      <div class="head">
+        <div class="logo">
+          <img
+            class="image"
+            src="../../project/static/assets/icons/logo.png"
+            alt="logo"
+          />
+          <div class="name">언더기</div>
+          <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="title">
+          <a href="" class="backbutton">
+            <svg
+              class="backbtn"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M16.62 2.99004C16.5039 2.87363 16.366 2.78127 16.2141 2.71826C16.0622 2.65524 15.8994 2.6228 15.735 2.6228C15.5706 2.6228 15.4078 2.65524 15.2559 2.71826C15.1041 2.78127 14.9661 2.87363 14.85 2.99004L6.54 11.3C6.4473 11.3926 6.37375 11.5024 6.32357 11.6234C6.27339 11.7444 6.24756 11.8741 6.24756 12.005C6.24756 12.136 6.27339 12.2657 6.32357 12.3867C6.37375 12.5076 6.4473 12.6175 6.54 12.71L14.85 21.02C15.34 21.51 16.13 21.51 16.62 21.02C17.11 20.53 17.11 19.74 16.62 19.25L9.38 12L16.63 4.75004C17.11 4.27004 17.11 3.47004 16.62 2.99004Z"
+                fill="#AFAFAF"
+              />
+            </svg>
+          </a>
+          <span class="signuptxt">회원가입 하기</span>
+        </div>
+        <form action="{% url 'accounts:signup3' %}" method="POST">
+          {% csrf_token %}
+          <div class="kcal">
+            <div class="kcalselect">
+              <p class="kcaltxt">1일 목표 칼로리</p>
+              <input
+                class="goalkcal"
+                id="id-input"
+                type="text"
+                name="goal"
+                placeholder="kcal"
+              />
+              <svg
+                class="no"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                onclick="clearInput('id-input')"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12ZM8.111 15.889C8.01726 15.7952 7.96461 15.6681 7.96461 15.5355C7.96461 15.4029 8.01726 15.2758 8.111 15.182L11.293 12L8.111 8.818C8.01992 8.7237 7.96952 8.5974 7.97066 8.4663C7.9718 8.3352 8.02439 8.20979 8.11709 8.11709C8.20979 8.02439 8.3352 7.9718 8.4663 7.97066C8.5974 7.96952 8.7237 8.01992 8.818 8.111L12 11.293L15.182 8.111C15.2763 8.01992 15.4026 7.96952 15.5337 7.97066C15.6648 7.9718 15.7902 8.02439 15.8829 8.11709C15.9756 8.20979 16.0282 8.3352 16.0293 8.4663C16.0305 8.5974 15.9801 8.7237 15.889 8.818L12.707 12L15.889 15.182C15.9801 15.2763 16.0305 15.4026 16.0293 15.5337C16.0282 15.6648 15.9756 15.7902 15.8829 15.8829C15.7902 15.9756 15.6648 16.0282 15.5337 16.0293C15.4026 16.0305 15.2763 15.9801 15.182 15.889L12 12.707L8.818 15.889C8.72424 15.9827 8.59708 16.0354 8.4645 16.0354C8.33192 16.0354 8.20476 15.9827 8.111 15.889Z"
+                  fill="#AFAFAF"
+                />
+              </svg>
+              <p class="comment">
+                숫자만 입력해 주세요. 목표 칼로리는 내 정보에서 변경할 수
+                있어요.
+              </p>
+              <br />
+            </div>
+          </div>
 
-<input type="submit" value="회원가입">
+          <div class="detail">
+            <p class="diet">
+              다이어트가 목적이신가요?<a
+                href=""
+                class="dietdetail"
+                id="dietdetail"
+              >
+                자세히 보기</a
+              >
+            </p>
+            <p class="health">
+              건강이 목적이신가요?<a
+                href=""
+                class="healthdetail"
+                id="healthdetail"
+              >
+                자세히 보기</a
+              >
+            </p>
+          </div>
+          <div clas="submitbtn">
+            <input class="submit" type="submit" value="다음" />
+          </div>
+        </form>
+      </div>
+      {% include 'shared/_navbar.html' %}
+    </div>
+
+    <div id="myModal" class="modal">
+      <img
+        class="image2"
+        src="../../project/static/assets/icons/duggy.png"
+        alt="duggy"
+      />
+      <span class="close1">&times; </span>
+      <p class="hello">
+        반가워요! <br />
+        다이어트가 목적이신가요?
+      </p>
+      <p class="explain">
+        <br />다이어트를 위해 소비되는 하루의 평균 칼로리 양은
+      </p>
+    </div>
+
+    <div id="myModal2" class="modal">
+      <img
+        class="image2"
+        src="../../project/static/assets/icons/duggy.png"
+        alt="duggy"
+      />
+      <span class="close2">&times; </span>
+      <p class="hello">
+        반가워요! <br />
+        건강이 목적이신가요?
+      </p>
+      <p class="explain">
+        <br />다이어트를 위해 소비되는 하루의 평균 칼로리 양은
+      </p>
+    </div>
+
+    <script>
+      const idInput = document.getElementById("id-input");
+      const clearIcon = document.querySelector(".no");
+
+      function clearInput() {
+        idInput.value = "";
+      }
+
+      clearIcon.addEventListener("click", clearInput);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("dietdetail");
+        const span = document.getElementsByClassName("close1")[0];
+
+        // '자세히 보기' 링크를 클릭했을 때 모달을 열기
+        btn.onclick = function (event) {
+          event.preventDefault();
+          modal.style.display = "block";
+        };
+
+        // 모달의 닫기 버튼 클릭 시 모달 닫기
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        // 모달 외부 클릭 시 모달 닫기
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("myModal2");
+        const btn = document.getElementById("healthdetail");
+        const span = document.getElementsByClassName("close2")[0];
+
+        // '자세히 보기' 링크를 클릭했을 때 모달을 열기
+        btn.onclick = function (event) {
+          event.preventDefault();
+          modal.style.display = "block";
+        };
+
+        // 모달의 닫기 버튼 클릭 시 모달 닫기
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        // 모달 외부 클릭 시 모달 닫기
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

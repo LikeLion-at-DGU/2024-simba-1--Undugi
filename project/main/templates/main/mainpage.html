@@ -40,7 +40,7 @@
                 언더기와 함께 힘든 동국대 언덕을 재밌게 바꿔봐요!
               </div>
             </div>
-            <form action="{% url 'main:map_page' %}" method="POST">
+            <form action="{% url 'main:map_select' %}" method="POST">
               {% csrf_token %}
               <div class="list">
                 <select class="department" name="start_building">
@@ -98,14 +98,21 @@
                   <option value="과학관">과학관</option>
                 </select>
               </div>
+              <div id="error-message" class="error-message"></div>
           </div>
           <div class="go">
             <button type="submit" id="gobutton">GO!</button>
           </div>
         </form>
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
         </div>
       </div>
       {% include 'shared/_navbar.html' %}
     </div>
+
+    
+      
   </body>
 </html>

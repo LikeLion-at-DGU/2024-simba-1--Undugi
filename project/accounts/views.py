@@ -78,8 +78,11 @@ def signup3(request):
         user.profile.save()
 
         auth.login(request, user)
-        return redirect('/')
+        return redirect('accounts:signup4')
     return render(request, 'accounts/signup3.html')
+
+def signup4(request):
+    return render(request, 'accounts/signup4.html')
 
 # 아이디/비밀번호 찾기
 def idpasswordfind(request):
