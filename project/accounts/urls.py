@@ -13,4 +13,5 @@ urlpatterns = [
     path('idfindv2/', idfindv2, name="idfindv2"),
     path('passwordfindv1/', passwordfindv1, name="passwordfindv1"),
     path('passwordfindv2/', passwordfindv2, name="passwordfindv2"),
+    path('passwordfindv3/', passwordfindv3, name="passwordfindv3"),
 ]
