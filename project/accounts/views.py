@@ -89,17 +89,16 @@ def idpasswordfind(request):
 def idfindv1(request):
     if request.method == 'POST':
         nickname = request.POST.get('nickName', '')
-        password = request.POST.get('password', '')
         major = request.POST.get('major', '')
 
         try:
-            user_profile = Profile.objects.get(nickName=nickname, major=major)
+            user_profile = Profile.objects.get(nickName=nickname)
             user = user_profile.user
-            if check_password(password, user.password):
+            if major == user.profile.major:
                 return render(request, 'accounts/idfindv2.html', {'username': user.username})
             else:
-                messages.warning(request, "비밀번호가 일치하지 않습니다.")
-                return render(request, 'accounts/idfindv1.html', {'error':'비밀번호가 일치하지 않습니다.'})
+                messages.warning(request, "소속 학과가 일치하지 않습니다.")
+                return render(request, 'accounts/idfindv1.html', {'error':'소속 학과가 일치하지 않습니다.'})
         except Profile.DoesNotExist:
             messages.warning(request, "일치하는 사용자를 찾을 수 없습니다.")
             return render(request, 'accounts/idfindv1.html', {'error':'일치하는 사용자를 찾을 수 없습니다.'})
@@ -141,8 +140,7 @@ def passwordfindv2(request):
                     user = User.objects.get(id=user_id)
                     user.set_password(password)
                     user.save()
-                    messages.warning(request, '비밀번호 변경이 완료되었습니다.')
-                    return render(request, 'accounts/passwordfindv1.html')   #passwordfindv3.html 생기면 경로 변경
+                    return render(request, 'accounts/passwordfindv3.html')   #passwordfindv3.html 생기면 경로 변경
                 except User.DoesNotExist:
                     messages.warning(request, '일치하는 사용자를 찾을 수 없습니다.')
                     return render(request, 'accounts/passwordfindv1.html')
