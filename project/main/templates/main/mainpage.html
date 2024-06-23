@@ -12,6 +12,7 @@
     <div class="home">
       <div class="status"></div>
       <div class="head">
+        {% if not user.is_authenticated %}
         <div class="signin">
           <div class="signinbutton">
             <a href="{% url 'accounts:login' %}">
@@ -19,6 +20,7 @@
             </a>
           </div>
         </div>
+        {% endif %}
         <div class="logo">
           <img
             class="image"
