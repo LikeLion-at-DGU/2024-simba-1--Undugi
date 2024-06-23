@@ -149,3 +149,6 @@ def passwordfindv2(request):
         else:
             messages.warning(request, '비밀번호가 일치하지 않습니다.')
     return render(request, 'accounts/passwordfindv2.html')
+
+def passwordfindv3(request):
+    return render(request, 'accounts/passwordfindv3.html')
