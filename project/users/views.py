@@ -16,3 +16,9 @@ def mypage(request):
 
 def modify(request):
     return render(request, 'users/modify.html')
+
+def pw_checking(request):
+    return render(request, 'users/pw_checking.html')
+
+def modifyv2(request):
+    return render(request, 'users/modifyv2.html')
