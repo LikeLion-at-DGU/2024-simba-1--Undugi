@@ -10,8 +10,9 @@ def update_rankings():
 
 def ranking_page(request):
     update_rankings()
-    top_rankings = list(Ranking.objects.order_by('-total_calories_burned')[:3])
+    top_rankings = list(Ranking.objects.order_by('-total_calories_burned')[:6])
     user_ranking = None
+    user_rank=None
     if request.user.is_authenticated:
         try:
             user_ranking = Ranking.objects.get(nickname=request.user.username)
@@ -21,6 +22,7 @@ def ranking_page(request):
     context = {
         'top_rankings': top_rankings,
         'user_ranking': user_ranking,
+        'user_rank' : user_rank,
     }
     return render(request, 'ranking/ranking.html', context)
 
