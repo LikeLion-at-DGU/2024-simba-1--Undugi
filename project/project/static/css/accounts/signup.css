@@ -131,6 +131,12 @@ body {
   margin-bottom: 3px;
 }
 
+.textholder {
+  position: relative;
+  width: 280px;
+  height: 42px;
+}
+
 .id {
   width: 280px;
   height: 42px;
@@ -143,6 +149,20 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.no {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  top: 20%;
+}
+
+.invisiblebutton {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  top: 20%;
 }
 
 .pwsection {
