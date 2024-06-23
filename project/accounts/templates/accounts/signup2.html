@@ -45,36 +45,292 @@
         <form action="{% url 'accounts:signup2' %}" method="POST">
           {% csrf_token %}
           <div class="info">
-            <div class="nicknamesection">
-              <p class="nickname">닉네임</p>
-              <input type="text" class="nicknameinput" name="nickName" />
+            <div class="section">
+              <p class="inputtxt">닉네임</p>
+              <input
+                type="text"
+                class="nicknameinput"
+                name="nickName"
+                id="id-input"
+                placeholder="Nickname"
+                required
+              />
+              <svg
+                class="no"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                onclick="clearInput('id-input')"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12ZM8.111 15.889C8.01726 15.7952 7.96461 15.6681 7.96461 15.5355C7.96461 15.4029 8.01726 15.2758 8.111 15.182L11.293 12L8.111 8.818C8.01992 8.7237 7.96952 8.5974 7.97066 8.4663C7.9718 8.3352 8.02439 8.20979 8.11709 8.11709C8.20979 8.02439 8.3352 7.9718 8.4663 7.97066C8.5974 7.96952 8.7237 8.01992 8.818 8.111L12 11.293L15.182 8.111C15.2763 8.01992 15.4026 7.96952 15.5337 7.97066C15.6648 7.9718 15.7902 8.02439 15.8829 8.11709C15.9756 8.20979 16.0282 8.3352 16.0293 8.4663C16.0305 8.5974 15.9801 8.7237 15.889 8.818L12.707 12L15.889 15.182C15.9801 15.2763 16.0305 15.4026 16.0293 15.5337C16.0282 15.6648 15.9756 15.7902 15.8829 15.8829C15.7902 15.9756 15.6648 16.0282 15.5337 16.0293C15.4026 16.0305 15.2763 15.9801 15.182 15.889L12 12.707L8.818 15.889C8.72424 15.9827 8.59708 16.0354 8.4645 16.0354C8.33192 16.0354 8.20476 15.9827 8.111 15.889Z"
+                  fill="#AFAFAF"
+                />
+              </svg>
+              <br />
+              <p class="comment">랭킹에 보일 닉네임이에요.</p>
+            </div>
+            {% for message in messages %} {{ message }} {% endfor %}
+
+            <div class="section">
+              <p class="inputtxt">소속 학과</p>
+              <input
+                type="text"
+                class="majorinput"
+                name="major"
+                id="id-input2"
+                placeholder="Major"
+                required
+              />
+              <svg
+                class="no"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                onclick="clearInput2('id-input2')"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12ZM8.111 15.889C8.01726 15.7952 7.96461 15.6681 7.96461 15.5355C7.96461 15.4029 8.01726 15.2758 8.111 15.182L11.293 12L8.111 8.818C8.01992 8.7237 7.96952 8.5974 7.97066 8.4663C7.9718 8.3352 8.02439 8.20979 8.11709 8.11709C8.20979 8.02439 8.3352 7.9718 8.4663 7.97066C8.5974 7.96952 8.7237 8.01992 8.818 8.111L12 11.293L15.182 8.111C15.2763 8.01992 15.4026 7.96952 15.5337 7.97066C15.6648 7.9718 15.7902 8.02439 15.8829 8.11709C15.9756 8.20979 16.0282 8.3352 16.0293 8.4663C16.0305 8.5974 15.9801 8.7237 15.889 8.818L12.707 12L15.889 15.182C15.9801 15.2763 16.0305 15.4026 16.0293 15.5337C16.0282 15.6648 15.9756 15.7902 15.8829 15.8829C15.7902 15.9756 15.6648 16.0282 15.5337 16.0293C15.4026 16.0305 15.2763 15.9801 15.182 15.889L12 12.707L8.818 15.889C8.72424 15.9827 8.59708 16.0354 8.4645 16.0354C8.33192 16.0354 8.20476 15.9827 8.111 15.889Z"
+                  fill="#AFAFAF"
+                />
+              </svg>
+              <p class="comment">정식 명칭으로 적어주세요.</p>
               <br />
             </div>
-            {% for message in messages %}
-              {{ message }}
-            {% endfor %}
+            {% for message in messages %} {{ message }} {% endfor %}
 
-            <p>소속 학과</p>
-            <input type="text" name="major" />
-            <br />
+            <div class="section">
+              <p class="inputtxt">체중</p>
+              <input type="text" id="id-input3"class="weightinput" step="0.01"
+              name="weight" placeholder="Weight" required/ />
+              <svg
+                class="no"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                onclick="clearInput3('id-input3')"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12ZM8.111 15.889C8.01726 15.7952 7.96461 15.6681 7.96461 15.5355C7.96461 15.4029 8.01726 15.2758 8.111 15.182L11.293 12L8.111 8.818C8.01992 8.7237 7.96952 8.5974 7.97066 8.4663C7.9718 8.3352 8.02439 8.20979 8.11709 8.11709C8.20979 8.02439 8.3352 7.9718 8.4663 7.97066C8.5974 7.96952 8.7237 8.01992 8.818 8.111L12 11.293L15.182 8.111C15.2763 8.01992 15.4026 7.96952 15.5337 7.97066C15.6648 7.9718 15.7902 8.02439 15.8829 8.11709C15.9756 8.20979 16.0282 8.3352 16.0293 8.4663C16.0305 8.5974 15.9801 8.7237 15.889 8.818L12.707 12L15.889 15.182C15.9801 15.2763 16.0305 15.4026 16.0293 15.5337C16.0282 15.6648 15.9756 15.7902 15.8829 15.8829C15.7902 15.9756 15.6648 16.0282 15.5337 16.0293C15.4026 16.0305 15.2763 15.9801 15.182 15.889L12 12.707L8.818 15.889C8.72424 15.9827 8.59708 16.0354 8.4645 16.0354C8.33192 16.0354 8.20476 15.9827 8.111 15.889Z"
+                  fill="#AFAFAF"
+                />
+              </svg>
+              <br />
+              <p class="comment">칼로리 측정에 사용돼요.</p>
+            </div>
 
-            <p>체중</p>
-            <input type="text" step="0.01" name="weight" />
-            <br /><br />
-
-            <input type="radio" name="gender" value="0" />Female
-            <input type="radio" name="gender" value="1" />Male
-            <br />
-
-            <input type="radio" name="agegroup" value="20" />20대
-            <input type="radio" name="agegroup" value="30" />30대
-            <input type="radio" name="agegroup" value="40" />40대
-            <br />
-
-            <button type="submit">다음</button>
+            <div class="selcet">
+              <div class="genderselect">
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="0"
+                    class="gender-radio"
+                  />
+                  <span class="custom-radio">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 21 21"
+                      fill="none"
+                    >
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="9.5"
+                        stroke="#EEEEEE"
+                        stroke-width="2"
+                      />
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="5.5"
+                        class="inner-circle"
+                        fill="transparent"
+                      />
+                    </svg>
+                  </span>
+                  Female
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="1"
+                    class="gender-radio"
+                  />
+                  <span class="custom-radio">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 21 21"
+                      fill="none"
+                    >
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="9.5"
+                        stroke="#EEEEEE"
+                        stroke-width="2"
+                      />
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="5.5"
+                        class="inner-circle"
+                        fill="transparent"
+                      />
+                    </svg>
+                  </span>
+                  Male
+                </label>
+              </div>
+              <div class="ageselect">
+                <label>
+                  <input
+                    type="radio"
+                    name="agegroup"
+                    value="20"
+                    class="age-radio"
+                  />
+                  <span class="custom-radio">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 21 21"
+                      fill="none"
+                    >
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="9.5"
+                        stroke="#EEEEEE"
+                        stroke-width="2"
+                      />
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="5.5"
+                        class="inner-circle"
+                        fill="transparent"
+                      />
+                    </svg>
+                  </span>
+                  20대
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="agegroup"
+                    value="30"
+                    class="age-radio"
+                  />
+                  <span class="custom-radio">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 21 21"
+                      fill="none"
+                    >
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="9.5"
+                        stroke="#EEEEEE"
+                        stroke-width="2"
+                      />
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="5.5"
+                        class="inner-circle"
+                        fill="transparent"
+                      />
+                    </svg>
+                  </span>
+                  30대
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="agegroup"
+                    value="40"
+                    class="age-radio"
+                  />
+                  <span class="custom-radio">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 21 21"
+                      fill="none"
+                    >
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="9.5"
+                        stroke="#EEEEEE"
+                        stroke-width="2"
+                      />
+                      <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="5.5"
+                        class="inner-circle"
+                        fill="transparent"
+                      />
+                    </svg>
+                  </span>
+                  40대
+                </label>
+              </div>
+            </div>
+            <div class="next">
+              <button class="nextbtn" type="submit">다음</button>
+            </div>
           </div>
         </form>
       </div>
+      {% include 'shared/_navbar.html' %}
     </div>
+    <script>
+      const idInput = document.getElementById("id-input");
+      const idInput2 = document.getElementById("id-input2");
+      const idInput3 = document.getElementById("id-input3");
+      const clearIcon = document.querySelector(".no");
+
+      function clearInput() {
+        idInput.value = "";
+      }
+
+      function clearInput2() {
+        idInput2.value = "";
+      }
+
+      function clearInput3() {
+        idInput3.value = "";
+      }
+
+      clearIcon.addEventListener("click", clearInput);
+      clearIcon.addEventListener("click", clearInput2);
+      clearIcon.addEventListener("click", clearInput3);
+    </script>
   </body>
 </html>

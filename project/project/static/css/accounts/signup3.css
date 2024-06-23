@@ -22,7 +22,7 @@ body {
   font-family: "Pretendard", sans-serif;
 }
 
-.signup2 {
+.signup3 {
   display: flex;
   flex-direction: column;
   max-width: 430px;
@@ -104,50 +104,51 @@ body {
   margin-left: 12.5px;
 }
 
-.info {
+.kcal {
   display: flex;
   width: 430px;
-  height: 239px;
+  height: 73px;
   padding: 0px 75px;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
   flex-shrink: 0;
-  margin-top: 200px;
 }
 
-.section {
+.kcalselect {
   width: 280px;
   height: 73px;
   flex-shrink: 0;
   position: relative;
+  width: 280px;
+  height: 42px;
 }
 
 .no {
   position: absolute;
   right: 10px;
   cursor: pointer;
-  top: 35%;
+  top: 325%;
 }
 
-.inputtxt {
+.kcaltxt {
   color: #000;
   font-family: Pretendard;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin-bottom: 10px;
+  margin-top: 100px;
+  margin-left: 20px;
 }
 
-.nicknameinput,
-.majorinput,
-.weightinput {
+.goalkcal {
   width: 280px;
   height: 42px;
   flex-shrink: 0;
   border-radius: 12px;
   background: #eee;
+  border: none;
 
   color: #7e7e7e;
   font-family: Pretendard;
@@ -164,72 +165,71 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin-left: 10px;
 }
 
-.select {
-  width: 430px;
-  height: 52px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.genderselect,
-.ageselect {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-  justify-content: left;
-
-  color: #000;
-  font-family: Pretendard;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-bottom: 20px;
-}
-
-.gender-radio,
-.age-radio {
-  display: none;
-}
-
-.custom-radio {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.gender-radio:checked + .custom-radio .inner-circle,
-.age-radio:checked + .custom-radio .inner-circle {
-  fill: #92d1ff;
-}
-
-label {
+.detail {
   display: inline-flex;
+  padding: 0px 124.5px;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 8px;
-  margin: 10px;
-  cursor: pointer;
+  margin-top: 200px;
 }
 
-.next {
+.diet {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dietdetail {
+  color: #ffc700;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.health {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.healthdetail {
+  color: #ffc700;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.submitbtn {
   display: flex;
   width: 430px;
   height: 42px;
+  padding: 0px 75px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  border: none;
 }
 
-.nextbtn {
+.submit {
   width: 280px;
   height: 42px;
   flex-shrink: 0;
   border-radius: 12px;
   background: #ffc700;
-  border: none;
 
   color: #fff;
   font-family: Pretendard;
@@ -237,7 +237,83 @@ label {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-right: 150px;
+  border: none;
+
+  margin-top: 70px;
+  margin-left: 80px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 60px;
+  top: 50%; /* 화면 상단에서 50% 위치 */
+  left: 50%; /* 화면 왼쪽에서 50% 위치 */
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  width: 330px;
+  height: 520px;
+  flex-shrink: 0;
+  border-radius: 21px;
+  background: #fff9d7;
+  margin: auto;
+
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.hello {
+  color: #000;
+  text-align: center;
+  font-family: EF_jejudoldam;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.image2 {
+  width: 154px;
+  height: 154px;
+  flex-shrink: 0;
+}
+
+.explain {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.close1,
+.close2 {
+  color: #000000;
+  float: right;
+  padding-right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; /* absolute로 설정하여 부모(.modal)를 기준으로 위치 지정 */
+  top: 20px; /* 원하는 상단 여백 설정 */
+  right: 20px; /* 원하는 오른쪽 여백 설정 */
+}
+
+.close1:hover,
+.close1:focus,
+.close2:hover,
+.close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .bottom {

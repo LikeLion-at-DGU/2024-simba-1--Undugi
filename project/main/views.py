@@ -33,13 +33,6 @@ def map_select(request):
 
             new_path.save()
             return redirect('main:map_page', id=new_path.id)
-        else:
-            messages.warning(request, '출발지와 도착지를 다르게 입력해 주세요!')
-            return render(request, 'main/mainpage.html')
-    elif request.method == 'GET':     # 지도페이지에서 출발/도착 지점 불러올 때
-        #return render(request, 'main/map.html', {'start_building':start_building, 'end_building':end_building})
-        return render(request, 'main/mainpage.html')
-    return render(request, 'main/mainpage.html')
 
 def map_page(request, id):
     new_path = Visit.objects.get(pk=id)
