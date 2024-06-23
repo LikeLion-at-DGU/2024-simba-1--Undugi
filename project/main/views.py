@@ -3,6 +3,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from .models import Building, Visit
 from ranking.models import Ranking
 from accounts.models import Profile
+import logging
 def update_rankings():
     # 랭킹 업데이트 로직
     rankings = Ranking.objects.order_by('-total_calories_burned')
@@ -16,6 +17,9 @@ def mainpage(request):
         start_building_id = request.POST.get('start_building')
         end_building_id = request.POST.get('end_building')
 
+
+        print("POST data received - Start:", start_building_id, "End:", end_building_id)
+
         # 폼 데이터가 없는 경우 예외 처리
         if not start_building_id or not end_building_id:
             return render(request, 'main/mainpage.html', {
@@ -27,6 +31,7 @@ def mainpage(request):
             start_building = Building.objects.get(id=start_building_id)
             end_building = Building.objects.get(id=end_building_id)
         except ObjectDoesNotExist:
+            print("Error: Building does not exist")
             return render(request, 'main/mainpage.html', {
                 'buildings': Building.objects.all(),
                 'error': '유효하지 않은 데이터입니다!'
@@ -45,6 +50,8 @@ def mainpage(request):
                 calorie=calorie_consumption
             )
 
+            print("Visit created successfully:", new_visit)  # 디버깅 메시지 추가
+
             # 맵 페이지로 데이터 전달
             return render(request, 'main/map.html', {
                 'start_building': start_building,
@@ -52,6 +59,7 @@ def mainpage(request):
                 'calorie_consumption': calorie_consumption
             })
         except Exception as e:
+            print("Error creating Visit:", e)  # 디버깅 메시지 추가
             return render(request, 'main/mainpage.html', {
                 'buildings': Building.objects.all(),
                 'error': f'오류가 발생했습니다: {str(e)}'
@@ -98,6 +106,8 @@ def map_page(request):
         else:
             user_ranking = None
             goal_calories = None
+
+        remaining_calories = goal_calories - calorie_consumption if goal_calories else None
 
         return render(request, 'main/arrive.html', {
             'calorie_consumption': calorie_consumption,
