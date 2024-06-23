@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Building(models.Model):
     id = models.AutoField(primary_key=True)
@@ -9,9 +10,10 @@ class Building(models.Model):
 
 class Visit(models.Model): 
     id = models.AutoField(primary_key=True)
-    start_building = models.ForeignKey(Building, related_name='start_visits', on_delete=models.CASCADE)  # 시작 건물
-    end_building = models.ForeignKey(Building, related_name='end_visits', on_delete=models.CASCADE)  # 도착 건물
-    calorie = models.FloatField()  # 소모 칼로리 추가
+    start_building = models.TextField()  # 시작 건물
+    end_building = models.TextField()  # 도착 건물
+    user = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE)
+    # calorie = models.FloatField()  # 소모 칼로리 추가
 
-    def __str__(self):
-        return f"Visit from {self.start_building} to {self.end_building} with {self.calorie} kcal"
+    #def __str__(self):
+    #    return f"Visit from {self.start_building} to {self.end_building} with {self.calorie} kcal"
