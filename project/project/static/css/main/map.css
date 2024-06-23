@@ -79,9 +79,25 @@ body {
   justify-content: center;
   align-items: center;
   width: 430px;
-  height: 596px;
+  height: 656px;
   padding: 21px 0px;
   flex-shrink: 0;
+}
+
+.kcal {
+  display: flex;
+  height: 37px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #000;
+  font-family: EF_jejudoldam;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin-bottom: 40px;
 }
 
 #kakaomap {
@@ -114,9 +130,9 @@ body {
   justify-content: center;
   align-items: center;
   width: 430px;
-  height: 50px;
+  height: 30px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   flex-shrink: 0;
 }
 
