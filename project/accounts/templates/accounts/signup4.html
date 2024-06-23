@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>언더기</title>
+    <link rel="stylesheet" href="{% static 'css/accounts/signup4.css' %}" />
+  </head>
+  <body>
+    <div class="signup4">
+      <div class="status"></div>
+      <div class="head">
+        <div class="logo">
+          <img
+            class="image"
+            src="../../project/static/assets/icons/logo.png"
+            alt="logo"
+          />
+          <div class="name">언더기</div>
+          <div class="description">매일 오르는 언덕을 조금 더 즐겁게</div>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="contents">
+          <p class="hello">반가워요!<br />같이 힘차게 언덕을 올라봐요.</p>
+          <img
+            class="image2"
+            src="../../project/static/assets/icons/duggy.png"
+            alt="logo"
+          />
+        </div>
+        <div class="signinbtn">
+          <input class="signin" type="submit" value="Sign in" />
+        </div>
+      </div>
+      {% include 'shared/_navbar.html' %}
+    </div>
+  </body>
+</html>
