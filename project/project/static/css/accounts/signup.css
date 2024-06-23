@@ -158,7 +158,8 @@ body {
   top: 20%;
 }
 
-.invisiblebutton {
+.invisiblebutton,
+.invisiblebutton2 {
   position: absolute;
   right: 10px;
   cursor: pointer;
