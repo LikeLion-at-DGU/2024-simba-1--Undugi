@@ -26,21 +26,41 @@
 
   var map = new kakao.maps.Map(container, options);
 
-  var linePath = [
-    new kakao.maps.LatLng(37.5578, 127.0019),
-    new kakao.maps.LatLng(37.5579, 127.0014),
-    new kakao.maps.LatLng(37.5581, 127.0015),
-    new kakao.maps.LatLng(37.5582, 127.0012),
-    new kakao.maps.LatLng(37.5584, 127.0011),
-    new kakao.maps.LatLng(37.5585, 127.0007),
-    new kakao.maps.LatLng(37.5581, 126.9997),
-    new kakao.maps.LatLng(37.5583, 126.9987),
-  ]; // 혜화관-신공학관
+  // 출발/도착 건물 저장
+  var start_building = "{{ path.start_building }}";
+  var end_building = "{{ path.end_building }}";
+  var S = 60;   // 걷기 속도
+  var W = "{{ request.user.profile.weight }}";
+  var G, T, description;  // 경사, 운동 시간
+
+  if (start_building == "사회과학관")
+  {
+    if (end_building == "혜화관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),
+        new kakao.maps.LatLng(37.5577, 127.0018),
+      ];
+      G = 0;
+      T = 2;
+      description = "사회과학관 3층에서 걸어서 혜화관 1층에 도착합니다.";
+    }
+  }
+
+  // 칼로리 계산
+  var calorie = (3.5 + (0.1 * S) + (1.8 * S * G)) * 0.001 * W * 5 * T;
+
+  // 칼로리 출력
+  var kcalElement = document.querySelector('.kcal');
+  kcalElement.textContent = calorie.toFixed(2) + ' Kcal';
+
+  // 경로 설명 출력
+  var contenttxt = document.querySelector('.contenttxt');
+  contenttxt.textContent = description;
 
 var polyline = new kakao.maps.Polyline({
-  path: linePath, // 선을 구성하는 좌표배열 입니다
+  path: linePath, // 선을 구성하는 좌표배열
   strokeWeight: 5, // 선의 두께
-  strokeColor: "#FFAE00", // 선의 색깔
+  strokeColor: "#ffc700", // 선의 색깔
   strokeOpacity: 0.7, // 선의 불투명도. 1에서 0 사이의 값이며 0에 가까울수록 투명
   strokeStyle: "solid", // 선의 스타일
 });
