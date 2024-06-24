@@ -157,52 +157,51 @@ body {
 
 .circle {
   display: flex;
-  width: 430px;
-  height: 258px;
-  padding: 0px 84.8px 0px 83px;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   margin-top: 31px;
   margin-bottom: 86px;
 }
 
 .circlebar {
+  position: relative;
   width: 262.2px;
-  height: 258px;
-  flex-shrink: 0;
-  border-radius: 262.2px;
-  border: 41.4px solid #ffc700;
-  margin-top: 30px;
+  height: 262.2px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ffc700 calc(var(--progress) * 1%),
+    #fff3b2 calc(var(--progress) * 1%)
+  );
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.inner-circle {
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .nowkcal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #000;
   font-family: EF_jejudoldam;
   font-size: 24px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   margin-bottom: 10px;
 }
 
 .plankcal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #000;
   font-family: EF_jejudoldam;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   margin-bottom: 10px;
 }
 
@@ -210,9 +209,7 @@ body {
   color: #7e7e7e;
   font-family: Pretendard;
   font-size: 9.6px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
 }
 
 .bottom {
@@ -233,6 +230,7 @@ body {
   height: 43px;
   padding: 14px 80px 15px 0px;
   flex-shrink: 0;
+  margin-left: 80px;
 }
 
 .starbutton {

@@ -31,16 +31,20 @@
         </div>
         <div class="arriving">
           <div class="arrivebtn">
-            <form id="arriveForm" method="POST" action="{% url 'main:arrive' %}">
+            <form
+              id="arriveForm"
+              method="POST"
+              action="{% url 'main:arrive' %}"
+            >
               {% csrf_token %}
-              <input type="hidden" name="calorie" id="calorieInput">
+              <input type="hidden" name="calorie" id="calorieInput" />
               <button type="submit" id="arrivebtn">도착!</button>
-          </form>
+            </form>
           </div>
         </div>
       </div>
       {% include 'shared/_navbar.html' %}
     </div>
-      {% include 'map_detail.html' %}
+    {% include 'map_detail.html' %}
   </body>
 </html>
