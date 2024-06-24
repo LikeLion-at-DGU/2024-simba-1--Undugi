@@ -45,4 +45,15 @@ def map_page(request, id):
     return render(request, 'main/map.html', {'path':new_path})
 
 def arrive(request):
+    if request.method == 'POST':
+        calorie = float(request.POST.get('calorie'))
+        profile = request.user.profile
+        request.user.profile.daily_consumedCalorie += calorie
+        request.user.profile.consumedCalorie += calorie
+        profile.save()
+        return render(request, 'main/arrive.html', {
+            'calorie': calorie,
+            'daily_consumedCalorie': profile.daily_consumedCalorie,
+            'remained_calorie': float(request.user.profile.goal) - float(request.user.profile.daily_consumedCalorie)
+        })
     return render(request, 'main/arrive.html')
