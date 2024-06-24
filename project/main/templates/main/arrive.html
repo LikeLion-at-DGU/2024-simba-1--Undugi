@@ -1,11 +1,11 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>지도</title>
+    <title>언더기</title>
     <link rel="stylesheet" href="{% static 'css/main/arrive.css' %}" />
   </head>
   <body>
@@ -26,15 +26,27 @@
       <div class="body">
         <span class="congraturation">CONGRATULATIONS!<br /></span>
         {% if user_ranking %}
-          <span class="menow"><br />지금 나는 {{ user_ranking.rank }}순위예요!</span>
+        <span class="menow"
+          ><br />지금 나는 {{ user_ranking.rank }}순위예요!</span
+        >
         {% else %}
-          <span class="menow"><br />랭킹 데이터를 가져올 수 없습니다.</span>
+        <span class="menow"><br />랭킹 데이터를 가져올 수 없습니다.</span>
         {% endif %}
         <div class="circle">
           <div class="circlebar">
-            <span class="nowkcal">{{ user.profile.daily_consumedCalorie|floatformat:2 }} kcal<br /></span>
-            <span class="plankcal">{{ user.profile.goal|floatformat:2 }} kcal<br /></span>
-            <span class="todaygoal">오늘 목표까지 {{ remained_calorie|floatformat:2 }} kcal 남았어요!<br /></span>
+            <div class="inner-circle">
+              <span class="nowkcal"
+                >{{ user.profile.daily_consumedCalorie|floatformat:2 }}
+                kcal</span
+              >
+              <span class="plankcal"
+                >{{ user.profile.goal|floatformat:2 }} kcal</span
+              >
+              <span class="todaygoal"
+                >오늘 목표까지 {{ remained_calorie|floatformat:2 }} kcal
+                남았어요!</span
+              >
+            </div>
           </div>
         </div>
         <div class="homebtn">
@@ -46,4 +58,18 @@
       {% include 'shared/_navbar.html' %}
     </div>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const consumedCalorie = parseFloat(
+        "{{user.profile.daily_consumedCalorie|floatformat:2}}"
+      );
+      const goalCalorie = parseFloat("{{user.profile.goal|floatformat:2}}");
+
+      const progress = (consumedCalorie / goalCalorie) * 100;
+
+      document
+        .querySelector(".circlebar")
+        .style.setProperty("--progress", progress);
+    });
+  </script>
 </html>
