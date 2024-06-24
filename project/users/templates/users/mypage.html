@@ -36,9 +36,9 @@
           </div>
           <div class="circle">
             <div class="circlebar">
-              <span class="nowkcal">{{user.profile.consumedCalorie}}<br /></span>
-              <span class="plankcal">{{user.profile.goal}}<br /></span>
-              <span class="todaygoal">오늘 목표까지 {{remainCalorie}}kcal 남았어요!<br /></span>
+              <span class="nowkcal">{{user.profile.consumedCalorie|floatformat:2}}<br /></span>
+              <span class="plankcal">{{user.profile.goal|floatformat:2}}<br /></span>
+              <span class="todaygoal">오늘 목표까지 {{remainCalorie|floatformat:2}}kcal 남았어요!<br /></span>
             </div>
           </div>
         </div>

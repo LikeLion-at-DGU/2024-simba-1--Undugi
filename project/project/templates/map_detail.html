@@ -1,18 +1,3 @@
-<div class="body">
-    <div class="kcal">NN Kcal</div>
-    <div id="kakaomap" style="width: 390px; height: 483px"></div>
-    <div class="content">
-      <i class="contenttxt">길에대한자세한안내 </i>
-    </div>
-    <div class="arriving">
-      <div class="arrivebtn">
-        <a href="{% url 'main:arrive' %}" id="arrivebtn">도착!</a>
-      </div>
-    </div>
-  </div>
-  {% include 'shared/_navbar.html' %}
-</div>
-
 <script
   type="text/javascript"
   src="//dapi.kakao.com/v2/maps/sdk.js?appkey=70f022e04ffaf40810c250d86f2571e6"
@@ -115,8 +100,8 @@
         new kakao.maps.LatLng(37.5579, 127.0024),
         new kakao.maps.LatLng(37.5579, 127.0031),   // 학술문화관
       ];
-      G = -0.31;
-      T = 3;
+      G = 0.31;
+      T = 3 * 0.75;
       description = "사회과학관 정문에서 보이는 계단을 내려가 2층으로 간 뒤 경영관 쪽에 있는 연결 통로를 이용합니다.";
       Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
       Marker2 = new kakao.maps.LatLng(37.5579, 127.0031);
@@ -150,8 +135,8 @@
         new kakao.maps.LatLng(37.5572, 127.0022),
         new kakao.maps.LatLng(37.557, 127.0029),   // 경영관
       ];
-      G = -0.18;
-      T = 2;
+      G = 0.18;
+      T = 2 * 0.75;
       description = "정문에서 나와 왼쪽에 있는 계단을 이용해 그루터기를 지나 도착합니다.";
       Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
       Marker2 = new kakao.maps.LatLng(37.557, 127.0029);
@@ -160,7 +145,7 @@
 
   // 칼로리 계산
   if (T != 0) {
-    var calorie = (3.5 + (0.1 * S) + (1.8 * S * G)) * 0.001 * W * 5 * T;
+    var calorie = (3.5 + (0.1 * S) + (1.8 * S * G)) * 0.001 * W * 5 * T * 0.75;
   }
   
   // 칼로리 출력
@@ -205,4 +190,8 @@ var polyline = new kakao.maps.Polyline({
 });
 
 polyline.setMap(map);
+
+// 칼로리 값을 숨겨진 폼 필드에 설정
+var calorieInput = document.getElementById('calorieInput');
+    calorieInput.value = calorie.toFixed(2);
 </script>
