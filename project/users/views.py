@@ -1,5 +1,8 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
+from .forms import UserProfileForm
+from django.contrib.auth.hashers import make_password
 # Create your views here.
 def mypage(request):
     user = request.user
@@ -27,4 +30,20 @@ def pw_checking(request):
     return render(request, 'users/pw_checking.html')
 
 def modifyv2(request):
-    return render(request, 'users/modifyv2.html')
+    if request.method == 'POST':
+        profile_form = UserProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        
+        if profile_form.is_valid():
+            profile_form.save()
+            update_session_auth_hash(request, request.user)  # Important, to update the session with the new user info
+            return redirect('users:mypage')
+        else:
+            # Handle errors if form is invalid
+            print(profile_form.errors)
+    else:
+        profile_form = UserProfileForm(instance=request.user.profile)
+    
+    context = {
+        'profile_form': profile_form,
+    }
+    return render(request, 'users/modifyv2.html', context)

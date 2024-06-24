@@ -34,7 +34,7 @@ def map_select(request):
             new_path.save()
             return redirect('main:map_page', id=new_path.id)
         else:
-            messages.warning(request, '출발지와 도착지를 다르게 입력해주세요!')
+            messages.error(request, '출발지와 도착지를 다르게 입력해주세요!')
             return render(request, 'main/mainpage.html')
     elif request.method == 'GET':       # 지도페이지에서 출발/도착 지점 불러올 때
         return render(request, 'main/mainpage.html')
@@ -45,4 +45,15 @@ def map_page(request, id):
     return render(request, 'main/map.html', {'path':new_path})
 
 def arrive(request):
+    if request.method == 'POST':
+        calorie = float(request.POST.get('calorie'))
+        profile = request.user.profile
+        request.user.profile.daily_consumedCalorie += calorie
+        request.user.profile.consumedCalorie += calorie
+        profile.save()
+        return render(request, 'main/arrive.html', {
+            'calorie': calorie,
+            'daily_consumedCalorie': profile.daily_consumedCalorie,
+            'remained_calorie': float(request.user.profile.goal) - float(request.user.profile.daily_consumedCalorie)
+        })
     return render(request, 'main/arrive.html')
