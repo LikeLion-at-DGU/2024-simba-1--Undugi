@@ -121,49 +121,10 @@
       {% include 'shared/_navbar.html' %}
     </div>
 
-    <div class="overlay"></div>
-    <div id="myModal" class="modal">
-      <div class="modalsection">
-        <span class="close">&times; </span>
-        <p class="text1">로그인 후 이용해 주세요!<i class="text2"><br />언더기와 함께<br/> 나만의 칼로리 데이터를 만들어봐요.</i></p>
-        
-        <img
-          class="image2"
-          src="../../project/static/assets/icons/rundugi.png"
-          alt="rundugi"
-        />
-        <a href ="" class="logingo" value="로그인하기"><i>로그인하기</i></a>
-      </div>
-    </div>
+    
 
     <script>
-      //{% comment %} document.addEventListener("DOMContentLoaded", (event) => {
-        const modal = document.getElementById("myModal");
-        const btn = document.getElementById("gobutton");
-        const span = document.getElementsByClassName("close")[0];
-        const overlay = document.querySelector(".overlay");
 
-        // '내 순위 보기' 링크를 클릭했을 때 모달을 열기
-        btn.onclick = function (event) {
-          event.preventDefault();
-          modal.style.display = "block";
-          overlay.style.display = "block";
-        };
-
-        // 모달의 닫기 버튼 클릭 시 모달 닫기
-        span.onclick = function () {
-          modal.style.display = "none";
-          overlay.style.display = "none";
-        };
-
-        // 모달 외부 클릭 시 모달 닫기
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-            overlay.style.display = "none";
-          }
-        };
-      //}); {% endcomment %}
     </script>
 
     

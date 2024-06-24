@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>언더기</title>
+    <link rel="stylesheet" href="{% static 'css/main/mainpage.css' %}" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div id="myModal" class="modal">
+      <div class="modalsection">
+        <span class="close">&times; </span>
+        <p class="text1">
+          로그인 후 이용해 주세요!<i class="text2"
+            ><br />언더기와 함께<br />
+            나만의 칼로리 데이터를 만들어봐요.</i
+          >
+        </p>
+
+        <img
+          class="image2"
+          src="../../project/static/assets/icons/rundugi.png"
+          alt="rundugi"
+        />
+        <a href="" class="logingo" value="로그인하기"><i>로그인하기</i></a>
+      </div>
+    </div>
+  </body>
+</html>
