@@ -20,7 +20,7 @@ def map_select(request):
         start_building = request.POST['start_building']
         end_building = request.POST['end_building']
         # 출발지 or 도착지 미입력시 경고 문구
-        if (start_building is None) and (end_building is None):
+        if not start_building or not end_building:
             messages.warning(request, '출발지와 도착지를 입력해 주세요!')
             return render(request, 'main/mainpage.html')
 
@@ -29,14 +29,31 @@ def map_select(request):
             new_path = Visit()
             new_path.start_building = start_building
             new_path.end_building = end_building
-            new_path.user = request.user      # 맞는지 확인
+            new_path.user = request.user
 
             new_path.save()
             return redirect('main:map_page', id=new_path.id)
+        else:
+            messages.warning(request, '출발지와 도착지를 다르게 입력해주세요!')
+            return render(request, 'main/mainpage.html')
+    elif request.method == 'GET':       # 지도페이지에서 출발/도착 지점 불러올 때
+        return render(request, 'main/mainpage.html')
+    return render(request, 'main/mainpage.html')
 
 def map_page(request, id):
     new_path = Visit.objects.get(pk=id)
     return render(request, 'main/map.html', {'path':new_path})
 
 def arrive(request):
+    if request.method == 'POST':
+        calorie = float(request.POST.get('calorie'))
+        profile = request.user.profile
+        request.user.profile.daily_consumedCalorie += calorie
+        request.user.profile.consumedCalorie += calorie
+        profile.save()
+        return render(request, 'main/arrive.html', {
+            'calorie': calorie,
+            'daily_consumedCalorie': profile.daily_consumedCalorie,
+            'remained_calorie': float(request.user.profile.goal) - float(request.user.profile.daily_consumedCalorie)
+        })
     return render(request, 'main/arrive.html')

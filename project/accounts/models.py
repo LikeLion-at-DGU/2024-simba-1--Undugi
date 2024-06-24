@@ -11,6 +11,7 @@ class Profile(models.Model):
     profileImage = models.ImageField(upload_to='profileImages/', null=True)  # 프로필사진
     goal = models.FloatField(null=True)         # 목표소모칼로리
     consumedCalorie = models.FloatField(null=True, default=0)  # 총 소모한칼로리
+    daily_consumedCalorie = models.FloatField(null=True, default=0) # 오늘 소모한 칼로리
     weight = models.FloatField(null=True, default=50)       # null False면 왜 오류?
     major = models.TextField(max_length=40)     # 소속 학과
     gender = models.BooleanField(null=True)               # 성별
