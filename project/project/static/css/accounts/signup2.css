@@ -114,7 +114,7 @@ body {
   align-items: flex-start;
   gap: 10px;
   flex-shrink: 0;
-  margin-top: 200px;
+  margin-top: 170px;
 }
 
 .section {
@@ -276,4 +276,13 @@ label {
   width: 30px;
   height: 37.778px;
   fill: #000;
+}
+
+.error-message {
+  color: #d80000;
+  font-family: Pretendard;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
