@@ -104,13 +104,67 @@
             <button type="submit" id="gobutton">GO!</button>
           </div>
         </form>
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
+        {% if messages %}
+          <div class="error">
+            <span class="error-message">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </span>
+            <svg class="error-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#D80000"/>
+            </svg>
+          </div>
+        {% endif %}
         </div>
       </div>
       {% include 'shared/_navbar.html' %}
     </div>
+
+    <div class="overlay"></div>
+    <div id="myModal" class="modal">
+      <div class="modalsection">
+        <span class="close">&times; </span>
+        <p class="text1">로그인 후 이용해 주세요!<i class="text2"><br />언더기와 함께<br/> 나만의 칼로리 데이터를 만들어봐요.</i></p>
+        
+        <img
+          class="image2"
+          src="../../project/static/assets/icons/rundugi.png"
+          alt="rundugi"
+        />
+        <a href ="" class="logingo" value="로그인하기"><i>로그인하기</i></a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("gobutton");
+        const span = document.getElementsByClassName("close")[0];
+        const overlay = document.querySelector(".overlay");
+
+        // '내 순위 보기' 링크를 클릭했을 때 모달을 열기
+        btn.onclick = function (event) {
+          event.preventDefault();
+          modal.style.display = "block";
+          overlay.style.display = "block";
+        };
+
+        // 모달의 닫기 버튼 클릭 시 모달 닫기
+        span.onclick = function () {
+          modal.style.display = "none";
+          overlay.style.display = "none";
+        };
+
+        // 모달 외부 클릭 시 모달 닫기
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+            overlay.style.display = "none";
+          }
+        };
+      });
+    </script>
 
     
       

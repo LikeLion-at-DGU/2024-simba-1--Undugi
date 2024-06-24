@@ -36,30 +36,45 @@
           <div class="nickname">
             <div class="nickname1">
               <div class="profile">
+                {% if forloop.counter == 1 %}
                 <img
                   class="one"
                   src="{% static 'assets/icons/one.png' %}"
                   alt="logo"
                 />
+                {% elif forloop.counter == 2 %}
+                <img
+                  class="two"
+                  src="{% static 'assets/icons/two.png' %}"
+                  alt="logo"
+                />
+                {% elif forloop.counter == 3 %}
+                <img
+                  class="three"
+                  src="{% static 'assets/icons/three.png' %}"
+                  alt="logo"
+                />
+                {% else %} {% endif %}
               </div>
               <div class="nickname1text">
-                  <div class="info">
-                      <p class="loadnickname">{{ ranking.nickname }}</p>
-                      <p class="id">{{ ranking.ranking_id }}</p>
-                  </div>
-                  <div class="score">
-                      <span class="n">{{ ranking.total_calories_burned }}</span>
-                      <span class="kcal">kcal</span>
+                <div class="info">
+                  <p class="loadnickname">{{ ranking.nickname }}</p>
+                  <p class="id">{{ ranking.ranking_id }}</p>
+                </div>
+                <div class="score">
+                  <span class="n">{{ ranking.total_calories_burned }}</span>
+                  <span class="kcal">kcal</span>
                 </div>
               </div>
             </div>
           </div>
-        {% endfor %}
+          {% endfor %}
         </div>
       </div>
       {% include 'shared/_navbar.html' %}
     </div>
 
+    <div class="overlay"></div>
     <div id="myModal" class="modal">
       <span class="close">&times; </span>
       <p class="rankinginfo">현재 내 순위는 {{ user_rank }}위예요!</p>
@@ -76,22 +91,26 @@
         const modal = document.getElementById("myModal");
         const btn = document.getElementById("viewRanking");
         const span = document.getElementsByClassName("close")[0];
+        const overlay = document.querySelector(".overlay");
 
         // '내 순위 보기' 링크를 클릭했을 때 모달을 열기
         btn.onclick = function (event) {
           event.preventDefault();
           modal.style.display = "block";
+          overlay.style.display = "block";
         };
 
         // 모달의 닫기 버튼 클릭 시 모달 닫기
         span.onclick = function () {
           modal.style.display = "none";
+          overlay.style.display = "none";
         };
 
         // 모달 외부 클릭 시 모달 닫기
         window.onclick = function (event) {
           if (event.target == modal) {
             modal.style.display = "none";
+            overlay.style.display = "none";
           }
         };
       });
