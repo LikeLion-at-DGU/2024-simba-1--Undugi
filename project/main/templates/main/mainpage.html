@@ -137,7 +137,64 @@
     </div>
 
     <script>
+      clearIcon.addEventListener("click", clearInput);
 
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal1 = document.getElementById("myModal");
+        const btn1 = document.getElementById("dietdetail");
+        const span1 = document.getElementsByClassName("close1")[0];
+        const overlay1 = document.querySelector(".overlay");
+
+        if (btn1) {
+          // '자세히 보기' 링크를 클릭했을 때 모달을 열기
+          btn1.onclick = function (event) {
+            event.preventDefault();
+            modal1.style.display = "block";
+            overlay1.style.display = "block";
+          };
+
+          // 모달의 닫기 버튼 클릭 시 모달 닫기
+          span1.onclick = function () {
+            modal1.style.display = "none";
+            overlay1.style.display = "none";
+          };
+
+          // 모달 외부 클릭 시 모달 닫기
+          window.onclick = function (event) {
+            if (event.target === modal1) {
+              modal1.style.display = "none";
+              overlay1.style.display = "none";
+            }
+          };
+        }
+      });
+      /*{% comment %} document.addEventListener("DOMContentLoaded", (event) => {
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("gobutton");
+        const span = document.getElementsByClassName("close")[0];
+        const overlay = document.querySelector(".overlay");
+
+        // '내 순위 보기' 링크를 클릭했을 때 모달을 열기
+        btn.onclick = function (event) {
+          event.preventDefault();
+          modal.style.display = "block";
+          overlay.style.display = "block";
+        };
+
+        // 모달의 닫기 버튼 클릭 시 모달 닫기
+        span.onclick = function () {
+          modal.style.display = "none";
+          overlay.style.display = "none";
+        };
+
+        // 모달 외부 클릭 시 모달 닫기
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+            overlay.style.display = "none";
+          }
+        };
+      }); {% endcomment %}*/
     </script>
 
     
