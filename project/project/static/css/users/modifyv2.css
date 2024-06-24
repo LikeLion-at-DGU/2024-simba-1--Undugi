@@ -100,9 +100,15 @@ body {
     height: 120px;
     flex-direction: row;
     flex-shrink: 0;
-    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-rows: 1.5fr 0.5fr 1fr;
     grid-template-columns: 2fr 2fr 3fr;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+.image_info {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
 }
 
 .image_title:nth-child(1) {
@@ -132,7 +138,7 @@ body {
 }
 
 .image_text:nth-child(4) {
-    grid-row: 3/4;
+    grid-row: 2/3;
     grid-column: 2/4;
     color: #000;
     font-family: Pretendard;
@@ -690,4 +696,11 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* 반투명 회색 */
     z-index: 1; /* 모달보다 낮은 z-index 값 */
     display: none; /* 기본적으로 숨김 */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -44,7 +44,7 @@
             <div class="next">
                 <button type="submit" class="next_button">다음</button>
             </div>
-        </form>  
+        </form>
         </div>
         {% include 'shared/_navbar.html' %}
     </div>
@@ -52,12 +52,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
         const passwordInput = document.getElementById('password-input');
-        const svgIcon = document.querySelector('.invisiblebutton');
+        const svgIcon = document.querySelector('.no_password');
         const placeholderText = 'Password';
-
-        passwordInput.type = 'password';
-        passwordInput.value = '';
-        passwordInput.placeholder = placeholderText;
+        
+        svgIcon.addEventListener('click', function() {
+            passwordInput.type = 'password';
+            passwordInput.value = '';
+            passwordInput.placeholder = placeholderText;
+        });
     });
     </script>
     
