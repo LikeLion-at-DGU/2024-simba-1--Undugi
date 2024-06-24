@@ -32,6 +32,7 @@
   var S = 60;   // 걷기 속도
   var W = "{{ request.user.profile.weight }}";
   var G, T, description;  // 경사, 운동 시간
+  var Marker1, Marker2;   // 마커 이미지 위치
 
   if (start_building == "사회과학관")
   {
@@ -43,6 +44,8 @@
       G = 0;
       T = 2;
       description = "사회과학관 3층에서 걸어서 혜화관 1층에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5577, 127.0018);
     }
   }
 
@@ -56,6 +59,32 @@
   // 경로 설명 출력
   var contenttxt = document.querySelector('.contenttxt');
   contenttxt.textContent = description;
+
+  // 마커 이미지 변경
+  var Marker1image = '/project/static/images/mapMarker1.png';
+  var Marker2image = '/project/static/images/mapMarker2.png';
+  var imageSize = new kakao.maps.Size(64, 69),
+      imageOption = {offset: new kakao.maps.Point(27, 69)};
+
+  var markerImage1 = new kakao.maps.MarkerImage(Marker1image, imageSize, imageOption),
+      markerPosition1 = Marker1;
+
+  var markerImage2 = new kakao.maps.MarkerImage(Marker2image, imageSize, imageOption),
+      markerPosition2 = Marker2;
+
+  var marker = new kakao.maps.Marker({
+    position: markerPosition1, 
+    image: markerImage1
+});
+
+marker.setMap(map);
+
+  var marker = new kakao.maps.Marker({
+    position: markerPosition2, 
+    image: markerImage2
+});
+
+marker.setMap(map);
 
 var polyline = new kakao.maps.Polyline({
   path: linePath, // 선을 구성하는 좌표배열
