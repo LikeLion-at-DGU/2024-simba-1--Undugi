@@ -106,6 +106,9 @@
       {% include 'shared/_navbar.html' %}
     </div>
 
+
+    <div class="overlay"><div>
+
     <div id="myModal" class="modal">
       <img
         class="image2"
@@ -149,51 +152,63 @@
       clearIcon.addEventListener("click", clearInput);
 
       document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("myModal");
-        const btn = document.getElementById("dietdetail");
-        const span = document.getElementsByClassName("close1")[0];
+        const modal1 = document.getElementById("myModal");
+        const btn1 = document.getElementById("dietdetail");
+        const span1 = document.getElementsByClassName("close1")[0];
+        const overlay1 = document.querySelector(".overlay");
 
-        // '자세히 보기' 링크를 클릭했을 때 모달을 열기
-        btn.onclick = function (event) {
-          event.preventDefault();
-          modal.style.display = "block";
-        };
+        if (btn1) {
+          // '자세히 보기' 링크를 클릭했을 때 모달을 열기
+          btn1.onclick = function (event) {
+            event.preventDefault();
+            modal1.style.display = "block";
+            overlay1.style.display = "block";
+          };
 
-        // 모달의 닫기 버튼 클릭 시 모달 닫기
-        span.onclick = function () {
-          modal.style.display = "none";
-        };
+          // 모달의 닫기 버튼 클릭 시 모달 닫기
+          span1.onclick = function () {
+            modal1.style.display = "none";
+            overlay1.style.display = "none";
+          };
 
-        // 모달 외부 클릭 시 모달 닫기
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        };
+          // 모달 외부 클릭 시 모달 닫기
+          window.onclick = function (event) {
+            if (event.target === modal1) {
+              modal1.style.display = "none";
+              overlay1.style.display = "none";
+            }
+          };
+        }
       });
 
       document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("myModal2");
-        const btn = document.getElementById("healthdetail");
-        const span = document.getElementsByClassName("close2")[0];
+        const modal2 = document.getElementById("myModal2");
+        const btn2 = document.getElementById("healthdetail");
+        const span2 = document.getElementsByClassName("close2")[0];
+        const overlay2 = document.querySelector(".overlay");
 
-        // '자세히 보기' 링크를 클릭했을 때 모달을 열기
-        btn.onclick = function (event) {
-          event.preventDefault();
-          modal.style.display = "block";
-        };
+        if (btn2) {
+          // '자세히 보기' 링크를 클릭했을 때 모달을 열기
+          btn2.onclick = function (event) {
+            event.preventDefault();
+            modal2.style.display = "block";
+            overlay2.style.display = "block";
+          };
 
-        // 모달의 닫기 버튼 클릭 시 모달 닫기
-        span.onclick = function () {
-          modal.style.display = "none";
-        };
+          // 모달의 닫기 버튼 클릭 시 모달 닫기
+          span2.onclick = function () {
+            modal2.style.display = "none";
+            overlay2.style.display = "none";
+          };
 
-        // 모달 외부 클릭 시 모달 닫기
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        };
+          // 모달 외부 클릭 시 모달 닫기
+          window.onclick = function (event) {
+            if (event.target === modal2) {
+              modal2.style.display = "none";
+              overlay2.style.display = "none";
+            }
+          };
+        }
       });
     </script>
   </body>
