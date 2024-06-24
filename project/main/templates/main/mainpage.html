@@ -43,8 +43,8 @@
             <form action="{% url 'main:map_select' %}" method="POST">
               {% csrf_token %}
               <div class="list">
-                <select class="department" name="start_building">
-                  <option selected disabled>출발지 입력</option>
+                <select class="department" name="start_building" required>
+                  <option selected disabled value="">출발지 입력</option>
                   <option value="학술문화관">학술문화관</option>
                   <option value="혜화관">혜화관</option>
                   <option value="명진관">명진관</option>
@@ -70,8 +70,8 @@
                   <option value="후문">후문</option>
                   <option value="과학관">과학관</option>
                 </select>
-                <select class="arrive" name="end_building">
-                  <option selected disabled>도착지 입력</option>
+                <select class="arrive" name="end_building" required>
+                  <option selected disabled value="">도착지 입력</option>
                   <option value="학술문화관">학술문화관</option>
                   <option value="혜화관">혜화관</option>
                   <option value="명진관">명진관</option>
