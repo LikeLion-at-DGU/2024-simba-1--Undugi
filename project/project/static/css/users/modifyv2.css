@@ -618,3 +618,76 @@ body {
     flex-shrink: 0;
     fill: #000;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 50%; /* 화면 상단에서 50% 위치 */
+    left: 50%; /* 화면 왼쪽에서 50% 위치 */
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* 오버플로우 숨기기 */
+    width: 368px;
+    height: 137px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #FFF3B2;
+    margin: auto;
+    color: #000;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* 추가된 그림자 효과 */
+}
+
+.save_check {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0px;
+    margin-top: 11px;
+}
+
+.close {
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; /* absolute로 설정하여 부모(.modal)를 기준으로 위치 지정 */
+    top: 10px; /* 원하는 상단 여백 설정 */
+    right: 10px; /* 원하는 오른쪽 여백 설정 */
+    background: none; /* 배경 제거 */
+    border: none; /* 테두리 제거 */
+}
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal_image {
+    width: 73px;
+    height: 71px;
+    flex-shrink: 0;
+    margin-top: 12px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 회색 */
+    z-index: 1; /* 모달보다 낮은 z-index 값 */
+    display: none; /* 기본적으로 숨김 */
+}
