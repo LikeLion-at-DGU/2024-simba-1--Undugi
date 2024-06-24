@@ -54,7 +54,7 @@
                         </div>
                         <p class="caution_text">정식 명칭으로 적어주세요.</p>
                     <div class="next">
-                        <button type="submit" class="next_button" onclick="goToNextPage()">다음</button>
+                        <button type="submit" class="next_button">다음</button>
                     </div>
                 </form>
                 {% if messages %}
@@ -75,10 +75,6 @@
     </div>
 
     <script>
-        function goToNextPage() {
-                            window.location.href = "{% url 'accounts:idfindv2' %}";
-                        }        
-        
         document.addEventListener('DOMContentLoaded', function() {
             const svgIcon = document.querySelector('.no_nick');
             const inputField1 = document.querySelector('.nick-text');
