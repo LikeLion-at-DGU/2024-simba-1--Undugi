@@ -12,6 +12,7 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +23,7 @@ body {
 .home {
     display: flex;
     width: 430px;
-    height: 932px;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -63,159 +64,332 @@ body {
 }
 
 .body {
-    display: flex;
+    display: grid;
     width: 430px;
-    height: 596px;
     flex-direction: column;
     align-items: center;
-    gap: 68px;
     flex-shrink: 0;
-}
-
-form {
-    display : flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .image_button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 110px;
-    height: 40px;
+    width: 83px;
+    height: 31px;
     flex-shrink: 0;
-    border-radius: 35px;
     background: #FFC700;
     border: none;
     margin-top : 30px;
+    margin-bottom: 45px;
 }
 
 .image_button a {
     color: #000;
     font-family: Pretendard;
-    font-size: 14.7px;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     line-height: normal;
     text-decoration: none;
 }
 
-.Nickname {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+.Image {
+    display: grid;
+    width: 430px;
+    height: 120px;
+    flex-direction: row;
     flex-shrink: 0;
+    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-columns: 2fr 2fr 3fr;
+    margin-bottom: 20px;
 }
 
-.Nickname-title {
+.image_title:nth-child(1) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.image_info:nth-child(2) {
+    grid-row: 1/3;
+    grid-column: 2/3;
+}
+
+.image_button:nth-child(3) {
+    grid-row:1/2;
+    grid-column: 3/4;
+    margin-left: 80px;
+}
+
+.image_text:nth-child(4) {
+    grid-row: 3/4;
+    grid-column: 2/4;
     color: #000;
     font-family: Pretendard;
     font-size: 14px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+
+.Nickname {
+    display: grid;
+    width: 430px;
+    flex-direction: row;
+    flex-shrink: 0;
+    grid-template-columns: 2fr 5fr;
+}
+
+.Nickname_title:nth-child(1) {
+    grid-column: 1/2;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.nick-text:nth-child(2) {
+    grid-column: 2/3;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
 }
 
 .ID {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    display: grid;
+    width: 430px;
+    flex-direction: row;
     flex-shrink: 0;
+    grid-template-columns: 2fr 5fr;
 }
 
-.id-title {
+.id_title:nth-child(1) {
+    grid-column: 1/2;
     color: #000;
     font-family: Pretendard;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight:700;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.id-text:nth-child(2) {
+    grid-column: 2/3;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
 }
 
 .Password {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    display: grid;
+    width: 430px;
+    flex-direction: row;
     flex-shrink: 0;
+    grid-template-columns: 2fr 5fr;
 }
 
-.password-title {
+.password_title:nth-child(1) {
+    grid-column: 1/2;
     color: #000;
     font-family: Pretendard;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.password-text:nth-child(2) {
+    grid-column: 2/3;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
 }
 
 .Cal {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    display: grid;
+    width: 430px;
+    flex-direction: row;
     flex-shrink: 0;
+    grid-template-columns: 2fr 5fr;
 }
 
-.cal-title {
+.cal_title:nth-child(1) {
+    grid-column: 1/2;
     color: #000;
     font-family: Pretendard;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.cal-text:nth-child(2) {
+    grid-column: 2/3;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
 }
 
 .Weight {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    display: grid;
+    width: 430px;
+    flex-direction: row;
     flex-shrink: 0;
+    grid-template-columns: 2fr 5fr;
 }
 
-.weight-title {
+.weight_title:nth-child(1) {
+    grid-column: 1/2;
     color: #000;
     font-family: Pretendard;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.weight-text:nth-child(2) {
+    grid-column: 2/3;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
 }
 
 .Major {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    display: grid;
+    width: 430px;
+    flex-direction: row;
     flex-shrink: 0;
+    grid-template-columns: 2fr 5fr;
 }
 
-.major-title {
+.major_title:nth-child(1) {
+    grid-column: 1/2;
     color: #000;
     font-family: Pretendard;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
 }
 
-.input-filed {
-    height: 42px;
+.major-text:nth-child(2) {
+    grid-column: 2/3;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+
+.caution_text:nth-child(3) {
+    grid-column: 2/3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.input-field {
+    position: relative; /* 컨테이너를 상대적으로 만듭니다 */
+    height: 39.699px;
     flex-shrink: 0;
-    display : flex;
-    flex-direction : row;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 10px;
 }
 
-input {
+.nick-text {
+    width: 255px;
+    height: 39.699px;
+    flex-shrink: 0;
     border-radius: 12px;
     background: #EEE;
-    border : none;
-}
-
-.input-text {  
-    width : 240px;
-    height: 42px;
-    flex-shrink: 0;
-    color: #7E7E7E;
+    border: none;
+    color: #7e7e7e;
     font-family: Pretendard;
     font-size: 12px;
     font-style: normal;
@@ -223,11 +397,14 @@ input {
     line-height: normal;
 }
 
-.nick-text {  
-    width : 240px;
-    height: 42px;
+.id-text {
+    width: 255px;
+    height: 39.699px;
     flex-shrink: 0;
-    color: #7E7E7E;
+    border-radius: 12px;
+    background: #EEE;
+    border: none;
+    color: #7e7e7e;
     font-family: Pretendard;
     font-size: 12px;
     font-style: normal;
@@ -235,11 +412,14 @@ input {
     line-height: normal;
 }
 
-.id-text {  
-    width : 240px;
-    height: 42px;
+.password-text {
+    width: 255px;
+    height: 39.699px;
     flex-shrink: 0;
-    color: #7E7E7E;
+    border-radius: 12px;
+    background: #EEE;
+    border: none;
+    color: #7e7e7e;
     font-family: Pretendard;
     font-size: 12px;
     font-style: normal;
@@ -247,11 +427,14 @@ input {
     line-height: normal;
 }
 
-.password-text {  
-    width : 240px;
-    height: 42px;
+.cal-text {
+    width: 255px;
+    height: 39.699px;
     flex-shrink: 0;
-    color: #7E7E7E;
+    border-radius: 12px;
+    background: #EEE;
+    border: none;
+    color: #7e7e7e;
     font-family: Pretendard;
     font-size: 12px;
     font-style: normal;
@@ -259,11 +442,14 @@ input {
     line-height: normal;
 }
 
-.cal-text {  
-    width : 240px;
-    height: 42px;
+.weight-text {
+    width: 255px;
+    height: 39.699px;
     flex-shrink: 0;
-    color: #7E7E7E;
+    border-radius: 12px;
+    background: #EEE;
+    border: none;
+    color: #7e7e7e;
     font-family: Pretendard;
     font-size: 12px;
     font-style: normal;
@@ -271,11 +457,14 @@ input {
     line-height: normal;
 }
 
-.weight-text {  
-    width : 240px;
-    height: 42px;
+.major-text {
+    width: 255px;
+    height: 39.699px;
     flex-shrink: 0;
-    color: #7E7E7E;
+    border-radius: 12px;
+    background: #EEE;
+    border: none;
+    color: #7e7e7e;
     font-family: Pretendard;
     font-size: 12px;
     font-style: normal;
@@ -283,40 +472,110 @@ input {
     line-height: normal;
 }
 
-.major-text {  
-    width : 240px;
-    height: 42px;
-    flex-shrink: 0;
-    color: #7E7E7E;
-    font-family: Pretendard;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.input-field svg.no_nick {
+    position: absolute; /* 아이콘을 절대적으로 배치 */
+    right: 30px; /* 오른쪽 가장자리에서의 거리 조정 */
+    cursor: pointer;
+    color: #afafaf;
 }
 
-.caution_text {
+.input-field svg.no_id {
+    position: absolute; /* 아이콘을 절대적으로 배치 */
+    right: 30px; /* 오른쪽 가장자리에서의 거리 조정 */
+    cursor: pointer;
+    color: #afafaf;
+}
+
+.input-field svg.no_password {
+    position: absolute; /* 아이콘을 절대적으로 배치 */
+    right: 30px; /* 오른쪽 가장자리에서의 거리 조정 */
+    cursor: pointer;
+    color: #afafaf;
+}
+
+.input-field svg.no_cal {
+    position: absolute; /* 아이콘을 절대적으로 배치 */
+    right: 30px; /* 오른쪽 가장자리에서의 거리 조정 */
+    cursor: pointer;
+    color: #afafaf;
+}
+
+.input-field svg.no_weight {
+    position: absolute; /* 아이콘을 절대적으로 배치 */
+    right: 30px; /* 오른쪽 가장자리에서의 거리 조정 */
+    cursor: pointer;
+    color: #afafaf;
+}
+
+.input-field svg.no_major {
+    position: absolute; /* 아이콘을 절대적으로 배치 */
+    right: 30px; /* 오른쪽 가장자리에서의 거리 조정 */
+    cursor: pointer;
+    color: #afafaf;
+}
+
+.caution_text{
     color: #000;
     font-family: Pretendard;
     font-size: 7px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-right: 0px;
 }
 
-.modify_button {
+#save_button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 110px;
+    width: 157px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    border: none;
+    margin-top : 30px;
+    margin-bottom: 45px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    cursor: not-allowed; /* 기본적으로 버튼 비활성화 */
+}
+
+#save_button.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 157px;
     height: 40px;
     flex-shrink: 0;
     border-radius: 35px;
     background: #FFC700;
     border: none;
     margin-top : 30px;
+    margin-bottom: 45px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    cursor: pointer; /* 활성화된 버튼에 포인터 커서 */
 }
 
+.modify_button a {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+}
 
 .bottom{
     display: flex;
@@ -359,4 +618,3 @@ input {
     flex-shrink: 0;
     fill: #000;
 }
-

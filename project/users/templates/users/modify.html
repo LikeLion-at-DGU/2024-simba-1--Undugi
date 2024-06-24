@@ -20,13 +20,13 @@
             </div>
         </div>
         <div class="body">
-            <div class="image">
+            <div class="Image">
                 <p class="image_title">사진</p>
                 <div class="image_info">
                     <img class="profile" src="{{ profileImage }}" /><br>
-                    <div class="image_text">나를 알릴 수 있는 사진을 등록해 주세요!
-                        등록된 사진은 랭킹 프로필에 사용됩니다.
-                    </div>
+                </div>
+                <div class="image_text">나를 알릴 수 있는 사진을 등록해 주세요!<br>
+                    등록된 사진은 랭킹 프로필에 사용됩니다.
                 </div>
             </div>
             <div class="Nickname">
@@ -39,7 +39,7 @@
             </div>
             <div class="Password">
                 <p class="password_title">비밀번호</p>
-                <span class="id">********</span>
+                <span class="password">********</span>
             </div>
             <div class="Cal">
                 <p class="cal_title">목표 칼로리</p>
@@ -47,15 +47,15 @@
             </div>
             <div class="Weight">
                 <p class="weight_title">체중</p>
-                <span class="plankcal">{{user.profile.weight}}kg</span>
+                <span class="weight">{{user.profile.weight}}kg</span>
             </div>
             <div class="Major">
                 <p class="major_title">학과</p>
-                <span class="plankcal">{{user.profile.major}}</span>
-            </div>
-            <div class="modify_button">
-                <a href="{% url 'users:pw_checking' %}" class="button">내 정보 수정하기</a>
-            </div>
+                <span class="major">{{user.profile.major}}</span>
+            </div>   
+        </div>
+        <div class="modify_button">
+            <a href="{% url 'users:pw_checking' %}" class="button">내 정보 수정하기</a>
         </div>
         {% include 'shared/_navbar.html' %}
     </div>
