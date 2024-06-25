@@ -4,10 +4,11 @@ from accounts.models import Profile
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['nickName', 'profileImage', 'goal' ,'weight', 'major']
-        widgets={
+        fields = ['profileImage', 'nickName', 'goal', 'weight', 'major']
+        widgets = {
             'profileImage': forms.FileInput()
         }
+
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
         self.fields['nickName'].required = False
