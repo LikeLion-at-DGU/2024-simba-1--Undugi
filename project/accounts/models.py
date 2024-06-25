@@ -15,7 +15,10 @@ class Profile(models.Model):
     major = models.TextField(max_length=40)     # 소속 학과
     gender = models.BooleanField(null=True)               # 성별
     agegroup = models.IntegerField(null=True)            # 연령대
-    # rank =  models.ForeignKey(Rank, null=True, on_delete=models.CASCADE)
+
+    def reset_daily_consumedCalorie(self):
+        self.daily_consumedCalorie = 0
+        self.save()
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

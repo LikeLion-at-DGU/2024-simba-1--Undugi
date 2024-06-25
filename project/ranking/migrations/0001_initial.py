@@ -18,8 +18,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('ranking_id', models.AutoField(primary_key=True, serialize=False)),
                 ('nickname', models.CharField(max_length=100, unique=True)),
-                ('total_calories_burned', models.FloatField(default=0)),
                 ('rank', models.PositiveIntegerField(blank=True, null=True)),
+                ('total_calories_burned', models.FloatField(default=0)),
                 ('profile', models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='ranking', to='accounts.profile')),
             ],
         ),
