@@ -51,9 +51,18 @@ def arrive(request):
         request.user.profile.daily_consumedCalorie += calorie
         request.user.profile.consumedCalorie += calorie
         profile.save()
+
+        update_rankings()
+        try:
+            user_ranking = Ranking.objects.get(profile=profile)
+        except Ranking.DoesNotExist:
+            user_ranking = None
+
+
         return render(request, 'main/arrive.html', {
             'calorie': calorie,
             'daily_consumedCalorie': profile.daily_consumedCalorie,
-            'remained_calorie': float(request.user.profile.goal) - float(request.user.profile.daily_consumedCalorie)
+            'remained_calorie': float(request.user.profile.goal) - float(request.user.profile.daily_consumedCalorie),
+            'user_ranking':user_ranking
         })
     return render(request, 'main/arrive.html')
