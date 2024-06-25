@@ -66,7 +66,7 @@
                   <img src="{% if ranking.profile.profileImage %}{{ ranking.profile.profileImage.url }}{% else %}{% static 'images/defaultProfile.jpg' %}{% endif %}" alt="Profile Image" />
                 </div>
                 <div class="score">
-                  <span class="n">{{ ranking.total_calories_burned }}</span>
+                  <span class="n">{{ ranking.total_calories_burned|floatformat:2 }}</span>
                   <span class="kcal">kcal</span>
                 </div>
               </div>
