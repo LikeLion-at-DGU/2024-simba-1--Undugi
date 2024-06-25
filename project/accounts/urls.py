@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import *
-
+from django.conf import settings
+from django.conf.urls.static import static
 app_name = "accounts"
 urlpatterns = [
     path('login/', login, name="login"),
@@ -15,4 +16,4 @@ urlpatterns = [
     path('passwordfindv1/', passwordfindv1, name="passwordfindv1"),
     path('passwordfindv2/', passwordfindv2, name="passwordfindv2"),
     path('passwordfindv3/', passwordfindv3, name="passwordfindv3"),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
