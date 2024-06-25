@@ -327,6 +327,129 @@ body {
   cursor: pointer;
 }
 
+.overlay3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 회색 */
+  z-index: 1; /* 모달보다 낮은 z-index 값 */
+  display: none; /* 기본적으로 숨김 */
+}
+
+.modal3 {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  padding-top: 60px;
+  top: 50%; /* 화면 상단에서 50% 위치 */
+  left: 50%; /* 화면 왼쪽에서 50% 위치 */
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  width: 315px;
+  height: 321px;
+  flex-shrink: 0;
+  border-radius: 21px;
+  background: #fff9d7;
+  margin: auto;
+
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.modalsection {
+  width: 203px;
+  height: 246px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 55px;
+}
+
+.text1 {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text2 {
+  color: #7e7e7e;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.image3 {
+  display: flex;
+  width: 106px;
+  height: 106px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logingo {
+  width: 130px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #ffc700;
+  color: #000;
+  font-family: EF_jejudoldam;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 30px;
+  display: flex;
+}
+
+.logingo > i {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  font-style: normal;
+}
+
+.close3 {
+  color: #000000;
+  float: right;
+  padding-right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; /* absolute로 설정하여 부모(.modal)를 기준으로 위치 지정 */
+  top: 20px; /* 원하는 상단 여백 설정 */
+  right: 20px; /* 원하는 오른쪽 여백 설정 */
+}
+
+.close3:hover,
+.close3:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .bottom {
   display: flex;
   justify-content: center;
