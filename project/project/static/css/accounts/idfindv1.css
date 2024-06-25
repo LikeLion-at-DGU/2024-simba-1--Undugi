@@ -32,6 +32,11 @@ body {
     background: #FFF;
 }
 
+.status {
+    width: 100%;
+    height: 48px;
+}
+
 .head {
     width: 430px;
     height: 216px;
@@ -123,10 +128,7 @@ body {
     font-weight: 700;
     line-height: normal;
     margin : 0px;
-}
-
-form {
-    margin-top : 49px;
+    margin-bottom: 49px;
 }
 
 .NN {
@@ -224,6 +226,7 @@ form {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-top: 3px;
 }
 
 .bottom{
@@ -270,9 +273,10 @@ form {
 
 .next {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 91px;
+    margin-top: 45px;
     margin-bottom: 94px;
 }
 
@@ -306,7 +310,8 @@ form {
     border-radius: 12px;
     border: 1px solid #d80000;
     background: #ffe9e9;
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .error-message {

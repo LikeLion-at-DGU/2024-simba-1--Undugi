@@ -33,6 +33,11 @@ body {
   background: #fff;
 }
 
+.status {
+  width: 100%;
+  height: 48px;
+}
+
 .logo {
   display: flex;
   flex-direction: column;
