@@ -54,11 +54,11 @@
                   src="{% static 'assets/icons/three.png' %}"
                   alt="logo"
                 />
-                {% else %} {% endif %}
+                {% endif %}
               </div>
               <div class="nickname1text">
                 <div class="info">
-                  <p class="loadnickname">{{ ranking.nickname }}</p>
+                  <p class="loadnickname">{{ ranking.profile.nickName }}</p>
                   <p class="id">{{ ranking.ranking_id }}</p>
                 </div>
                 <div class="score">

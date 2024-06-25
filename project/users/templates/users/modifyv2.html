@@ -25,7 +25,7 @@
             <div class="Image">
                 <p class="image_title">사진</p>
                 <div class="image_info">
-                    <img id="profileImage" class="profile" src="{{ profileImage }}">
+                    <img id="profileImage" class="profile" src="{% if user.profile.profileImage %}{{ user.profile.profileImage }}{% else %}{% static 'images/defaultProfile.jpg' %}{% endif %}">
                 </div>
                 <div class="image_button"> 
                     <p>
