@@ -141,6 +141,21 @@
       </p>
     </div>
 
+    <div class="overlay3"></div>
+    <div id="myModal3" class="modal3">
+      <div class="modalsection">
+        <span class="close3">&times; </span>
+        <p class="text1">로그인 후 이용해 주세요!<i class="text2"><br />언더기와 함께<br/> 나만의 칼로리 데이터를 만들어봐요.</i></p>
+        
+        <img
+          class="image3"
+          src="../../project/static/assets/icons/rundugi.png"
+          alt="rundugi"
+        />
+      </div>
+    </div>
+
+
     <script>
       const idInput = document.getElementById("id-input");
       const clearIcon = document.querySelector(".no");
@@ -210,6 +225,40 @@
           };
         }
       });
+
+      {% if not user.is_authenticated %}
+        document.addEventListener("DOMContentLoaded", function() {
+          var modal3 = document.getElementById("myModal3");
+          var overlay3 = document.querySelector(".overlay3");
+          var closeBtn3 = document.querySelector(".close3");
+      
+          // 랭킹 페이지 링크 클릭 시 모달 표시
+          document.querySelector("a[href='{% url 'ranking:ranking_page' %}']").addEventListener("click", function(event) {
+            event.preventDefault();
+            modal3.style.display = "block";
+            overlay3.style.display = "block";
+          });
+  
+          // 마이페이지 링크 클릭 시 모달 표시
+          document.querySelector("a[href='{% url 'users:mypage' %}']").addEventListener("click", function(event) {
+            event.preventDefault();
+            modal3.style.display = "block";
+            overlay3.style.display = "block";
+          });
+      
+          // 모달 닫기 버튼 클릭 시 모달 숨김
+          closeBtn3.addEventListener("click", function() {
+            modal3.style.display = "none";
+            overlay3.style.display = "none";
+          });
+      
+          // 오버레이 클릭 시 모달 숨김
+          overlay3.addEventListener("click", function() {
+            modal3.style.display = "none";
+            overlay3.style.display = "none";
+          });
+        });
+      {% endif %}
     </script>
   </body>
 </html>
