@@ -128,7 +128,7 @@
       Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
       Marker2 = new kakao.maps.LatLng(37.5585, 126.9994);
     }
-    else if (end_building == "경영관") {    // 수정
+    else if (end_building == "경영관") {    
       var linePath = [
         new kakao.maps.LatLng(37.5575, 127.0025),
         new kakao.maps.LatLng(37.5575, 127.0023),
@@ -140,6 +140,376 @@
       description = "정문에서 나와 왼쪽에 있는 계단을 이용해 그루터기를 지나 도착합니다.";
       Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
       Marker2 = new kakao.maps.LatLng(37.557, 127.0029);
+    }
+    else if (end_building == "다향관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5588, 127.0001), // 다향관
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      var calorie = calorie1 + calorie2;
+      description = "사회과학관 3층에서 나와 카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 팔정도를 지나 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5588, 127.0001);
+    }
+    else if (end_building == "체육관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.11;
+      T3 = 4;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 팔정도를 지나서 헐떡고개를 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.56, 127.0002);
+    }
+    else if (end_building == "학림관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5601, 127.0001),
+        new kakao.maps.LatLng(37.5602, 126.9997),
+        new kakao.maps.LatLng(37.5603, 126.9998),
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.11;
+      T3 = 5;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 팔정도를 지나서 헐떡고개를 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5603, 126.9998);
+    }
+    else if (end_building == "계산관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),      // 다향관
+        new kakao.maps.LatLng(37.5589, 127),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5591, 126.9992),
+        new kakao.maps.LatLng(37.5595, 126.9989),
+        new kakao.maps.LatLng(37.56, 126.9987),
+        new kakao.maps.LatLng(37.5602, 126.9989),
+        new kakao.maps.LatLng(37.5601, 126.999),  // 계산관
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.11;
+      T3 = 6;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 팔정도를 지나서 헐떡고개를 내려가 학생회관 쪽으로 걸어가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5601, 126.999);
+    }
+    else if (end_building == "학생회관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),      // 다향관
+        new kakao.maps.LatLng(37.5589, 127),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5591, 126.9992),
+        new kakao.maps.LatLng(37.5595, 126.9989),
+        new kakao.maps.LatLng(37.56, 126.9987),
+        new kakao.maps.LatLng(37.5601, 126.9985),
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.08;
+      T3 = 4;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "정문에서 나와 카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 팔정도를 지나 만해광장 쪽 내리막길로 쭉 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5601, 126.9985);
+    }
+    else if (end_building == "정보문화관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),      // 다향관
+        new kakao.maps.LatLng(37.5589, 127),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5591, 126.9992),
+        new kakao.maps.LatLng(37.5595, 126.9989),
+        new kakao.maps.LatLng(37.56, 126.9987),
+        new kakao.maps.LatLng(37.5599, 126.9983),
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.08;
+      T3 = 4;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "정문에서 나와 카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 팔정도를 지나 만해광장 쪽 내리막길로 쭉 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5599, 126.9983);
+    }
+    else if (end_building == "원흥관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5581, 126.9996), // 중앙도서관
+        new kakao.maps.LatLng(37.5583, 126.9989),
+        new kakao.maps.LatLng(37.5586, 126.9989), // 원흥관
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 3;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.07;
+      T3 = 1;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "정문에서 나와 카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 중앙도서관 쪽으로 간 뒤 옆 계단을 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5586, 126.9989);
+    }
+    else if (end_building == "남산학사") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5581, 126.9996), // 중앙도서관
+        new kakao.maps.LatLng(37.5583, 126.9989),
+        new kakao.maps.LatLng(37.5586, 126.998),
+        new kakao.maps.LatLng(37.5584, 126.9978),
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 3;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.16;
+      T3 = 4;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "정문에서 나와 카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 중앙도서관 쪽으로 가 옆쪽 계단을 이용한 뒤 108계단을 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5584, 126.9978);
+    }
+    else if (end_building == "신공학관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5581, 126.9996), // 중앙도서관
+        new kakao.maps.LatLng(37.5584, 126.9986),
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 3;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.11;
+      T3 = 1;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "정문에서 나와 카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 중앙도서관 쪽으로 가 신공학관 9층에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5584, 126.9986);
+    }
+    else if (end_building == "중앙도서관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5581, 126.9996),
+        new kakao.maps.LatLng(37.5579, 126.9992), // 중앙도서관
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 3;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      var calorie = calorie1 + calorie2;
+      description = "정문에서 나와 카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 명진관을 지나 중앙도서관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5579, 126.9992);
+    }
+    else if (end_building == "상록원") {
+      var linePath = [
+      new kakao.maps.LatLng(37.5575, 127.0025),
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.5569, 127.001),
+        new kakao.maps.LatLng(37.557, 126.9997),
+      ];
+      G = 0.12;
+      T = 8;
+      description = "정문에서 나와 카페 잉을 지나 대운동장 옆 계단을 올라가 상록원에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.557, 126.9997);
+    }
+    else if (end_building == "만해광장") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),      // 다향관
+        new kakao.maps.LatLng(37.5589, 127),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5591, 126.9992),
+        new kakao.maps.LatLng(37.5595, 126.9989),
+        new kakao.maps.LatLng(37.5596, 126.9993),
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.08;
+      T3 = 2;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "정문에서 나와 카페 잉 옆을 지나 정각원 방향으로 계단(언덕)을 올라 팔정도를 지나 본관과 다향관 사이의 내리막길을 따라 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5596, 126.9993);
+    }
+    else if (end_building == "정문") {    
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),
+        new kakao.maps.LatLng(37.5575, 127.0023),
+        new kakao.maps.LatLng(37.557, 127.002),
+        new kakao.maps.LatLng(37.5571, 127.0014),
+        new kakao.maps.LatLng(37.557, 127.001),
+        new kakao.maps.LatLng(37.5566, 127.0031), // 정문
+      ];
+      G = 0.2;
+      T = 6 * 0.75;
+      description = "카페 잉을 지나 도로가 만나는 곳에서 유턴하여 도로로 된 내리막을 조심히 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5566, 127.0031);
+    }
+    else if (end_building == "후문") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),      // 다향관
+        new kakao.maps.LatLng(37.5589, 127),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5591, 126.9992),
+        new kakao.maps.LatLng(37.5595, 126.9989),
+        new kakao.maps.LatLng(37.56, 126.9987),
+        new kakao.maps.LatLng(37.5606, 126.9989),
+        new kakao.maps.LatLng(37.5608, 126.9994), // 후문
+      ];
+      G1 = 0.11;
+      T1 = 6;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1;
+      G2 = 0;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2;
+      G3 = 0.08;
+      T3 = 4;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      G4 = 0.17;
+      T4 = 2;
+      var calorie4 = (3.5 + (0.1 * S) + (1.8 * S * G4)) * 0.001 * W * 5 * T4 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3 + calorie4;
+      description = "대운동장까지 가 옆 언덕을 올라 팔정도를 지나 본관과 다향관 사이의 내리막길을 따라 내려가 학생회관 옆에 있는 계단을 내려가 길을 따라 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5608, 126.9994);
+    }
+    else if (end_building == "과학관") {
+      var linePath = [
+      new kakao.maps.LatLng(37.5575, 127.0025),
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.5569, 127.001),
+        new kakao.maps.LatLng(37.5573, 126.9999),
+      ];
+      G = 0.08;
+      T = 7;
+      description = "카페 잉을 지나 대운동장 옆 계단을 이용해 올라가 상록원을 지나 직진하여 도로를 만나면 우회전하여 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.5575, 127.0025);
+      Marker2 = new kakao.maps.LatLng(37.5573, 126.9999);
     }
   }
 
