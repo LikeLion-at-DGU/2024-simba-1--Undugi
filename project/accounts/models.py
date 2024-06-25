@@ -2,12 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-
 # Create your models here.
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE) #id, password, name 전송
-    nickName = models.TextField(max_length=30)  # 닉네임
+    nickName = models.TextField(max_length=30,unique=True)  # 닉네임
     profileImage = models.ImageField(upload_to='profileImages/', null=True)  # 프로필사진
     goal = models.FloatField(null=True)         # 목표소모칼로리
     consumedCalorie = models.FloatField(null=True, default=0)  # 총 소모한칼로리
@@ -29,3 +28,4 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
