@@ -4,13 +4,22 @@ from .models import Building, Visit
 from ranking.models import Ranking
 from accounts.models import Profile
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def update_rankings():
-    # 랭킹 업데이트 로직
-    rankings = Ranking.objects.order_by('-total_calories_burned')
-    for index, ranking in enumerate(rankings, start=1):
+    profiles = Profile.objects.all().order_by('-consumedCalorie')
+    for index, profile in enumerate(profiles, start=1):
+        ranking, created = Ranking.objects.get_or_create(profile=profile)
+        ranking.total_calories_burned = profile.consumedCalorie
         ranking.rank = index
         ranking.save()
+    
+    
+    # 랭킹 업데이트 로직
+    #rankings = Ranking.objects.order_by('-total_calories_burned')
+    #for index, ranking in enumerate(rankings, start=1):
+    #    ranking.rank = index
+    #    ranking.save()
 
 def mainpage(request):
     return render(request, 'main/mainpage.html')
@@ -53,6 +62,8 @@ def arrive(request):
         profile.save()
 
         update_rankings()
+
+        user_ranking = None
         try:
             user_ranking = Ranking.objects.get(profile=profile)
         except Ranking.DoesNotExist:
