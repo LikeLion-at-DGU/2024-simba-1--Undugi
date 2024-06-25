@@ -18,12 +18,13 @@ body {
   align-items: center;
   background: #fff;
   font-family: "Pretendard", sans-serif;
+  height: 100vh;
 }
 
 .home {
   display: flex;
   width: 430px;
-  height: 932px;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;

@@ -17,12 +17,13 @@ body {
     align-items: center;
     background: #FFF;
     font-family: 'Pretendard', sans-serif;
+    height: 100vh;
 }
 
 .home {
     display: flex;
     width: 430px;
-    height: 932px;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -146,7 +147,7 @@ form {
     margin-top: 10px;
 }
 
-.password-text {
+.input-text {
     width: 255px;
     height: 39.699px;
     flex-shrink: 0;
