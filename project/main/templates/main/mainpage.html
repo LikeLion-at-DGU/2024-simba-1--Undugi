@@ -132,8 +132,53 @@
           src="../../project/static/assets/icons/rundugi.png"
           alt="rundugi"
         />
-        <a href ="" class="logingo" value="로그인하기"><i>로그인하기</i></a>
+        <a href ="{% url 'accounts:login' %}" class="logingo" value="로그인하기"><i>로그인하기</i></a>
       </div>
     </div>
+    {% if not user.is_authenticated %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("myModal");
+        var overlay = document.querySelector(".overlay");
+        var closeBtn = document.querySelector(".close");
+    
+        // GO 버튼 클릭 시 모달 표시
+        document.getElementById("gobutton").addEventListener("click", function(event) {
+          event.preventDefault();
+          modal.style.display = "block";
+          overlay.style.display = "block";
+        });
+    
+        // 랭킹 페이지 링크 클릭 시 모달 표시
+        document.querySelector("a[href='{% url 'ranking:ranking_page' %}']").addEventListener("click", function(event) {
+          event.preventDefault();
+          modal.style.display = "block";
+          overlay.style.display = "block";
+        });
+
+        // 마이페이지 링크 클릭 시 모달 표시
+        document.querySelector("a[href='{% url 'users:mypage' %}']").addEventListener("click", function(event) {
+          event.preventDefault();
+          modal.style.display = "block";
+          overlay.style.display = "block";
+        });
+    
+        // 모달 닫기 버튼 클릭 시 모달 숨김
+        closeBtn.addEventListener("click", function() {
+          modal.style.display = "none";
+          overlay.style.display = "none";
+        });
+    
+        // 오버레이 클릭 시 모달 숨김
+        overlay.addEventListener("click", function() {
+          modal.style.display = "none";
+          overlay.style.display = "none";
+        });
+      });
+    </script>
+    {% endif %}
+    
+
+
   </body>
 </html>

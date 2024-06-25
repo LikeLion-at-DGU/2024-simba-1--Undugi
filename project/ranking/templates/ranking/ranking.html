@@ -36,7 +36,6 @@
           <div class="nickname">
             <div class="nickname1">
               <div class="profile">
-
                 {% if forloop.counter == 1 %}
                 <img
                   class="one"
@@ -56,17 +55,19 @@
                   alt="logo"
                 />
                 {% endif %}
+                <img
+                  class="profilesection"
+                  src="{% if ranking.profile.profileImage %}{{ ranking.profile.profileImage.url }}{% else %}{% static 'images/defaultProfile.jpg' %}{% endif %}"
+                  alt="Profile Image"
+                />
               </div>
               <div class="nickname1text">
                 <div class="info">
                   <p class="loadnickname">{{ ranking.profile.nickName }}</p>
-                  <p class="id">{{ user.profile.user.username }}</p>
-                </div>
-                <div class="profile_image">
-                  <img src="{% if ranking.profile.profileImage %}{{ ranking.profile.profileImage.url }}{% else %}{% static 'images/defaultProfile.jpg' %}{% endif %}" alt="Profile Image" />
+                  <p class="id">{{ ranking.profile.user.username }}</p>
                 </div>
                 <div class="score">
-                  <span class="n">{{ ranking.total_calories_burned }}</span>
+                  <span class="n">{{ ranking.total_calories_burned|floatformat:2 }}</span>
                   <span class="kcal">kcal</span>
                 </div>
               </div>

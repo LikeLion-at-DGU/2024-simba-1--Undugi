@@ -219,6 +219,7 @@ body {
   width: 430px;
   height: 42px;
   padding: 0px 75px;
+  margin-right: 30px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -240,7 +241,6 @@ body {
   border: none;
 
   margin-top: 70px;
-  margin-left: 80px;
 }
 
 .overlay {
@@ -322,6 +322,89 @@ body {
 .close1:focus,
 .close2:hover,
 .close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal3 {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  padding-top: 60px;
+  top: 50%; /* 화면 상단에서 50% 위치 */
+  left: 50%; /* 화면 왼쪽에서 50% 위치 */
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  width: 315px;
+  height: 321px;
+  flex-shrink: 0;
+  border-radius: 21px;
+  background: #fff9d7;
+  margin: auto;
+
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.modalsection {
+  width: 203px;
+  height: 246px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 55px;
+}
+
+.text1 {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text2 {
+  color: #7e7e7e;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.image3 {
+  display: flex;
+  width: 106px;
+  height: 106px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.close3 {
+  color: #000000;
+  float: right;
+  padding-right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; /* absolute로 설정하여 부모(.modal)를 기준으로 위치 지정 */
+  top: 20px; /* 원하는 상단 여백 설정 */
+  right: 20px; /* 원하는 오른쪽 여백 설정 */
+}
+
+.close3:hover,
+.close3:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
