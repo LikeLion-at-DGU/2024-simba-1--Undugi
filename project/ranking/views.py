@@ -1,21 +1,23 @@
 from django.shortcuts import render
 from .models import Ranking
+from .utils import update_rankings
 
-def update_rankings():
-    # 랭킹을 업데이트하는 로직
-    rankings = Ranking.objects.order_by('-total_calories_burned')
-    for index, ranking in enumerate(rankings, start=1):
-        ranking.rank = index
-        ranking.save()
+    
+    ##rankings = Ranking.objects.order_by('-total_calories_burned')
+    ##for index, ranking in enumerate(rankings, start=1):
+    ##    ranking.rank = index
+    ##    ranking.save()
 
 def ranking_page(request):
     update_rankings()
-    top_rankings = list(Ranking.objects.order_by('-total_calories_burned')[:6])
+    top_rankings = list(Ranking.objects.order_by('rank')[:6])
     user_ranking = None
     user_rank=None
     if request.user.is_authenticated:
         try:
-            user_ranking = Ranking.objects.get(nickname=request.user.username)
+           user_ranking = Ranking.objects.get(profile__user=request.user)
+           user_rank = user_ranking.rank
+           ##user_ranking = Ranking.objects.get(nickname=request.user.username)
         except Ranking.DoesNotExist:
             user_ranking = None
 
@@ -28,7 +30,7 @@ def ranking_page(request):
 
 def detailed_ranking_page(request):
     update_rankings()
-    all_rankings = Ranking.objects.order_by('-total_calories_burned')
+    all_rankings = Ranking.objects.order_by('rank')
     context = {
         'all_rankings': all_rankings,
     }
