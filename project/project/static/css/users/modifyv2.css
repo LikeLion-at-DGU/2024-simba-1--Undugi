@@ -72,14 +72,24 @@ body {
 .body {
     display: grid;
     width: 430px;
-    height: 596px;
+    height: 458px;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
 }
 
+.back {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 430px;
+}
+
 .backbutton {
-    width: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     height: 24px;
     flex-shrink: 0;
     margin-left: 10px;
@@ -116,13 +126,15 @@ body {
     flex-shrink: 0;
     grid-template-rows: 1.5fr 0.5fr 1fr;
     grid-template-columns: 2fr 2fr 3fr;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
-#profileImage {
+.profile {
     width: 72px;
     height: 72px;
     flex-shrink: 0;
+    fill: #d9d9d9;
+    border-radius: 20px;
 }
 
 button  {
@@ -574,7 +586,7 @@ button a {
     flex-shrink: 0;
     border-radius: 35px;
     border: none;
-    margin-top : 30px;
+    margin-top : 45px;
     margin-bottom: 45px;
     color: #000;
     font-family: Pretendard;
@@ -596,7 +608,7 @@ button a {
     border-radius: 35px;
     background: #FFC700;
     border: none;
-    margin-top : 30px;
+    margin-top : 45px;
     margin-bottom: 45px;
     color: #000;
     font-family: Pretendard;
