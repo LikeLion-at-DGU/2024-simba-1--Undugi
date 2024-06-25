@@ -433,3 +433,12 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+.error-message {
+  color: #d80000;
+  font-family: Pretendard;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
