@@ -171,8 +171,10 @@
             }
            
         });
+    </script>
 
         {% if not user.is_authenticated %}
+        <script>
         document.addEventListener("DOMContentLoaded", function() {
           var modal3 = document.getElementById("myModal3");
           var overlay3 = document.querySelector(".overlay3");
@@ -204,9 +206,10 @@
             overlay3.style.display = "none";
           });
         });
+    </script>
       {% endif %}
 
         
-      </script>
+      
   </body>
 </html>
