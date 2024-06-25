@@ -17,12 +17,13 @@ body {
     align-items: center;
     background: #FFF;
     font-family: 'Pretendard', sans-serif;
+    height: 100vh;
 }
 
 .home {
     display: flex;
     width: 430px;
-    height: 932px;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -74,14 +75,13 @@ body {
     height: 596px;
     flex-direction: column;
     align-items: center;
-    gap: 70px;
     flex-shrink: 0;
 }
 
 .title {
     display: flex;
     width: 430px;
-    margin-top: 25px;
+    margin-top: 30px;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -110,6 +110,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
 }
 
 .contents_text {
@@ -120,7 +121,11 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-top: 26px;
+    margin : 0px;
+}
+
+form {
+    margin-top : 49px;
 }
 
 .NN {
@@ -137,6 +142,7 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin : 0px;
 }
 
 .Major {
@@ -153,6 +159,8 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin : 0px;
+    margin-top: 21px;
 }
 
 .input-field {
@@ -176,6 +184,7 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-top: 3px;
 }
 
 .major-text {
@@ -190,18 +199,19 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-top: 3px;
 }
 
 .input-field svg.no_nick {
     position: absolute; /* 아이콘을 절대적으로 배치 */
-    right: 10px; /* 오른쪽 가장자리에서의 거리 조정 */
+    right: 5px; /* 오른쪽 가장자리에서의 거리 조정 */
     cursor: pointer;
     color: #afafaf;
 }
 
 .input-field svg.no_major {
     position: absolute; /* 아이콘을 절대적으로 배치 */
-    right: 10px; /* 오른쪽 가장자리에서의 거리 조정 */
+    right: 5px; /* 오른쪽 가장자리에서의 거리 조정 */
     cursor: pointer;
     color: #afafaf;
 }
@@ -261,7 +271,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 91px;
+    margin-bottom: 94px;
 }
 
 .next_button {

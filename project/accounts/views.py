@@ -124,7 +124,7 @@ def passwordfindv1(request):
                 request.session['user_id'] = user.id
                 return render(request, 'accounts/passwordfindv2.html')  # 비밀번호 재설정 페이지
             else:
-                messages.erroe(request, '아이디가 일치하지 않습니다.')
+                messages.error(request, '아이디가 일치하지 않습니다.')
                 return render(request, 'accounts/passwordfindv1.html', {'error':'아이디가 일치하지 않습니다.'})
         except Profile.DoesNotExist:
             messages.error(request, "일치하는 사용자를 찾을 수 없습니다.")
