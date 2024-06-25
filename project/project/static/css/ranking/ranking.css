@@ -73,7 +73,8 @@ body {
 .body {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 430px;
+  height: 596px;
   padding: 31px 0;
 }
 
