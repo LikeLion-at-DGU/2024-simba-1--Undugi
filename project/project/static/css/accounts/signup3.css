@@ -325,6 +325,9 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
 .close1,
