@@ -156,7 +156,7 @@
     
             svgIcon.addEventListener('click', function() {
                 inputField_nick.value = ''; 
-                inputField_nick.placeholder = placeholderText1;
+                inputField_nick.placeholder = placeholderText_nick;
             });
         });
 
@@ -175,10 +175,13 @@
             const svgIcon = document.querySelector('.no_password');
             const inputField_password = document.querySelector('.password-text');
             const placeholderText_password = '비밀번호';
+            const saveBtn_pw = document.getElementById('save_button');
     
             svgIcon.addEventListener('click', function() {
                 inputField_password.value = ''; 
                 inputField_password.placeholder = placeholderText_password;
+                saveBtn_pw.classList.add('active');
+                saveBtn_pw.removeAttribute('data-disabled');
             });
         });
 

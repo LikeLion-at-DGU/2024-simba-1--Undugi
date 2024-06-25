@@ -305,6 +305,7 @@ button a {
     align-items: center;
     justify-content: flex-start;
     margin-left: 10px;
+    margin-bottom: 3px;
 }
 
 .Cal {
@@ -575,6 +576,7 @@ button a {
     font-weight: 600;
     line-height: normal;
     margin-right: 0px;
+    margin-top: 3px;
 }
 
 #save_button {
@@ -595,7 +597,7 @@ button a {
     font-weight: 700;
     line-height: normal;
     text-decoration: none;
-    cursor: not-allowed; /* 기본적으로 버튼 비활성화 */
+    cursor: default; /* 기본적으로 버튼 비활성화 */
 }
 
 #save_button.active {
