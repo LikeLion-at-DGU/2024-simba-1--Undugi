@@ -71,6 +71,13 @@ body {
     flex-shrink: 0;
 }
 
+.backbutton {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
 .Image {
     display: grid;
     width: 430px;
