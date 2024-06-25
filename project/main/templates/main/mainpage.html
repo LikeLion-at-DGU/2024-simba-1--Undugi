@@ -132,7 +132,7 @@
           src="../../project/static/assets/icons/rundugi.png"
           alt="rundugi"
         />
-        <a href ="" class="logingo" value="로그인하기"><i>로그인하기</i></a>
+        <a href ="{% url 'accounts:login' %}" class="logingo" value="로그인하기"><i>로그인하기</i></a>
       </div>
     </div>
     {% if not user.is_authenticated %}
