@@ -48,7 +48,6 @@ def modifyv2(request):
         
         if profile_form.is_valid():
             profile_form.save()
-            print("Profile Image Path:", request.user.profile.profileImage.url)
             update_session_auth_hash(request, request.user)  
             return redirect('users:mypage')
         else:
