@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate
 from django.contrib import messages
 # Create your views here.
-def mypage(request):
+def mypage(request): #사용자 마이페이지를 렌더링. 사용자 프로필 이미지와 남은 칼로리를 표시.
     user = request.user
     profileImage = user.profile.profileImage.url if user.profile.profileImage else '/project/static/images/defaultProfile.jpg'
     consumedCalorie = request.user.profile.consumedCalorie
@@ -25,10 +25,10 @@ def mypage(request):
     return render(request, 'users/mypage.html', context)
 
 
-def modify(request):
+def modify(request): #사용자 프로필 수정 페이지를 렌더링.
     return render(request, 'users/modify.html')
 
-def pw_checking(request):
+def pw_checking(request):  #비밀번호 확인 페이지를 렌더링. 사용자가 입력한 비밀번호를 확인하고 일치하면 수정 페이지로 리디렉션.
     if request.method == 'POST':
         password = request.POST.get('password')
         user = authenticate(username=request.user.username, password=password)
@@ -39,7 +39,7 @@ def pw_checking(request):
             messages.error(request, '비밀번호가 일치하지 않습니다.')
     return render(request, 'users/pw_checking.html')
 
-def modifyv2(request):
+def modifyv2(request):  # 사용자 프로필 수정 페이지를 렌더링 및 처리. 비밀번호 확인을 거친 후 사용자 프로필 정보를 수정하고 저장.
     if not request.session.get('password_checked'):
         return redirect('users:pw_checking')
     
