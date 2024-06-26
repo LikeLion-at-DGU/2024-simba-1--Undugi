@@ -51,7 +51,9 @@ def modifyv2(request):
             update_session_auth_hash(request, request.user)  
             return redirect('users:mypage')
         else:
-            print(profile_form.errors)
+            for field, errors in profile_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
     else:
         profile_form = UserProfileForm(instance=request.user.profile)
     
