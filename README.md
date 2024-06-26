@@ -87,7 +87,7 @@
 
 ### 언어
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1743ce8f-f891-4075-b600-f1f480dda49a)
+<img style="width:50px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1743ce8f-f891-4075-b600-f1f480dda49a"/>
 
 ![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/65d64e70-b710-4a19-82b0-517f67fbd47d)
 
