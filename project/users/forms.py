@@ -28,3 +28,10 @@ class UserProfileForm(forms.ModelForm):
         if commit:
             profile.save()
         return profile
+
+
+    def clean_nickName(self):
+        nickName = self.cleaned_data.get('nickName')
+        if Profile.objects.filter(nickName=nickName).exclude(user=self.instance.user).exists():
+            raise forms.ValidationError("This nickname is already in use.")
+        return nickName
