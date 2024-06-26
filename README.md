@@ -79,7 +79,7 @@
 
 | 마수빈 | 박채현 | 조성현 | 이수용 | 최효은 |
 | --- | --- | --- | --- | --- |
-| 기/디 | BE | Be | FE | FE |
+| 기/디 | BE | BE | FE | FE |
 
 ---
 
@@ -87,26 +87,26 @@
 
 ### 언어
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/d4677f64-d369-4b53-89b7-915d8ecae5af/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1743ce8f-f891-4075-b600-f1f480dda49a"/>
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/134af9a3-2e0d-438e-b5f8-27efd9a80bc7/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/65d64e70-b710-4a19-82b0-517f67fbd47d"/>
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/b2003d26-830a-46d9-a0b8-37b0d49d3788/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/9d5cb1d3-ae20-456f-a537-8e8a1264781f"/>
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/2dfad3eb-570c-4783-8780-88b0b90f3d06/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1935200e-257c-462d-823f-dc657834698f"/>
 
 ### 개발환경
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/d72f4d96-fa0c-44f7-8f51-5284be4dc109/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/de6f5ed6-a2c6-4d17-8a3d-1314fe01a0b6"/>
 
 ### 개발 툴
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/a4e09fe2-77e5-4296-a77f-9a9fdf55b9be/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/c98fa25b-fd90-4ab4-90ec-17ff0ed71eca"/>
 
 ### 협업 툴
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/52f16cec-4c39-46d4-9ecf-4b4a1ee7e241/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/70abf913-fc5e-4b2e-8d5f-74d767c92dfb"/>
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/2754cdb5-c707-4659-a0c5-fa66f8c17c8f/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/8778bf47-1b78-4aa5-bf16-621666e4311f"/>
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/e3d20457-80e6-4f7d-9720-d421a5066194/Untitled.png)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1539a9f5-a925-424a-adc0-90bc1c412055"/>
