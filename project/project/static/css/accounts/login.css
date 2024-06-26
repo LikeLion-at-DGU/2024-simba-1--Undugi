@@ -395,3 +395,8 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
