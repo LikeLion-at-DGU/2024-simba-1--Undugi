@@ -2,7 +2,7 @@
 
 > **동국대학교 구성원들의 언덕을 더 재미있고 의미있게 만드는 서비스, 언더기**
 > 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/37cb2f9f-0bf2-4c68-b3bf-e68d8c0de638)
+![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/2e8cfae0-217b-42c6-8705-063703cff723)
 
 
 
