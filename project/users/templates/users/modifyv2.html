@@ -111,7 +111,15 @@
             <button type="submit" class="button" id="save_button">변경정보 저장하기</button>
         </div>
     </form>
+
         {% include 'shared/_navbar.html' %}
+        {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
     </div>
 
     <div class="overlay"></div>
