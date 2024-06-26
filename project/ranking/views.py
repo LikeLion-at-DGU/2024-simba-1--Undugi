@@ -2,11 +2,6 @@ from django.shortcuts import render
 from .models import Ranking
 from .utils import update_rankings
 
-    
-    ##rankings = Ranking.objects.order_by('-total_calories_burned')
-    ##for index, ranking in enumerate(rankings, start=1):
-    ##    ranking.rank = index
-    ##    ranking.save()
 
 def ranking_page(request):
     update_rankings()
