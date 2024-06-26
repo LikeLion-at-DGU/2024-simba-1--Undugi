@@ -53,7 +53,7 @@ def modifyv2(request):  # 사용자 프로필 수정 페이지를 렌더링 및 
         else:
             for field, errors in profile_form.errors.items():
                 for error in errors:
-                    messages.error(request, '모든 항목을 작성해주세요')
+                    messages.error(request, '변경 사항을 확인해주세요.')
     else:
         profile_form = UserProfileForm(instance=request.user.profile)
     
