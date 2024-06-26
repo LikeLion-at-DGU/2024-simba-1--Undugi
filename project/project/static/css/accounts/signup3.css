@@ -479,3 +479,8 @@ body {
   height: 37.778px;
   fill: #000;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
