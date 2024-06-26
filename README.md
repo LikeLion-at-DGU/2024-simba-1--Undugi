@@ -87,26 +87,26 @@
 
 ### 언어
 
-<img style="width:50px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1743ce8f-f891-4075-b600-f1f480dda49a"/>
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1743ce8f-f891-4075-b600-f1f480dda49a"/>
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/65d64e70-b710-4a19-82b0-517f67fbd47d)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/65d64e70-b710-4a19-82b0-517f67fbd47d"/>
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/9d5cb1d3-ae20-456f-a537-8e8a1264781f)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/9d5cb1d3-ae20-456f-a537-8e8a1264781f"/>
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1935200e-257c-462d-823f-dc657834698f)!
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1935200e-257c-462d-823f-dc657834698f"/>
 
 ### 개발환경
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/de6f5ed6-a2c6-4d17-8a3d-1314fe01a0b6)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/de6f5ed6-a2c6-4d17-8a3d-1314fe01a0b6"/>
 
 ### 개발 툴
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/c98fa25b-fd90-4ab4-90ec-17ff0ed71eca)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/c98fa25b-fd90-4ab4-90ec-17ff0ed71eca"/>
 
 ### 협업 툴
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/70abf913-fc5e-4b2e-8d5f-74d767c92dfb)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/70abf913-fc5e-4b2e-8d5f-74d767c92dfb"/>
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/8778bf47-1b78-4aa5-bf16-621666e4311f)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/8778bf47-1b78-4aa5-bf16-621666e4311f"/>
 
-![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1539a9f5-a925-424a-adc0-90bc1c412055)
+<img style="width:80px" src="https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/1539a9f5-a925-424a-adc0-90bc1c412055"/>
