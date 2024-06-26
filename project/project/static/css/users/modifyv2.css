@@ -588,8 +588,8 @@ button a {
     flex-shrink: 0;
     border-radius: 35px;
     border: none;
-    margin-top : 35px;
-    margin-bottom: 45px;
+    margin-top : 60px;
+    margin-bottom: 40px;
     color: #000;
     font-family: Pretendard;
     font-size: 14px;
@@ -610,8 +610,8 @@ button a {
     border-radius: 35px;
     background: #FFC700;
     border: none;
-    margin-top : 35px;
-    margin-bottom: 45px;
+    margin-top : 60px;
+    margin-bottom: 40px;
     color: #000;
     font-family: Pretendard;
     font-size: 14px;
@@ -769,7 +769,7 @@ input[type="password"]::-ms-clear {
     border-radius: 12px;
     border: 1px solid #d80000;
     background: #ffe9e9;
-    margin-top: 40px;
+    margin-top: 70px;
 } 
 
 .message {
@@ -780,6 +780,7 @@ input[type="password"]::-ms-clear {
     font-weight: 600;
     line-height: normal;
     margin-left: 5px;
+    margin-right: 10px;
 }
 
 .error-icon {
