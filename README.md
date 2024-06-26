@@ -2,8 +2,7 @@
 
 > **동국대학교 구성원들의 언덕을 더 재미있고 의미있게 만드는 서비스, 언더기**
 > 
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/0f64e03a-bac1-44ce-9422-0a7f0b9adc80/Untitled.png)
+(https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F02823ac9-d68f-4485-99ae-1cde50454120%2F0f64e03a-bac1-44ce-9422-0a7f0b9adc80%2FUntitled.png?table=block&id=3d3cbb33-2778-4f51-95f9-3bb45b8e80b6&spaceId=02823ac9-d68f-4485-99ae-1cde50454120&width=2000&userId=892e8ff3-dccb-4909-9baf-5d39aa203a85&cache=v2)
 
 ---
 
