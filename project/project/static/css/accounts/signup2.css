@@ -409,3 +409,8 @@ label {
   font-weight: 600;
   line-height: normal;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
