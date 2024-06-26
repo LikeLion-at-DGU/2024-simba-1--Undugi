@@ -170,7 +170,6 @@ body {
 
 .detail {
   display: inline-flex;
-  padding: 0px 124.5px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -185,6 +184,10 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  width: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dietdetail {
@@ -203,6 +206,10 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  width: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .healthdetail {
