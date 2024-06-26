@@ -3999,6 +3999,460 @@
       Marker2 = new kakao.maps.LatLng(37.5573, 126.9999);
     }
   }   // 다향관 루트
+  else if (start_building == "체육관") {
+    if (end_building == "학술문화관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5578, 127.0031),   // 학술문화관
+        new kakao.maps.LatLng(37.5579, 127.0027),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G1 = 0.25;
+      T1 = 1 * 0.75;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0.11;
+      T2 = 6 * 0.75;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      G3 = 0;
+      T3 = 2 * 0.75;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      G4 = 0.11;
+      T4 = 4;
+      var calorie4 = (3.5 + (0.1 * S) + (1.8 * S * G4)) * 0.001 * W * 5 * T4 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3 + calorie4;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 법학만해관과 명진관 사이 내리막길로 내려갑니다. 백년비에서 잉카페 방향으로 꺾어 걸어가 사회과학관 3층 입구에 도착합니다. 사회과학관 2층 내부 통로를 통해 학술문화관 3층에 도착합니다";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5578, 127.0031);
+    }
+    else if (end_building == "혜화관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5577, 127.0018),   // 혜화관
+        new kakao.maps.LatLng(37.5579, 127.0007), // 법학관
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G1 = 0.14;
+      T1 = 4 * 0.75;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0;
+      T2 = 2 * 0.75;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      G3 = 0.11;
+      T3 = 4;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 법학만해관으로 갑니다. 법학만해관에서 구름다리를 통해 혜화관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5577, 127.0018);
+    }
+    else if (end_building == "명진관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5577, 126.9999), 
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G = 0.09;
+      T = 5;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 직진으로 가로질러 명진관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5577, 126.9999);
+    }
+    else if (end_building == "본관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5585, 126.9994), 
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G = 0.09;
+      T = 3;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 오른쪽 건물인 본관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5585, 126.9994);
+    }
+    else if (end_building == "법학관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5579, 127.0007), 
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G = 0.09;
+      T = 5;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 법학만해관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5579, 127.0007);
+    }
+    else if (end_building == "정각원") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0012), 
+        new kakao.maps.LatLng(37.5579, 127.0007), // 법학관
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G1 = 0.1;
+      T1 = 5 * 0.75;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0.11;
+      T2 = 2;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      var calorie = calorie1 + calorie2;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 법학만해관 옆 갓길로 들어가 정각원에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5575, 127.0012);
+    }
+    else if (end_building == "경영관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.557, 127.0029),   // 경영관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G1 = 0.11;
+      T1 = 3 * 0.75;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0;
+      T2 = 2 * 0.75;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      G3 = 0.10;
+      T3 = 3;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      G4 = 1;
+      T4 = 0.15 * 0.75;
+      var calorie4 = (3.5 + (0.1 * S) + (1.8 * S * G4)) * 0.001 * W * 5 * T4 * 0.74;
+      var calorie = calorie1 + calorie2 + calorie3 + calorie4;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 법학만해관과 명진관 사이 내리막길로 내려갑니다. 백년비에서 잉카페 방향으로 꺾어 사회과학관 3층 입구 옆 계단으로 내려가 경영관 2층 입구에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.557, 127.0029);
+    }
+    else if (end_building == "사회과학관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5575, 127.0025),   // 사과관
+        new kakao.maps.LatLng(37.5571, 127.002),
+        new kakao.maps.LatLng(37.557, 127.001),   // 잉카페
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5578, 127.0006),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G1 = 0.11;
+      T1 = 6 * 0.75;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0;
+      T2 = 2 * 0.75;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      G3 = 0.11;
+      T3 = 4;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 법학만해관과 명진관 사이 내리막길로 내려갑니다. 백년비에서 잉카페 방향으로 꺾어 사회과학관 3층 입구에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5575, 127.0025);
+    }
+    else if (end_building == "다향관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5588, 127.0001), 
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G = 0.11;
+      T = 3;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 다향관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5588, 127.0001);
+    }
+    else if (end_building == "학림관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+        new kakao.maps.LatLng(37.5603, 126.9998),   // 학림관
+      ];
+      G = 0;
+      T = 1;
+      description = "체육관을 나와 오른쪽으로 꺾어 학림관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5603, 126.9998);
+    }
+    else if (end_building == "계산관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+        new kakao.maps.LatLng(37.5603, 126.999),   // 학림관
+        new kakao.maps.LatLng(37.5601, 126.9989),
+      ];
+      G = 0;
+      T = 1.5;
+      description = "학림관 옆 도로를 따라 걸어가 계산관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5601, 126.9989);
+    }
+    else if (end_building == "학생회관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+        new kakao.maps.LatLng(37.5603, 126.999),   // 학림관
+        new kakao.maps.LatLng(37.56, 126.9987),
+        new kakao.maps.LatLng(37.56, 126.9984),
+      ];
+      G = 0.03;
+      T = 2 * 0.75;
+      description = "체육관에서 학림관을 따라 직진으로 걸어가 학생회관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.56, 126.9984);
+    }
+    else if (end_building == "정보문화관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+        new kakao.maps.LatLng(37.5603, 126.999),   // 학림관
+        new kakao.maps.LatLng(37.56, 126.9987),
+        new kakao.maps.LatLng(37.5599, 126.9985),
+      ];
+      G = 0.03;
+      T = 2 * 0.75;
+      description = "체육관에서 학림관을 따라 직진으로 걸어가 정보문화관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5599, 126.9985);
+    }
+    else if (end_building == "원흥관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5591, 126.9988),
+      ];
+      G = 0.06;
+      T = 4;
+      description = "헐떡고개를 올라간 뒤, 오른쪽으로 꺾어 내려가 원흥관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5591, 126.9988);
+    }
+    else if (end_building == "남산학사") {
+      var linePath = [
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5591, 126.9992),
+        new kakao.maps.LatLng(37.5588, 126.9993),
+        new kakao.maps.LatLng(37.5584, 126.999),
+        new kakao.maps.LatLng(37.5586, 126.998),
+        new kakao.maps.LatLng(37.5585, 126.9978),
+      ];
+      G1 = 0.11;
+      T1 = 2.5;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0;
+      T2 = 1;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      G3 = 0.16;
+      T3 = 1 * 0.75;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "헐떡고개를 올라간 뒤, 오른쪽으로 꺾어 내려가 원흥관을 지나쳐 직진합니다. 이후 오른쪽에 108계단을 이용하여 내려가 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5585, 126.9978);
+    }
+    else if (end_building == "신공학관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.5591, 126.9992),
+        new kakao.maps.LatLng(37.5588, 126.9993),
+        new kakao.maps.LatLng(37.5584, 126.9991),
+        new kakao.maps.LatLng(37.5582, 126.9985), // 신공학관
+      ];
+      G1 = 0.11;
+      T1 = 2.5;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0;
+      T2 = 1;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      G3 = 0.11;
+      T3 = 1 * 0.75;
+      var calorie3 = (3.5 + (0.1 * S) + (1.8 * S * G3)) * 0.001 * W * 5 * T3 * 0.75;
+      var calorie = calorie1 + calorie2 + calorie3;
+      description = "헐떡고개를 올라간 뒤, 오른쪽으로 꺾어 내려가 원흥관을 지나쳐 직진합니다. 이후 계단을 따라 올라간 다음 오른쪽으로 꺾어 신공학관에 도착합니다. ";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5582, 126.9985);
+    }
+    else if (end_building == "중앙도서관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5579, 126.9992),
+        new kakao.maps.LatLng(37.5581, 126.9997),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),
+      ];
+      G1 = 0.11;
+      T1 = 2.5;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0;
+      T2 = 1.5;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      var calorie = calorie1 + calorie2;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 직진해 중앙도서관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5579, 126.9992);
+    }
+    else if (end_building == "상록원") {
+      var linePath = [
+        new kakao.maps.LatLng(37.557, 126.9996),    // 상록원
+        new kakao.maps.LatLng(37.5575, 126.9993),
+        new kakao.maps.LatLng(37.5581, 126.9997),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),    // 체육관
+      ];
+      G1 = 0.11;
+      T1 = 2.5;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0.09;
+      T2 = 3;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      var calorie = calorie1 + calorie2;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 직진해 중앙도서관에 도착합니다. 계속해서 직진해 오르막길을 올라 상록원에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.557, 126.9996);
+    }
+    else if (end_building == "만해광장") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5594, 126.9992), 
+        new kakao.maps.LatLng(37.5595, 126.9989), 
+        new kakao.maps.LatLng(37.5591, 126.9992),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G = 0.08;
+      T = 4;
+      description = "헐떡고개를 올라간 뒤, 오른쪽으로 꺾어 내려가 만해광장에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5594, 126.9992);
+    }
+    else if (end_building == "대운동장") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5567, 127.0007), 
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5577, 127.0006),
+        new kakao.maps.LatLng(37.5578, 127.0005),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G1 = 0.09;
+      T1 = 5;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0.09;
+      T2 = 2 * 0.75;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      var calorie = calorie1 + calorie2;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 법학만해관과 명진관 사이 내리막길로 내려가 대운동장에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5567, 127.0007);
+    }
+    else if (end_building == "정문") {
+      var linePath = [
+        
+        new kakao.maps.LatLng(37.5566, 127.0031),   // 정문
+        new kakao.maps.LatLng(37.557, 127.001),
+        new kakao.maps.LatLng(37.5571, 127.0005),
+        new kakao.maps.LatLng(37.5577, 127.0006),
+        new kakao.maps.LatLng(37.5578, 127.0005),
+        new kakao.maps.LatLng(37.5585, 127.0007),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+      ];
+      G1 = 0.09;
+      T1 = 5;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0.12;
+      T2 = 5 * 0.75;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      var calorie = calorie1 + calorie2;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 법학만해관과 명진관 사이 내리막길로 내려갑니다. 백년비를 지나쳐 오른쪽 갈래길로 내려가 정문에 도착합니다. ";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5566, 127.0031);
+    }
+    else if (end_building == "후문") {
+      var linePath = [
+        new kakao.maps.LatLng(37.56, 127.0002),   // 체육관
+        new kakao.maps.LatLng(37.5603, 126.999),   // 학림관
+        new kakao.maps.LatLng(37.56, 126.9987),
+        new kakao.maps.LatLng(37.5604, 126.9987),
+        new kakao.maps.LatLng(37.5606, 126.9989),
+        new kakao.maps.LatLng(37.5608, 126.9994), // 후문
+      ];
+      G = 0.02;
+      T = 2.5 * 0.75;
+      description = "체육관에서 학림관을 따라 직진으로 걸어가 학생회관 옆 계단을 내려갑니다. 이후 계속해서 내려가 후문에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5608, 126.9994);
+    }
+    else if (end_building == "과학관") {
+      var linePath = [
+        new kakao.maps.LatLng(37.5573, 126.9999),    // 과학관
+        new kakao.maps.LatLng(37.5575, 126.9993),
+        new kakao.maps.LatLng(37.558, 126.9995),
+        new kakao.maps.LatLng(37.5581, 126.9997),
+        new kakao.maps.LatLng(37.5587, 127),
+        new kakao.maps.LatLng(37.5589, 126.9999),
+        new kakao.maps.LatLng(37.5592, 126.9998),
+        new kakao.maps.LatLng(37.56, 127),
+        new kakao.maps.LatLng(37.56, 127.0002),    // 체육관
+      ];
+      G1 = 0.11;
+      T1 = 2.5;
+      var calorie1 = (3.5 + (0.1 * S) + (1.8 * S * G1)) * 0.001 * W * 5 * T1 * 0.75;
+      G2 = 0.09;
+      T2 = 3;
+      var calorie2 = (3.5 + (0.1 * S) + (1.8 * S * G2)) * 0.001 * W * 5 * T2 * 0.75;
+      var calorie = calorie1 + calorie2;
+      description = "헐떡고개를 올라간 뒤, 왼쪽으로 꺾어 올라가 팔정도를 가로질러 직진해 명진관 뒤 과학관에 도착합니다.";
+      Marker1 = new kakao.maps.LatLng(37.56, 127.0002);
+      Marker2 = new kakao.maps.LatLng(37.5573, 126.9999);
+    }
+  }   // 체육관 루트
 
     
     
