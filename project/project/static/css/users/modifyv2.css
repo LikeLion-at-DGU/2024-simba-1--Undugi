@@ -305,6 +305,7 @@ button a {
     align-items: center;
     justify-content: flex-start;
     margin-left: 10px;
+    margin-bottom: 3px;
 }
 
 .Cal {
@@ -575,6 +576,7 @@ button a {
     font-weight: 600;
     line-height: normal;
     margin-right: 0px;
+    margin-top: 3px;
 }
 
 #save_button {
@@ -595,7 +597,7 @@ button a {
     font-weight: 700;
     line-height: normal;
     text-decoration: none;
-    cursor: not-allowed; /* 기본적으로 버튼 비활성화 */
+    cursor: default; /* 기본적으로 버튼 비활성화 */
 }
 
 #save_button.active {
@@ -750,4 +752,36 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 1px solid #d80000;
+    background: #ffe9e9;
+    margin-top: 30px;
+} 
+
+.message {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 5px;
+}
+
+.error-icon {
+    margin-right: 5px;
 }

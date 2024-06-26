@@ -275,3 +275,8 @@ form {
     line-height: normal;
     text-decoration: none;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}

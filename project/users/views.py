@@ -53,7 +53,7 @@ def modifyv2(request):
         else:
             for field, errors in profile_form.errors.items():
                 for error in errors:
-                    messages.error(request, f"{field}: {error}")
+                    messages.error(request, '모든 항목을 작성해주세요')
     else:
         profile_form = UserProfileForm(instance=request.user.profile)
     
