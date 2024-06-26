@@ -65,7 +65,7 @@
 
 ## 🦆Duggy
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/02823ac9-d68f-4485-99ae-1cde50454120/cb4e03e8-8b3f-4dd4-9218-8e11d88bdcfd/Untitled.png)
+![image](https://github.com/LikeLion-at-DGU/2024-simba-1-Undugi/assets/112747336/625e1a68-2219-41df-98af-8b006a58f6e3)
 
 🏮언더기 마스코트 ‘더기’, 동국대학교 연등을 들고 걸어다녀요🏮
 
