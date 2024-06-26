@@ -2,7 +2,7 @@ from django import forms
 from accounts.models import Profile
 from django.contrib.auth.models import User
 
-class UserProfileForm(forms.ModelForm):
+class UserProfileForm(forms.ModelForm):#사용자 프로필 정보를 수정하는 폼
     password = forms.CharField(widget=forms.PasswordInput(), required=False)
 
     class Meta:

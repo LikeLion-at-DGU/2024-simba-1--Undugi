@@ -196,7 +196,7 @@ button a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-left: 10px;
+    margin-left: 23px;
 }
 
 .Nickname {
@@ -571,7 +571,7 @@ button a {
 .caution_text{
     color: #000;
     font-family: Pretendard;
-    font-size: 7px;
+    font-size: 10px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -588,7 +588,7 @@ button a {
     flex-shrink: 0;
     border-radius: 35px;
     border: none;
-    margin-top : 45px;
+    margin-top : 35px;
     margin-bottom: 45px;
     color: #000;
     font-family: Pretendard;
@@ -610,7 +610,7 @@ button a {
     border-radius: 35px;
     background: #FFC700;
     border: none;
-    margin-top : 45px;
+    margin-top : 35px;
     margin-bottom: 45px;
     color: #000;
     font-family: Pretendard;
@@ -769,7 +769,7 @@ input[type="password"]::-ms-clear {
     border-radius: 12px;
     border: 1px solid #d80000;
     background: #ffe9e9;
-    margin-top: 30px;
+    margin-top: 40px;
 } 
 
 .message {
