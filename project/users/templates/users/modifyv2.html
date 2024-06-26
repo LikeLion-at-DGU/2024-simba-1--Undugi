@@ -141,15 +141,15 @@
 
             function validatePassword() {
                 const password = pwInput.value;
-                const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@!?-_]).{8,}$/;
+                const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@!?-_]).{8,}$/; /*비밀번호 조건 정규 표현식*/
         
                 if (regex.test(password) == true) {
                     saveBtn.classList.add('active');
-                    saveBtn.removeAttribute('data-disabled');
+                    saveBtn.removeAttribute('data-disabled'); /*버튼 활성화 */
                 }
                 else {
                     saveBtn.classList.remove('active');
-                    saveBtn.setAttribute('data-disabled', 'true');
+                    saveBtn.setAttribute('data-disabled', 'true'); /* 버튼 비활성화 */
                 }
             }
             pwInput.addEventListener('input', validatePassword);
@@ -166,9 +166,9 @@
             const inputField_nick = document.querySelector('.nick-text');
             const placeholderText_nick = '닉네임';
     
-            svgIcon.addEventListener('click', function() {
+            svgIcon.addEventListener('click', function() { /* svg이미지 클릭 시 값은 초기화되고 텍스트박스에는 placeholder 텍스트가 보여짐*/
                 inputField_nick.value = ''; 
-                inputField_nick.placeholder = placeholderText_nick;
+                inputField_nick.placeholder = placeholderText_nick; 
             });
         });
 
@@ -262,19 +262,17 @@
             overlay.style.display = "none";
         };
 
-        window.onclick = function (event) {
-            if (event.target == modal) {
+        overlay.onclick = function (event) {
                 modal.style.display = "none";
                 overlay.style.display = "none";
-            }
-        };
-    });
+            };
+        });
 
     var loadFile = function(event) {
             var image = document.getElementById('profileImage');
             image.src = URL.createObjectURL(event.target.files[0]);
             image.onload = function() {
-                URL.revokeObjectURL(image.src); // 메모리 해제를 위해 Object URL 해제
+                URL.revokeObjectURL(image.src); /* 더 이상 필요하지 않은 객체 URL을 해제 */
             }
         };
 
