@@ -6,7 +6,7 @@ from .utils import update_rankings
 def ranking_page(request):
     # 랭킹 업데이트 함수 호출
     update_rankings()
-    top_rankings = list(Ranking.objects.order_by('rank')[:6])
+    top_rankings = list(Ranking.objects.order_by('rank')[:5])
     user_ranking = None
     user_rank=None
     # 사용자가 인증된 상태인지 확인
